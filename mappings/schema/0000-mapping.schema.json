@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Enterprise-Semantics/enterprise-semantics-mappings/blob/main/mappings/schema/0000-mapping.schema.json",
+  "title": "Enterprise-Semantics Mapping (stub)",
+  "description": "Stub schema for bi-directional mappings between Enterprise-Semantics and WSF/OpenDEA/DEA Catalogs. Subject to evolution per ADR-ES-001.",
+  "type": "object",
+  "required": ["id", "source", "target", "direction", "predicate", "status"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^ES-MAP-[A-Z0-9-]+$" },
+    "source": { "type": "string", "description": "Source concept ID, e.g. ES:Capability" },
+    "target": { "type": "string", "description": "Target concept ID" },
+    "direction": { "type": "string", "enum": ["forward", "inverse"] },
+    "predicate": { "type": "string", "enum": ["grounded-by", "aligned-with", "specializes", "references", "maps-to", "represented-by", "profile-of"] },
+    "status": { "type": "string", "enum": ["proposed", "investigating", "established", "deprecated"] },
+    "provenance": { "type": "string" },
+    "rationale": { "type": "string" }
+  },
+  "additionalProperties": false
+}
