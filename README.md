@@ -38,3 +38,10 @@ The stub schema lives at [`mappings/schema/0000-mapping.schema.json`](mappings/s
 ## License
 
 Apache License 2.0. See [LICENSE](https://github.com/Enterprise-Semantics/enterprise-semantics-mappings/blob/main/LICENSE).
+
+
+<!--
+Mappings repository structure update per CR-ES-001 §15 + §16 + §17. The existing `mappings/schema/0000-mapping.schema.json` is preserved. New subdirs `mappings/wsf/`, `mappings/opendea/`, `mappings/dea-catalogs/` establish the per-authority mapping structure.
+
+Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-22).
+-->
