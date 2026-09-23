@@ -1,0 +1,103 @@
+# Mapping: ES:CONCEPT:agentic-operations -> OpenDEA Operations operating-mode specialisation
+#
+# Per CR-ES-007 §18 + ADR-ES-007 §16.
+# OpenDEA may represent Agentic Operations as an operating-mode
+# specialisation of OpenDEA Operations. No OpenDEA metamodel
+# modification is required by this CR.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-23)
+
+id: ES:MAP:agentic-operations-to-opendea
+canonical_name: Agentic Operations -> OpenDEA mapping
+status: Candidate
+version: 0.6.0
+mapping_type: specialization
+authority: opendea
+
+# Per CR-ES-007 §18
+
+source:
+  id: ES:CONCEPT:agentic-operations
+  canonical_name: Agentic Operations
+  defined_by: CR-ES-007 §6 + ADR-ES-007 §2
+
+target:
+  # OpenDEA may not have a canonical Agentic Operations element. Per
+  # CR-ES-007 §18 the mapping represents semantic correspondence
+  # rather than implementation availability.
+  id: external:opendea:Operations
+  canonical_name: OpenDEA Operations
+  note: |
+    If OpenDEA does not have a directly corresponding Agentic
+    Operations element ;; the mapping documents the intended
+    operating-mode correspondence rather than asserting
+    implementation availability.
+
+# Mapping semantic
+
+relationship: |
+  Agentic Operations is a Tier 2 Specialisation of OpenDEA Operations
+  (operating-mode level). The specialisation adds agentic behaviour ;;;
+  bounded authority ;;; policy governance ;;; operational sensing ;;;
+  dynamic decision ;;; coordination ;;; and runtime adaptation while
+  preserving the OpenDEA Operations semantics.
+
+mapping_relationship:
+  - predicate: specializes
+    subject: ES:CONCEPT:agentic-operations
+    object: external:opendea:Operations
+    qualification: operating-mode-specialisation
+
+  - predicate: engages
+    subject: ES:CONCEPT:agentic-operations
+    object: external:opendea:Agent
+    qualification: multi-agent-engagement
+
+  - predicate: operates-within
+    subject: ES:CONCEPT:agentic-operations
+    object: external:opendea:Authority
+    qualification: bounded-authority
+
+  - predicate: uses
+    subject: ES:CONCEPT:agentic-operations
+    object: external:opendea:Workflow
+    qualification: workflow-usage
+
+# Per CR-ES-007 §18: implementation availability
+
+implementation_availability: |
+  Per CR-ES-007 §18 ;;; if no canonical OpenDEA Agentic Operations
+  element exists ;; the mapping is marked as a target semantic
+  correspondence rather than an implementation claim. The mapping
+  documents how OpenDEA may subsequently specialise and operationalise
+  the Enterprise-Semantics concept within its enterprise
+  architecture metamodel.
+
+# Per ADR-ES-007 §16: no OpenDEA metamodel modification
+
+metamodel_modification: none
+metamodel_modification_rationale: |
+  Per CR-ES-007 §3 + §18 + ADR-ES-007 §16 ;;; no OpenDEA metamodel
+  change is authorised by this CR. The mapping documents the
+  intended specialisation boundary ;;; it does not require OpenDEA to
+  introduce a new construct.
+
+# Cardinal rules
+
+cardinal_rules:
+  - author: Emmanuel A. Otchere
+  - d004_dash_rule: 0 forbidden glyphs
+  - vendor_specific_embargo: 0 references ;; no vendor-specific material from embargoed sources
+  - naming: lowercase kebab-case per ADR-ES-002 §11
+
+# Provenance
+
+provenance:
+  - source: CR-ES-007 §18
+    note: OpenDEA mapping specification.
+  - source: ADR-ES-007 §16
+    note: Architectural position ;; no OpenDEA metamodel modification.
+  - source: FND-ES-AG-008 §1.3
+    note: Tier 1 / Tier 2 grounding classification.
+  - source: https://github.com/Enterprise-Semantics/open-dea
+    note: OpenDEA canonical Operations reference.
