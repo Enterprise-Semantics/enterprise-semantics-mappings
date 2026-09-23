@@ -27,6 +27,20 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - No vendor-specific material from embargoed sources
 - Naming: lowercase kebab-case per ADR-ES-002 §11
 
+## [0.5.0] ; 2026-09-23 ; VS-C ;;; 2 Autonomous Operations mapping records (WSF + OpenDEA) per CR-ES-008 §19 + §20 + ADR-ES-008 §16 + FND-ES-AG-008 §1.3
+
+### Added
+
+- mappings/wsf/autonomous-operations.yaml ;;; new ;; Tier 2 Specialisation + ES-canonical novelty ;; 10 autonomous-operations relationships mapped to WSF concepts
+- mappings/opendea/autonomous-operations.yaml ;;; new ;; OpenDEA Operations operating-mode specialisation ;; no metamodel modification
+
+### Cardinal rules
+
+- Author: Emmanuel A. Otchere
+- D-004 clean ;;; 0 forbidden glyphs
+- No vendor-specific material from embargoed sources
+- Naming: lowercase kebab-case per ADR-ES-002 §11
+
 ## [0.3.0] ; 2026-09-23 ; VS-C ;; 2 Agentic Value Stream mapping records (WSF + OpenDEA) per CR-ES-005 §12 + §13
 
 ### Added
@@ -52,6 +66,20 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 - mappings/wsf/agentic-operations.yaml ;;; new ;; Tier 2 Specialisation + ES-canonical novelty ;; 9 agentic-operations relationships mapped to WSF concepts
 - mappings/opendea/agentic-operations.yaml ;;; new ;; OpenDEA Operations operating-mode specialisation ;; no metamodel modification
+
+### Cardinal rules
+
+- Author: Emmanuel A. Otchere
+- D-004 clean ;;; 0 forbidden glyphs
+- No vendor-specific material from embargoed sources
+- Naming: lowercase kebab-case per ADR-ES-002 §11
+
+## [0.5.0] ; 2026-09-23 ; VS-C ;;; 2 Autonomous Operations mapping records (WSF + OpenDEA) per CR-ES-008 §19 + §20 + ADR-ES-008 §16 + FND-ES-AG-008 §1.3
+
+### Added
+
+- mappings/wsf/autonomous-operations.yaml ;;; new ;; Tier 2 Specialisation + ES-canonical novelty ;; 10 autonomous-operations relationships mapped to WSF concepts
+- mappings/opendea/autonomous-operations.yaml ;;; new ;; OpenDEA Operations operating-mode specialisation ;; no metamodel modification
 
 ### Cardinal rules
 
