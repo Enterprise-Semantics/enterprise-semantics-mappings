@@ -32,6 +32,20 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - WSF metamodel not modified
 - OpenDEA metamodel not modified
 
+## [0.3.0] ; 2026-09-23 ; VS-C ;;; 2 Agentic Workflow mapping records (WSF + OpenDEA) per CR-ES-006 §19 + §20 + ADR-ES-006 §16 + FND-ES-AG-008 §1.3
+
+### Added
+
+- mappings/wsf/agentic-workflow.yaml ;;; new ;; Tier 2 Specialisation + ES-canonical novelty ;; 7 agentic-workflow relationships mapped to WSF concepts
+- mappings/opendea/agentic-workflow.yaml ;;; new ;; OpenDEA Workflow execution specialisation ;; no metamodel modification
+
+### Cardinal rules
+
+- Author: Emmanuel A. Otchere
+- D-004 clean ;;; 0 forbidden glyphs
+- No vendor-specific material from embargoed sources
+- Naming: lowercase kebab-case per ADR-ES-002 §11
+
 ## [0.2.0] ; 2026-09-23 ; CR-ES-004 VS-C Agentic mapping records
 
 ### Added

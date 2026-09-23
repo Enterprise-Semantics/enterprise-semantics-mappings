@@ -1,0 +1,178 @@
+# Mapping: ES:CONCEPT:agentic-workflow -> WSF (Tier 2 Specialisation + ES-canonical novelty)
+#
+# Per CR-ES-006 §19 + ADR-ES-006 §16 + FND-ES-AG-008 §1.3.
+#
+# Per FND-ES-AG-008 §1.3:
+#   Workflow = Tier 1 Kernel Reference (WSF Activity grounds Workflow)
+#   Agentic Workflow = Tier 2 Specialisation + ES-canonical novelty
+#     ;; 8 characteristics, 8 properties, 8 canonical relationships
+#     ;; Agentic Workflow inherits Workflow grounding via
+#     ;; ES:CONCEPT:workflow -> external:wsf:Activity
+#
+# The mapping is per CR-ES-006 §19:
+#   mapping_type: specialization
+#   source: ES:CONCEPT:agentic-workflow
+#   target: WSF:CONCEPT:workflow (or external:wsf:Activity via Workflow)
+#
+# No new WSF foundational Agentic Workflow concept is asserted.
+# Reuses Agent + Agentic grounding from CR-ES-004.
+# WSF Tier 1 Workflow grounding inherited from ES:CONCEPT:workflow.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-23)
+
+id: ES:MAP:agentic-workflow-to-wsf
+canonical_name: Agentic Workflow -> WSF mapping
+status: Candidate
+version: 0.5.0
+mapping_type: specialization
+authority: wsf
+
+# Per CR-ES-006 §19 + FND-ES-AG-008 §1.3
+
+source:
+  id: ES:CONCEPT:agentic-workflow
+  canonical_name: Agentic Workflow
+  defined_by: CR-ES-006 §5 + ADR-ES-006 §2
+  tier: Tier 2 Specialisation + ES-canonical novelty
+
+target:
+  # WSF does not have a direct Agentic Workflow concept. The mapping
+  # targets the WSF Workflow concept (Tier 1) which grounds Workflow
+  # via ES:CONCEPT:workflow.
+  id: external:wsf:Workflow
+  canonical_name: WSF Workflow
+  note: |
+    WSF live baseline grounds Workflow via WSF Activity (Tier 1). The
+    Agentic Workflow specialisation adds ES-canonical novelty ;;; the
+    8 characteristics ;;; 8 properties ;;; 8 canonical relationships ;;
+    8 invariants ;;; 2 mappings documented in the source concept
+    record.
+
+# Mapping semantic
+
+relationship: |
+  Agentic Workflow is a Tier 2 Specialisation of WSF Workflow. The
+  specialisation adds agentic behaviour ;;; bounded authority ;;;
+  dynamic decision-making ;;; and runtime adaptation while preserving
+  the WSF Workflow semantics.
+
+mapping_relationship:
+  - predicate: specializes
+    subject: ES:CONCEPT:agentic-workflow
+    object: external:wsf:Workflow
+
+  - predicate: inherits
+    subject: ES:CONCEPT:agentic-workflow
+    object: external:wsf:Activity
+    qualification: workflow-grounding-inherited
+    rationale: |
+      Per CR-ES-006 §5 + §19 + ADR-ES-006 §5 ;;; Agentic Workflow
+      inherits the Workflow grounding ;; which itself grounds WSF
+      Activity. The chain is:
+        WSF Activity (Tier 1) -> WSF Workflow (Tier 1) -> ES Workflow (Established) -> ES Agentic Workflow (Candidate)
+      The Agentic Workflow specialisation does not introduce a new
+      WSF foundational concept.
+
+# WSF foundational inheritance
+
+wsf_foundational_inheritance:
+  - foundation_concept: external:wsf:Activity
+    relationship: specializes
+    via: external:wsf:Workflow ;;; ES:CONCEPT:workflow
+    note: |
+      WSF Activity grounds the kernel. The Agentic Workflow
+      specialisation is established on top of the Workflow
+      specialisation ;;; which itself specialises WSF Activity.
+
+# Per CR-ES-006 §5 + ADR-ES-006 §18: 7 Agentic Workflow relationships
+
+agentic_workflow_relationships:
+  - subject: ES:CONCEPT:agentic-workflow
+    predicate: specializes
+    object: ES:CONCEPT:workflow
+    wsf_correspondence: external:wsf:Workflow
+    note: |
+      Direct Workflow specialisation ;; per CR-ES-006 §5 + ADR-ES-006 §2.
+
+  - subject: ES:CONCEPT:agentic-workflow
+    predicate: engages
+    object: ES:CONCEPT:agent
+    wsf_correspondence: external:wsf:Agent (CR-ES-004 reuse)
+    note: |
+      Agent engagement ;; per ADR-ES-006 §18 + CR-ES-006 §11. Agent
+      semantics inherited from CR-ES-004 + ADR-ES-004.
+
+  - subject: ES:CONCEPT:agentic-workflow
+    predicate: interprets
+    object: ES:CONCEPT:intent
+    wsf_correspondence: external:wsf:Intent (CR-ES-004 reuse)
+    note: |
+      Workflow intent interpretation ;; per ADR-ES-006 §18 + CR-ES-006
+      §12.
+
+  - subject: ES:CONCEPT:agentic-workflow
+    predicate: operates-within
+    object: ES:CONCEPT:authority
+    wsf_correspondence: external:wsf:Authority (CR-ES-004 reuse)
+    note: |
+      Authority boundary ;; per ADR-ES-006 §18 + CR-ES-006 §5 + §13.
+
+  - subject: ES:CONCEPT:agentic-workflow
+    predicate: coordinates
+    object: external:concept:activity
+    wsf_correspondence: external:wsf:Activity (via Workflow)
+    note: |
+      Activity coordination ;; per ADR-ES-006 §18 + CR-ES-006 §10.
+      Activity is a WSF Tier 1 kernel concept ;;; grounded via
+      Workflow.
+
+  - subject: ES:CONCEPT:agentic-workflow
+    predicate: coordinates
+    object: external:concept:task
+    wsf_correspondence: external:wsf:Task
+    note: |
+      Task coordination ;; per ADR-ES-006 §18 + CR-ES-006 §10. Task
+      is a forward-reference ;; not yet canonicalised in
+      Enterprise-Semantics.
+
+  - subject: ES:CONCEPT:agentic-workflow
+    predicate: produces
+    object: external:concept:outcome
+    wsf_correspondence: external:wsf:Outcome
+    note: |
+      Outcome production ;; per ADR-ES-006 §18 + CR-ES-006 §21.
+      Outcome is a forward-reference.
+
+# Cardinal rules
+
+cardinal_rules:
+  - author: Emmanuel A. Otchere
+  - d004_dash_rule: 0 forbidden glyphs
+  - vendor_specific_embargo: 0 references ;; no vendor-specific material from embargoed sources
+  - naming: lowercase kebab-case per ADR-ES-002 §11
+
+# Cardinal mappings note: ES-canonical novelty
+
+canonical_mappings_note: |
+  Per FND-ES-AG-008 §1.3 ;;; the Agentic Workflow mapping is a
+  Tier 2 Specialisation. The 8 characteristics ;;; 8 properties ;;;
+  8 canonical relationships ;;; 8 invariants ;; 2 mapping records
+  are ES-canonical novelty. The mapping does not introduce a new WSF
+  foundational concept ;;; it documents how Enterprise-Semantics
+  extends WSF Workflow with agentic semantics.
+
+# Provenance
+
+provenance:
+  - source: CR-ES-006 §19
+    note: WSF mapping specification.
+  - source: ADR-ES-006 §16
+    note: Architectural position ;; Agentic Workflow is a Tier 2 Specialisation.
+  - source: FND-ES-AG-008 §1.3
+    note: Tier 1 / Tier 2 grounding classification.
+  - source: FND-ES-AG-001-Grounding-Result
+    note: WSF live baseline alignment.
+  - source: docs/finding/0009-wsf-tier1-tier2-grounding-boundary.md
+    note: "Established classification framework."
+  - source: https://github.com/World-Semantic-Foundation
+    note: WSF Activity + Workflow Tier 1 grounding inherited.
