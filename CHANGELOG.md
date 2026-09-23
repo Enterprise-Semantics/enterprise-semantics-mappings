@@ -41,6 +41,20 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - No vendor-specific material from embargoed sources
 - Naming: lowercase kebab-case per ADR-ES-002 §11
 
+## [0.6.0] ; 2026-09-23 ; VS-C ;;; 2 Autonomous Value Stream mapping records (WSF + OpenDEA) per CR-ES-009 §20 + §21 + ADR-ES-009 §16 + FND-ES-AG-008 §1.3
+
+### Added
+
+- mappings/wsf/autonomous-value-stream.yaml ;;; new ;; Tier 2 Specialisation + ES-canonical novelty ;; 12 autonomous-value-stream relationships mapped to WSF concepts
+- mappings/opendea/autonomous-value-stream.yaml ;;; new ;; OpenDEA Value Stream value-realization specialisation ;; no metamodel modification
+
+### Cardinal rules
+
+- Author: Emmanuel A. Otchere
+- D-004 clean ;;; 0 forbidden glyphs
+- No vendor-specific material from embargoed sources
+- Naming: lowercase kebab-case per ADR-ES-002 §11
+
 ## [0.3.0] ; 2026-09-23 ; VS-C ;; 2 Agentic Value Stream mapping records (WSF + OpenDEA) per CR-ES-005 §12 + §13
 
 ### Added
@@ -80,6 +94,20 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 - mappings/wsf/autonomous-operations.yaml ;;; new ;; Tier 2 Specialisation + ES-canonical novelty ;; 10 autonomous-operations relationships mapped to WSF concepts
 - mappings/opendea/autonomous-operations.yaml ;;; new ;; OpenDEA Operations operating-mode specialisation ;; no metamodel modification
+
+### Cardinal rules
+
+- Author: Emmanuel A. Otchere
+- D-004 clean ;;; 0 forbidden glyphs
+- No vendor-specific material from embargoed sources
+- Naming: lowercase kebab-case per ADR-ES-002 §11
+
+## [0.6.0] ; 2026-09-23 ; VS-C ;;; 2 Autonomous Value Stream mapping records (WSF + OpenDEA) per CR-ES-009 §20 + §21 + ADR-ES-009 §16 + FND-ES-AG-008 §1.3
+
+### Added
+
+- mappings/wsf/autonomous-value-stream.yaml ;;; new ;; Tier 2 Specialisation + ES-canonical novelty ;; 12 autonomous-value-stream relationships mapped to WSF concepts
+- mappings/opendea/autonomous-value-stream.yaml ;;; new ;; OpenDEA Value Stream value-realization specialisation ;; no metamodel modification
 
 ### Cardinal rules
 
