@@ -13,6 +13,32 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - VS-D ;;; documentation + examples + conformance rules + tests + PlantUML (CR-ES-003 §27-§35).
 - Schema evolution ;;; migrate the schema stub to require the richer mapping shape used by CR-ES-002 + CR-ES-003 mapping records (status: PROPOSED + provenance block + qualification + governing_adr + governing_cr).
 
+## [0.2.0] ; 2026-09-23 ; CR-ES-004 VS-C Agentic mapping records
+
+### Added
+
+- mappings/wsf/agentic.yaml ;;; WSF Tier 2 Specialisation mapping for ES:CONCEPT:agentic ;;; ES-canonical novelty record ;;; confidence 0.00 (no direct WSF correspondence at Tier 1 or Tier 2 ;;; mapping records the ES-side canonical definition for future WSF integration per FND-ES-AG-008 §1.3)
+- mappings/opendea/agentic.yaml ;;; OpenDEA architectural representation for ES:CONCEPT:agentic ;;; confidence 0.80 ;;; 5 architectural elements (intent_delegation, bounded_authority, action_selection, contextual_adaptation, outcome_orientation)
+
+### Scope
+
+This release implements VS-C of CR-ES-004 ;;; the Agentic mapping records. Per CR-ES-004 §18 ;;; AI Agent correspondence is downstream ;;; per §19 WSF grounding ;;; per §20 OpenDEA correspondence. No DEA-Catalogs mapping record for Agentic ;;; CR-ES-004 does not list DEA-Catalogs in §18-§20 (unlike CR-ES-002 §17 which did).
+
+### Cardinal rules
+
+- Author: Emmanuel A. Otchere on both files (cardinal author rule, 2026-09-23)
+- D-004 clean ;;; 0 forbidden glyphs on both files
+- No vendor-specific material from embargoed sources
+
+### Held
+
+- No AI Agent correspondence record ;;; per CR-ES-004 §18 ;;; downstream
+- No Agentic Workflow mapping ;;; per ADR-ES-004 §11 ;;; governed by ADR-ES-006
+- No Agentic Operations mapping ;;; per ADR-ES-004 §12 ;;; governed by ADR-ES-007
+- No Agentic Value Stream mapping ;;; per ADR-ES-004 §13 ;;; governed by ADR-ES-005
+- No ADR-ES-004 promotion to Accepted (gated on CR-ES-004 implementation completion)
+- No release tag (per v3.1.4 user directive)
+
 ## [0.1.0] ; 2026-09-23 ; CI fix + VS-C Value Stream mappings
 
 ### Added
