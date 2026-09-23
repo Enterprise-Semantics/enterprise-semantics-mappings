@@ -13,6 +13,20 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - VS-D ;;; documentation + examples + conformance rules + tests + PlantUML (CR-ES-003 §27-§35).
 - Schema evolution ;;; migrate the schema stub to require the richer mapping shape used by CR-ES-002 + CR-ES-003 mapping records (status: PROPOSED + provenance block + qualification + governing_adr + governing_cr).
 
+## [0.4.0] ; 2026-09-23 ; VS-C ;;; 2 Agentic Operations mapping records (WSF + OpenDEA) per CR-ES-007 §17 + §18 + ADR-ES-007 §16 + FND-ES-AG-008 §1.3
+
+### Added
+
+- mappings/wsf/agentic-operations.yaml ;;; new ;; Tier 2 Specialisation + ES-canonical novelty ;; 9 agentic-operations relationships mapped to WSF concepts
+- mappings/opendea/agentic-operations.yaml ;;; new ;; OpenDEA Operations operating-mode specialisation ;; no metamodel modification
+
+### Cardinal rules
+
+- Author: Emmanuel A. Otchere
+- D-004 clean ;;; 0 forbidden glyphs
+- No vendor-specific material from embargoed sources
+- Naming: lowercase kebab-case per ADR-ES-002 §11
+
 ## [0.3.0] ; 2026-09-23 ; VS-C ;; 2 Agentic Value Stream mapping records (WSF + OpenDEA) per CR-ES-005 §12 + §13
 
 ### Added
@@ -31,6 +45,20 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - No vendor-specific material from embargoed sources
 - WSF metamodel not modified
 - OpenDEA metamodel not modified
+
+## [0.4.0] ; 2026-09-23 ; VS-C ;;; 2 Agentic Operations mapping records (WSF + OpenDEA) per CR-ES-007 §17 + §18 + ADR-ES-007 §16 + FND-ES-AG-008 §1.3
+
+### Added
+
+- mappings/wsf/agentic-operations.yaml ;;; new ;; Tier 2 Specialisation + ES-canonical novelty ;; 9 agentic-operations relationships mapped to WSF concepts
+- mappings/opendea/agentic-operations.yaml ;;; new ;; OpenDEA Operations operating-mode specialisation ;; no metamodel modification
+
+### Cardinal rules
+
+- Author: Emmanuel A. Otchere
+- D-004 clean ;;; 0 forbidden glyphs
+- No vendor-specific material from embargoed sources
+- Naming: lowercase kebab-case per ADR-ES-002 §11
 
 ## [0.3.0] ; 2026-09-23 ; VS-C ;;; 2 Agentic Workflow mapping records (WSF + OpenDEA) per CR-ES-006 §19 + §20 + ADR-ES-006 §16 + FND-ES-AG-008 §1.3
 

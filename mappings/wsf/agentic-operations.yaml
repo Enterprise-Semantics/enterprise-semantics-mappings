@@ -1,0 +1,191 @@
+# Mapping: ES:CONCEPT:agentic-operations -> WSF (Tier 2 Specialisation + ES-canonical novelty)
+#
+# Per CR-ES-007 §17 + ADR-ES-007 §16 + FND-ES-AG-008 §1.3.
+#
+# Per FND-ES-AG-008 §1.3:
+#   Operations = Tier 1 Kernel Reference (WSF Activity grounds Operations)
+#   Agentic Operations = Tier 2 Specialisation + ES-canonical novelty
+#     ;; 8 characteristics, 10 properties, 9 canonical relationships
+#     ;; Agentic Operations inherits Operations grounding via
+#     ;; ES:CONCEPT:operations -> external:wsf:Activity
+#
+# No new WSF foundational Agentic Operations concept is asserted.
+# Reuses Agent + Agentic grounding from CR-ES-004.
+# Reuses Agentic Workflow grounding from CR-ES-006.
+# WSF Tier 1 Operations grounding inherited from ES:CONCEPT:operations.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-23)
+
+id: ES:MAP:agentic-operations-to-wsf
+canonical_name: Agentic Operations -> WSF mapping
+status: Candidate
+version: 0.6.0
+mapping_type: specialization
+authority: wsf
+
+# Per CR-ES-007 §17 + FND-ES-AG-008 §1.3
+
+source:
+  id: ES:CONCEPT:agentic-operations
+  canonical_name: Agentic Operations
+  defined_by: CR-ES-007 §6 + ADR-ES-007 §2
+  tier: Tier 2 Specialisation + ES-canonical novelty
+
+target:
+  # WSF does not have a direct Agentic Operations concept. The mapping
+  # targets the WSF Operations concept (Tier 1) which grounds
+  # Operations via ES:CONCEPT:operations.
+  id: external:wsf:Operations
+  canonical_name: WSF Operations
+  note: |
+    WSF live baseline grounds Operations via WSF Activity (Tier 1).
+    The Agentic Operations specialisation adds ES-canonical novelty ;;
+    ;; the 8 characteristics ;;; 10 properties ;;; 9 canonical
+    relationships ;;; 8 invariants ;;; 2 mappings documented in the
+    source concept record.
+
+# Mapping semantic
+
+relationship: |
+  Agentic Operations is a Tier 2 Specialisation of WSF Operations.
+  The specialisation adds agentic behaviour ;; bounded authority ;;;
+  policy governance ;;; operational sensing ;;; dynamic decision ;;;
+  coordination ;;; and runtime adaptation while preserving the WSF
+  Operations semantics.
+
+mapping_relationship:
+  - predicate: specializes
+    subject: ES:CONCEPT:agentic-operations
+    object: external:wsf:Operations
+
+  - predicate: inherits
+    subject: ES:CONCEPT:agentic-operations
+    object: external:wsf:Activity
+    qualification: operations-grounding-inherited
+    rationale: |
+      Per CR-ES-007 §17 + ADR-ES-007 §16 + §26 ;;; Agentic
+      Operations inherits the Operations grounding ;; which itself
+      grounds WSF Activity. The chain is:
+        WSF Activity (Tier 1) -> WSF Operations (Tier 1) -> ES Operations (Established) -> ES Agentic Operations (Candidate)
+      The Agentic Operations specialisation does not introduce a new
+      WSF foundational concept.
+
+# WSF foundational inheritance
+
+wsf_foundational_inheritance:
+  - foundation_concept: external:wsf:Activity
+    relationship: specializes
+    via: external:wsf:Operations ;;; ES:CONCEPT:operations
+    note: |
+      WSF Activity grounds the kernel. The Agentic Operations
+      specialisation is established on top of the Operations
+      specialisation ;;; which itself specialises WSF Activity.
+
+# Per CR-ES-007 §8 + ADR-ES-007 §21: 9 Agentic Operations relationships
+
+agentic_operations_relationships:
+  - subject: ES:CONCEPT:agentic-operations
+    predicate: specializes
+    object: ES:CONCEPT:operations
+    wsf_correspondence: external:wsf:Operations
+    note: |
+      Direct Operations specialisation ;; per CR-ES-007 §3 + ADR-ES-007
+      §2 + §21.
+
+  - subject: ES:CONCEPT:agentic-operations
+    predicate: engages
+    object: ES:CONCEPT:agent
+    wsf_correspondence: external:wsf:Agent (CR-ES-004 reuse)
+    note: |
+      Multi-agent engagement ;; per ADR-ES-007 §11 + §21 + CR-ES-007
+      §8.2.
+
+  - subject: ES:CONCEPT:agentic-operations
+    predicate: responds-to
+    object: external:concept:operational-context
+    wsf_correspondence: external:wsf:Event
+    note: |
+      Operational context response ;; per ADR-ES-007 §16 + §21 +
+      CR-ES-007 §8.3 + §17. Operational Context is a
+      forward-reference.
+
+  - subject: ES:CONCEPT:agentic-operations
+    predicate: operates-within
+    object: ES:CONCEPT:authority
+    wsf_correspondence: external:wsf:Authority (CR-ES-004 reuse)
+    note: |
+      Authority boundary ;; per ADR-ES-007 §6.7 + §21 + CR-ES-007 §8.4.
+
+  - subject: ES:CONCEPT:agentic-operations
+    predicate: governed-by
+    object: external:concept:policy
+    wsf_correspondence: external:wsf:Norm
+    note: |
+      Policy governance ;; per ADR-ES-007 §6.7 + §21 + CR-ES-007 §8.5.
+      Policy is a forward-reference.
+
+  - subject: ES:CONCEPT:agentic-operations
+    predicate: coordinates
+    object: external:concept:process
+    wsf_correspondence: external:wsf:Process
+    note: |
+      Process coordination ;; per ADR-ES-007 §10 + §21 + CR-ES-007
+      §8.6. Process is a forward-reference.
+
+  - subject: ES:CONCEPT:agentic-operations
+    predicate: uses
+    object: ES:CONCEPT:agentic-workflow
+    wsf_correspondence: external:wsf:Workflow (CR-ES-006 reuse)
+    note: |
+      Agentic Workflow usage ;; per ADR-ES-007 §9 + §21 + CR-ES-007
+      §8.7. Agentic Workflow semantics inherited from CR-ES-006.
+
+  - subject: ES:CONCEPT:agentic-operations
+    predicate: produces
+    object: external:concept:operational-outcome
+    wsf_correspondence: external:wsf:Outcome
+    note: |
+      Operational outcome production ;; per ADR-ES-007 §18 + §21 +
+      CR-ES-007 §8.8.
+
+  - subject: ES:CONCEPT:agentic-operations
+    predicate: adapts-to
+    object: external:concept:operational-context
+    wsf_correspondence: external:wsf:Event
+    note: |
+      Contextual adaptation ;; per ADR-ES-007 §6.5 + §21 + CR-ES-007
+      §8.3.
+
+# Cardinal rules
+
+cardinal_rules:
+  - author: Emmanuel A. Otchere
+  - d004_dash_rule: 0 forbidden glyphs
+  - vendor_specific_embargo: 0 references ;; no vendor-specific material from embargoed sources
+  - naming: lowercase kebab-case per ADR-ES-002 §11
+
+# Cardinal mappings note: ES-canonical novelty
+
+canonical_mappings_note: |
+  Per FND-ES-AG-008 §1.3 ;;; the Agentic Operations mapping is a
+  Tier 2 Specialisation. The 8 characteristics ;;; 10 properties ;;;
+  9 canonical relationships ;;; 8 invariants ;; 2 mapping records
+  are ES-canonical novelty. The mapping does not introduce a new WSF
+  foundational concept ;;; it documents how Enterprise-Semantics
+  extends WSF Operations with agentic operational semantics.
+
+# Provenance
+
+provenance:
+  - source: CR-ES-007 §17
+    note: WSF mapping specification.
+  - source: ADR-ES-007 §16
+    note: Architectural position ;; Agentic Operations is a Tier 2 Specialisation.
+  - source: FND-ES-AG-008 §1.3
+    note: Tier 1 / Tier 2 grounding classification.
+  - source: FND-ES-AG-001-Grounding-Result
+    note: WSF live baseline alignment.
+  - source: docs/finding/0009-wsf-tier1-tier2-grounding-boundary.md
+    note: "Established classification framework."
+  - source: https://github.com/World-Semantic-Foundation
+    note: WSF Activity + Operations Tier 1 grounding inherited.
