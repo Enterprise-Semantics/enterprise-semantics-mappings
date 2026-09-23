@@ -1,0 +1,201 @@
+# Mapping: ES:CONCEPT:autonomous-operations -> WSF (Tier 2 Specialisation + ES-canonical novelty)
+#
+# Per CR-ES-008 §19 + ADR-ES-008 §16 + FND-ES-AG-008 §1.3.
+#
+# Per FND-ES-AG-008 §1.3:
+#   Operations = Tier 1 Kernel Reference (WSF Activity grounds Operations)
+#   Autonomous Operations = Tier 2 Specialisation + ES-canonical novelty
+#     ;; 8 characteristics, 12 properties, 10 canonical relationships
+#     ;; Autonomous Operations inherits Operations grounding via
+#     ;; ES:CONCEPT:operations -> external:wsf:Activity
+#
+# No new WSF foundational Autonomous Operations concept is asserted.
+# Reuses Agent + Agentic grounding from CR-ES-004.
+# Reuses Agentic Workflow grounding from CR-ES-006.
+# Reuses Agentic Operations grounding from CR-ES-007.
+# WSF Tier 1 Operations grounding inherited from ES:CONCEPT:operations.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-23)
+
+id: ES:MAP:autonomous-operations-to-wsf
+canonical_name: Autonomous Operations -> WSF mapping
+status: Candidate
+version: 0.7.0
+mapping_type: specialization
+authority: wsf
+
+# Per CR-ES-008 §19 + FND-ES-AG-008 §1.3
+
+source:
+  id: ES:CONCEPT:autonomous-operations
+  canonical_name: Autonomous Operations
+  defined_by: CR-ES-008 §6 + ADR-ES-008 §2
+  tier: Tier 2 Specialisation + ES-canonical novelty
+
+target:
+  # WSF does not have a direct Autonomous Operations concept. The mapping
+  # targets the WSF Operations concept (Tier 1) which grounds
+  # Operations via ES:CONCEPT:operations.
+  id: external:wsf:Operations
+  canonical_name: WSF Operations
+  note: |
+    WSF live baseline grounds Operations via WSF Activity (Tier 1).
+    The Autonomous Operations specialisation adds ES-canonical novelty ;;
+    ;; the 8 characteristics ;;; 12 properties ;;; 10 canonical
+    relationships ;;; 10 invariants ;;; 2 mappings documented in the
+    source concept record.
+
+# Mapping semantic
+
+relationship: |
+  Autonomous Operations is a Tier 2 Specialisation of WSF Operations.
+  The specialisation adds independent operational decision and action ;;
+  bounded authority ;;; policy governance ;;; constraint enforcement ;;;
+  escalation boundaries ;;; and outcome orientation while preserving
+  the WSF Operations semantics.
+
+mapping_relationship:
+  - predicate: specializes
+    subject: ES:CONCEPT:autonomous-operations
+    object: external:wsf:Operations
+
+  - predicate: inherits
+    subject: ES:CONCEPT:autonomous-operations
+    object: external:wsf:Activity
+    qualification: operations-grounding-inherited
+    rationale: |
+      Per CR-ES-008 §19 + ADR-ES-008 §16 + §25 ;;; Autonomous
+      Operations inherits the Operations grounding ;; which itself
+      grounds WSF Activity. The chain is:
+        WSF Activity (Tier 1) -> WSF Operations (Tier 1) -> ES Operations (Established) -> ES Autonomous Operations (Candidate)
+      The Autonomous Operations specialisation does not introduce a
+      new WSF foundational concept.
+
+# WSF foundational inheritance
+
+wsf_foundational_inheritance:
+  - foundation_concept: external:wsf:Activity
+    relationship: specializes
+    via: external:wsf:Operations ;;; ES:CONCEPT:operations
+    note: |
+      WSF Activity grounds the kernel. The Autonomous Operations
+      specialisation is established on top of the Operations
+      specialisation ;;; which itself specialises WSF Activity.
+
+# Per CR-ES-008 §9 + ADR-ES-008 §17: 10 Autonomous Operations relationships
+
+autonomous_operations_relationships:
+  - subject: ES:CONCEPT:autonomous-operations
+    predicate: specializes
+    object: ES:CONCEPT:operations
+    wsf_correspondence: external:wsf:Operations
+    note: |
+      Direct Operations specialisation ;; per CR-ES-008 §3 + §9.1 +
+      ADR-ES-008 §1 + §17.
+
+  - subject: ES:CONCEPT:autonomous-operations
+    predicate: operates-within
+    object: ES:CONCEPT:authority
+    wsf_correspondence: external:wsf:Authority (CR-ES-004 reuse)
+    note: |
+      Authority boundary ;; per ADR-ES-008 §5 + §14 + §17 + CR-ES-008
+      §9.2.
+
+  - subject: ES:CONCEPT:autonomous-operations
+    predicate: governed-by
+    object: external:concept:policy
+    wsf_correspondence: external:wsf:Norm
+    note: |
+      Policy governance ;; per ADR-ES-008 §14 + §17 + CR-ES-008 §9.3.
+      Policy is a forward-reference.
+
+  - subject: ES:CONCEPT:autonomous-operations
+    predicate: pursues
+    object: external:concept:operational-objective
+    wsf_correspondence: external:wsf:Intent
+    note: |
+      Operational objective pursuit ;; per ADR-ES-008 §5 + §14 + §17 +
+      CR-ES-008 §9.4. Operational Objective is a forward-reference ;;
+      per CR-ES-008 §5 ;; if Intent/Goal vocabulary is authoritative
+      map rather than duplicate.
+
+  - subject: ES:CONCEPT:autonomous-operations
+    predicate: responds-to
+    object: external:concept:operational-context
+    wsf_correspondence: external:wsf:Event
+    note: |
+      Operational context response ;; per ADR-ES-008 §5 + §17 +
+      CR-ES-008 §9.5.
+
+  - subject: ES:CONCEPT:autonomous-operations
+    predicate: produces
+    object: external:concept:operational-outcome
+    wsf_correspondence: external:wsf:Outcome
+    note: |
+      Operational outcome production ;; per ADR-ES-008 §13 + §17 +
+      CR-ES-008 §9.6.
+
+  - subject: ES:CONCEPT:autonomous-operations
+    predicate: adapts-to
+    object: external:concept:operational-context
+    wsf_correspondence: external:wsf:Event
+    note: |
+      Contextual adaptation ;; per ADR-ES-008 §7.7 + §17 + CR-ES-008
+      §9.5.
+
+  - subject: ES:CONCEPT:autonomous-operations
+    predicate: escalates-to
+    object: external:concept:human-authority
+    wsf_correspondence: external:wsf:Agent
+    note: |
+      Escalation boundary ;; per ADR-ES-008 §7.8 + §8 + §17 + CR-ES-008
+      §9.7. Human/Authority is a forward-reference.
+
+  - subject: ES:CONCEPT:autonomous-operations
+    predicate: uses
+    object: ES:CONCEPT:workflow
+    wsf_correspondence: external:wsf:Workflow (CR-ES-001 reuse)
+    note: |
+      Workflow usage ;; per ADR-ES-008 §12 + §17 + CR-ES-008 §9.8.
+
+  - subject: ES:CONCEPT:autonomous-operations
+    predicate: uses
+    object: ES:CONCEPT:agentic-workflow
+    wsf_correspondence: external:wsf:Workflow (CR-ES-006 reuse)
+    note: |
+      Agentic Workflow usage ;; per ADR-ES-008 §12 + §17 + CR-ES-008
+      §9.8.
+
+# Cardinal rules
+
+cardinal_rules:
+  - author: Emmanuel A. Otchere
+  - d004_dash_rule: 0 forbidden glyphs
+  - vendor_specific_embargo: 0 references ;; no vendor-specific material from embargoed sources
+  - naming: lowercase kebab-case per ADR-ES-002 §11
+
+# Cardinal mappings note: ES-canonical novelty
+
+canonical_mappings_note: |
+  Per FND-ES-AG-008 §1.3 ;;; the Autonomous Operations mapping is a
+  Tier 2 Specialisation. The 8 characteristics ;;; 12 properties ;;;
+  10 canonical relationships ;;; 10 invariants ;; 2 mapping records
+  are ES-canonical novelty. The mapping does not introduce a new WSF
+  foundational concept ;;; it documents how Enterprise-Semantics
+  extends WSF Operations with autonomous operational semantics.
+
+# Provenance
+
+provenance:
+  - source: CR-ES-008 §19
+    note: WSF mapping specification.
+  - source: ADR-ES-008 §16
+    note: Architectural position ;; Autonomous Operations is a Tier 2 Specialisation.
+  - source: FND-ES-AG-008 §1.3
+    note: Tier 1 / Tier 2 grounding classification.
+  - source: FND-ES-AG-001-Grounding-Result
+    note: WSF live baseline alignment.
+  - source: docs/finding/0009-wsf-tier1-tier2-grounding-boundary.md
+    note: "Established classification framework."
+  - source: https://github.com/World-Semantic-Foundation
+    note: WSF Activity + Operations Tier 1 grounding inherited.
