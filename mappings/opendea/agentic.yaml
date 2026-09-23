@@ -1,0 +1,60 @@
+# Mapping: ES:CONCEPT:agentic -> OpenDEA Agentic architectural representation
+#
+# Per CR-ES-004 §20 + ADR-ES-004 §1.7.
+# OpenDEA may represent Agentic as an architectural pattern. This is a
+# mapping only ;;; no OpenDEA metamodel modification.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-23)
+
+source: ES:CONCEPT:agentic
+target: external:opendea:Agentic ;;; architectural pattern placeholder
+mapping_type: correspondence
+relationship: maps-to
+confidence: 0.80
+status: PROPOSED
+provenance:
+  source: ES
+  research: FND-ES-AG-008 §1.3
+  decision: ADR-ES-004 §1.7
+  implementation: CR-ES-004 §20
+  mapping: null
+governing_adr: ADR-ES-004
+governing_cr: CR-ES-004
+
+qualification: |
+  OpenDEA represents Agentic as an architectural pattern (not an
+  Entity subtype). The pattern establishes:
+  - semantic authority (per ES ;;; ES:CONCEPT:agentic)
+  - architectural representation (per OpenDEA)
+  - pattern boundaries ;;; Agentic != AI ;;; Agentic != Automation ;;; Agentic != Autonomous
+  - implementation realisation (per Architecture implementation)
+
+  Per ADR-ES-004 §6 ;;; Agentic is a semantic property / mode of
+  operation ;;; OpenDEA architectural representation respects this
+  mode-of-operation framing rather than introducing a new Entity class.
+
+architectural_representation:
+  - intent_delegation ;;; from Intent to Agent
+  - bounded_authority ;;; Authority constrains Agent action
+  - action_selection ;;; Agent selects within bounded authority
+  - contextual_adaptation ;;; Agent adapts to Context
+  - outcome_orientation ;;; Agent produces Outcome
+
+boundary_tests:
+  - test_id: agentic-not-ai ;;; per ADR-ES-004 §10 ;;; AI = Agentic must fail semantic validation
+  - test_id: agentic-not-automation ;;; per ADR-ES-004 §8 ;;; Automation = Agentic must fail semantic validation
+  - test_id: agentic-not-autonomy ;;; per ADR-ES-004 §9 ;;; Agentic = Autonomous must fail semantic validation
+  - test_id: agent-not-ai-agent ;;; per ADR-ES-004 §10 ;;; AI Agent is a possible specialization of Agent, not the definition
+
+exclusions:
+  - ES:CONCEPT:agent ;;; mapped separately per CR-ES-004 §20
+  - ES:CONCEPT:intent ;;; mapped separately
+  - ES:CONCEPT:authority ;;; mapped separately
+  - ES:CONCEPT:action ;;; mapped separately
+  - OpenDEA metamodel modification ;;; per CR-ES-004 §3 ;;; only correspondence is recorded
+
+held:
+  - AI Agent correspondence ;;; per CR-ES-004 §18 ;;; downstream ;;; AI Agent is a possible specialization of Agent
+  - Agentic Workflow correspondence ;;; per ADR-ES-004 §11 ;;; out of scope ;;; governed by prospective ADR-ES-006
+  - Agentic Operations correspondence ;;; per ADR-ES-004 §12 ;;; out of scope ;;; governed by prospective ADR-ES-007
+  - Agentic Value Stream correspondence ;;; per ADR-ES-004 §13 ;;; out of scope ;;; governed by prospective ADR-ES-005

@@ -15,7 +15,7 @@ A mapping is a governed assertion, not a copy. Each mapping carries:
 
 ## Status
 
-**First mapping tranche (v0.1.0).** Value Stream mappings landed via VS-C on 2026-09-23 (3 mapping records: WSF, OpenDEA, DEA Catalogs boundary).
+**First + second mapping tranches (v0.1.0 Value Stream + v0.2.0 Agentic).** Value Stream mappings landed via VS-C on 2026-09-23 (3 mapping records: WSF, OpenDEA, DEA Catalogs boundary).
 
 ## Mapping schema (stub)
 
