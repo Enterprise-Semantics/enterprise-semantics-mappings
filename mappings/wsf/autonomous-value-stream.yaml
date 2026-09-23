@@ -1,0 +1,219 @@
+# Mapping: ES:CONCEPT:autonomous-value-stream -> WSF (Tier 2 Specialisation + ES-canonical novelty)
+#
+# Per CR-ES-009 §20 + ADR-ES-009 §16 + FND-ES-AG-008 §1.3.
+#
+# Per FND-ES-AG-008 §1.3:
+#   Value Stream = Tier 1 Specialisation (WSF Activity grounds Value Stream)
+#   Autonomous Value Stream = Tier 2 Specialisation + ES-canonical novelty
+#     ;; 11 characteristics, 15 properties, 12 canonical relationships
+#     ;; 11 invariants, 2 mapping records
+#
+# No new WSF foundational Autonomous Value Stream concept is asserted.
+# Reuses Value Stream grounding from CR-ES-003.
+# Reuses Value Stage grounding from CR-ES-003.
+# Reuses Agentic Value Stream grounding from CR-ES-005.
+# Reuses Agentic Operations grounding from CR-ES-007.
+# Reuses Autonomous Operations grounding from CR-ES-008.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-23)
+
+id: ES:MAP:autonomous-value-stream-to-wsf
+canonical_name: Autonomous Value Stream -> WSF mapping
+status: Candidate
+version: 0.8.0
+mapping_type: specialization
+authority: wsf
+
+# Per CR-ES-009 §20 + FND-ES-AG-008 §1.3
+
+source:
+  id: ES:CONCEPT:autonomous-value-stream
+  canonical_name: Autonomous Value Stream
+  defined_by: CR-ES-009 §4 + ADR-ES-009 §2
+  tier: Tier 2 Specialisation + ES-canonical novelty
+
+target:
+  # WSF does not have a direct Autonomous Value Stream concept. The mapping
+  # targets the WSF Value Stream concept (Tier 1) which grounds
+  # Value Stream via ES:CONCEPT:value-stream.
+  id: external:wsf:Value Stream
+  canonical_name: WSF Value Stream
+  note: |
+    WSF live baseline grounds Value Stream via WSF Activity (Tier 1).
+    The Autonomous Value Stream specialisation adds ES-canonical novelty ;;
+    ;; the 11 characteristics ;;; 15 properties ;;; 12 canonical
+    relationships ;;; 11 invariants ;;; 2 mapping records documented
+    in the source concept record.
+
+# Mapping semantic
+
+relationship: |
+  Autonomous Value Stream is a Tier 2 Specialisation of WSF Value
+  Stream. The specialisation adds autonomous stage progression ;;;
+  autonomous value decision ;; autonomous coordination between stages ;;
+  autonomous response to conditions ;; autonomous exception handling ;;
+  autonomous adaptation ;; while preserving stakeholder-value orientation
+  and the WSF Value Stream semantics.
+
+mapping_relationship:
+  - predicate: specializes
+    subject: ES:CONCEPT:autonomous-value-stream
+    object: external:wsf:Value Stream
+
+  - predicate: inherits
+    subject: ES:CONCEPT:autonomous-value-stream
+    object: external:wsf:Activity
+    qualification: value-stream-grounding-inherited
+    rationale: |
+      Per CR-ES-009 §20 + ADR-ES-009 §16 + §22 ;;; Autonomous Value
+      Stream inherits the Value Stream grounding ;; which itself
+      grounds WSF Activity. The chain is:
+        WSF Activity (Tier 1) -> WSF Value Stream (Tier 1) -> ES Value Stream (Established) -> ES Autonomous Value Stream (Candidate)
+      The Autonomous Value Stream specialisation does not introduce a
+      new WSF foundational concept.
+
+# WSF foundational inheritance
+
+wsf_foundational_inheritance:
+  - foundation_concept: external:wsf:Activity
+    relationship: specializes
+    via: external:wsf:Value Stream ;;; ES:CONCEPT:value-stream
+    note: |
+      WSF Activity grounds the kernel. The Autonomous Value Stream
+      specialisation is established on top of the Value Stream
+      specialisation ;;; which itself specialises WSF Activity.
+
+# Per CR-ES-009 §8 + ADR-ES-009 §18: 12 Autonomous Value Stream relationships
+
+autonomous_value_stream_relationships:
+  - subject: ES:CONCEPT:autonomous-value-stream
+    predicate: specializes
+    object: ES:CONCEPT:value-stream
+    wsf_correspondence: external:wsf:Value Stream
+    note: |
+      Direct Value Stream specialisation ;; per CR-ES-009 §3 + §8 +
+      ADR-ES-009 §1 + §18 + AVS-AUTO-INV-001.
+
+  - subject: ES:CONCEPT:autonomous-value-stream
+    predicate: realizes
+    object: external:concept:stakeholder-value
+    wsf_correspondence: external:wsf:Value
+    note: |
+      Stakeholder-value realisation ;; per ADR-ES-009 §2 + §13 + §18 +
+      CR-ES-009 §5 + §8 + AVS-AUTO-INV-002. Stakeholder Value is a
+      forward-reference.
+
+  - subject: ES:CONCEPT:autonomous-value-stream
+    predicate: contains
+    object: ES:CONCEPT:value-stage
+    wsf_correspondence: external:wsf:Activity
+    note: |
+      Value Stage containment ;; per ADR-ES-009 §4 + §11 + §18 +
+      CR-ES-009 §5 + §8 + §9 + AVS-AUTO-INV-005.
+
+  - subject: ES:CONCEPT:autonomous-value-stream
+    predicate: operates-within
+    object: ES:CONCEPT:authority
+    wsf_correspondence: external:wsf:Authority (CR-ES-004 reuse)
+    note: |
+      Authority boundary ;; per ADR-ES-009 §12 + §18 + CR-ES-009 §8 +
+      AVS-AUTO-INV-009 + AVS-AUTO-INV-011.
+
+  - subject: ES:CONCEPT:autonomous-value-stream
+    predicate: governed-by
+    object: external:concept:policy
+    wsf_correspondence: external:wsf:Norm
+    note: |
+      Policy governance ;; per ADR-ES-009 §12 + §18 + CR-ES-009 §8 +
+      AVS-AUTO-INV-010. Policy is a forward-reference.
+
+  - subject: ES:CONCEPT:autonomous-value-stream
+    predicate: pursues
+    object: external:concept:value-objective
+    wsf_correspondence: external:wsf:Intent
+    note: |
+      Value Objective pursuit ;; per ADR-ES-009 §12 + §18 +
+      CR-ES-009 §6 + §8. Value Objective is a forward-reference.
+
+  - subject: ES:CONCEPT:autonomous-value-stream
+    predicate: produces
+    object: external:concept:stakeholder-outcome
+    wsf_correspondence: external:wsf:Outcome
+    note: |
+      Stakeholder Outcome production ;; per ADR-ES-009 §4 + §13 + §18 +
+      CR-ES-009 §5 + §8. Stakeholder Outcome is a forward-reference.
+
+  - subject: ES:CONCEPT:autonomous-value-stream
+    predicate: adapts-to
+    object: external:concept:value-context
+    wsf_correspondence: external:wsf:Event
+    note: |
+      Value Context adaptation ;; per ADR-ES-009 §2 + §6 + §18 +
+      CR-ES-009 §7 + §8 + AVS-AUTO-CON-011. Value Context is a
+      forward-reference.
+
+  - subject: ES:CONCEPT:autonomous-value-stream
+    predicate: uses
+    object: ES:CONCEPT:autonomous-operations
+    wsf_correspondence: external:wsf:Operations (CR-ES-008 reuse)
+    note: |
+      Autonomous Operations usage ;; per ADR-ES-009 §9 + §14 + §18 +
+      CR-ES-009 §11 + §8 + AVS-AUTO-INV-008. NOT mandatory per §14.
+
+  - subject: ES:CONCEPT:autonomous-value-stream
+    predicate: uses
+    object: ES:CONCEPT:agentic-operations
+    wsf_correspondence: external:wsf:Operations (CR-ES-007 reuse)
+    note: |
+      Agentic Operations usage ;; per ADR-ES-009 §12 + §18 +
+      CR-ES-009 §12 + §8 + AVS-AUTO-INV-015.
+
+  - subject: ES:CONCEPT:autonomous-value-stream
+    predicate: uses
+    object: ES:CONCEPT:workflow
+    wsf_correspondence: external:wsf:Workflow (CR-ES-001 reuse)
+    note: |
+      Workflow usage ;; per ADR-ES-009 §15 + §18 + CR-ES-009 §8 +
+      §13 + AVS-AUTO-CON-018.
+
+  - subject: ES:CONCEPT:autonomous-value-stream
+    predicate: uses
+    object: ES:CONCEPT:agentic-workflow
+    wsf_correspondence: external:wsf:Workflow (CR-ES-006 reuse)
+    note: |
+      Agentic Workflow usage ;; per ADR-ES-009 §15 + §18 +
+      CR-ES-009 §8 + §13 + AVS-AUTO-CON-018.
+
+# Cardinal rules
+
+cardinal_rules:
+  - author: Emmanuel A. Otchere
+  - d004_dash_rule: 0 forbidden glyphs
+  - vendor_specific_embargo: 0 references ;; no vendor-specific material from embargoed sources
+  - naming: lowercase kebab-case per ADR-ES-002 §11
+
+# Cardinal mappings note: ES-canonical novelty
+
+canonical_mappings_note: |
+  Per FND-ES-AG-008 §1.3 ;;; the Autonomous Value Stream mapping is a
+  Tier 2 Specialisation. The 11 characteristics ;;; 15 properties ;;;
+  12 canonical relationships ;;; 11 invariants ;; 2 mapping records
+  are ES-canonical novelty. The mapping does not introduce a new WSF
+  foundational concept ;;; it documents how Enterprise-Semantics
+  extends WSF Value Stream with autonomous value-realization semantics.
+
+# Provenance
+
+provenance:
+  - source: CR-ES-009 §20
+    note: WSF mapping specification.
+  - source: ADR-ES-009 §16
+    note: Architectural position ;; Autonomous Value Stream is a Tier 2 Specialisation.
+  - source: FND-ES-AG-008 §1.3
+    note: Tier 1 / Tier 2 grounding classification.
+  - source: FND-ES-AG-001-Grounding-Result
+    note: WSF live baseline alignment.
+  - source: docs/finding/0009-wsf-tier1-tier2-grounding-boundary.md
+    note: "Established classification framework."
+  - source: https://github.com/World-Semantic-Foundation
+    note: WSF Activity + Value Stream Tier 1 grounding inherited.
