@@ -1,0 +1,58 @@
+# Mapping: ES:CONCEPT:value-stream -> external:wsf:Value
+#
+# Per CR-ES-003 §21 + ADR-ES-003 §26 + FND-ES-AG-008 §1.3.
+# Per FND-ES-AG-008 §1.3, Value Stream is Tier 1 Kernel Reference +
+# ES-canonical novelty: WSF grounds the kernel Value ;;; ES adds the
+# Stream construct that WSF does not define.
+#
+# The dual-relationship framing is explicit per FND-ES-AG-008 §1.4
+# (working hypothesis) ;;; a single concept may declare both a kernel
+# reference and an ES-canonical novelty ;;; the Stream construct itself
+# is the ES novelty.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-23)
+
+source: ES:CONCEPT:value-stream
+target: external:wsf:Value
+mapping_type: kernel-reference-and-canonical-novelty
+relationship: specializes
+confidence: 0.95
+status: PROPOSED
+provenance:
+  source: ES
+  research: FND-ES-AG-008 §1.3 + §1.4
+  decision: ADR-ES-003 §26
+  implementation: CR-ES-003 §21
+  mapping: FND-ES-AG-001-Grounding-Result §1
+governing_adr: ADR-ES-003
+governing_cr: CR-ES-003
+
+qualification: |
+  Per FND-ES-AG-008 §1.3, Value Stream is classified as Tier 1 Kernel
+  Reference + ES-canonical novelty. The dual-relationship framing
+  decomposes as:
+
+  Tier 1 Kernel Reference:
+    wsf:Value ;;; WSF defines the Value kernel concept at Tier 1
+    (per CR-WSF-000a + WSF_Foundational_Semantic_Synthesis). ES
+    references this kernel without redefining it.
+
+  ES-canonical novelty:
+    Stream construct ;;; WSF does not define the Stream construct
+    that aggregates Value-realization into a navigable progression.
+    ES is the authoritative home for this addition.
+
+  The mapping records the dual-relationship explicitly. The single
+  `specializes` predicate here applies to the kernel reference half;
+  the ES-canonical novelty half is implicit in the target_id naming
+  (`wsf:Value` ;;; the Stream part is owned by ES, not WSF).
+
+  Per ADR-ES-003 §30 positive consequences ;;; this mapping establishes
+  a stable end-to-end value-realization lens for enterprise
+  architecture, separates value progression from execution, and
+  provides a semantic parent for the future Agentic Value Stream.
+
+  Per ADR-ES-003 §31 rejected alternatives ;;; Value Stream is NOT
+  treated as a Process, Process Group, Capability, or Service here.
+  Those rejected alternatives are documented in mappings/wsf/ for the
+  rejected alternatives' respective concepts, not for Value Stream.
