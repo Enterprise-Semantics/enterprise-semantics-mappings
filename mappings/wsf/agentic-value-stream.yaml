@@ -1,0 +1,117 @@
+# Mapping: ES:CONCEPT:agentic-value-stream -> WSF Agentic Value Stream (Tier 2 Specialisation, ES-canonical novelty)
+#
+# Per CR-ES-005 §12 + ADR-ES-005 §16 + FND-ES-AG-008 §1.3.
+# Per FND-ES-AG-008 §1.3 ;; Tier 2 Specialisation: the WSF Tier 1
+# Value Stream construct is the WSF grounding basis ;; the ES canonical
+# contribution is the agentic participation representation (an ES
+# novelty that WSF does not define).
+#
+# Per CR-ES-005 §3 ;; this mapping shall NOT modify the WSF. The WSF
+# live baseline remains the authoritative construct.
+
+id: ES:MAP:agentic-value-stream-to-wsf
+canonical_name: Agentic Value Stream to WSF mapping
+status: candidate ;;; per CR-ES-005 §12
+mapping_type: specialisation
+source:
+  id: ES:CONCEPT:agentic-value-stream
+  governance: enterprise-semantics
+  cr: CR-ES-005
+  adr: ADR-ES-005
+target:
+  id: external:wsf:Value-Stream
+  governance: World-Semantic-Foundation
+  note: |
+    WSF live baseline ;; Value Stream is a Tier 1 kernel reference.
+    Agentic Value Stream is a Tier 2 Specialisation that adds agentic
+    participation representation to the WSF Value Stream construct.
+
+relationship: specialises
+
+wsf_classification:
+  tier: 2
+  basis: WSF Tier 1 Value Stream
+  novelty: agentic-participation-representation
+  per: FND-ES-AG-008 §1.3
+
+semantic_authority:
+  source: enterprise-semantics
+  per: CR-ES-005 §12 + ADR-ES-005 §16
+  no_modification: |
+    The WSF metamodel is NOT modified by this mapping. The WSF live
+    baseline remains authoritative. ES specialises, not redefines.
+
+# Boundary assertions ;; per CR-ES-005 §3 ;; AI / Automation / Autonomous / Process / Workflow are not canonicalised here
+
+boundary_assertions:
+  - id: AVS-MAP-BND-001
+    description: |
+      Agentic Value Stream is NOT WSF Agentic Value Stream (the WSF
+      does not define an Agentic Value Stream construct). The ES
+      canonical concept is a Tier 2 Specialisation that adds agentic
+      participation to the WSF Value Stream.
+  - id: AVS-MAP-BND-002
+    description: |
+      AI is NOT a required implementation ;; the Agent may be human,
+      software-based, computational, organizational, or socio-technical
+      per ADR-ES-005 §11.
+  - id: AVS-MAP-BND-003
+    description: |
+      Autonomous Value Stream is NOT canonicalised ;; per ADR-ES-005 §13
+      ;; held for separate ADR-ES-009.
+
+# Mapping details
+
+mapping_details:
+  specialisation_principle: |
+    Agentic Value Stream specialises WSF Value Stream ;; the agentic
+    participation is the ES novelty ;; the WSF Value Stream semantics
+    are preserved (per CR-ES-005 §8 inheritance requirements).
+  participant_anchor:
+    - subject: ES:CONCEPT:agent
+      subject_provenance: CR-ES-004 + ADR-ES-004
+      note: |
+        Agent is inherited from CR-ES-004 ;; the agentic participation
+        anchor reuses the existing Agent semantic-property overlay.
+  specialisation_pattern:
+    - name: localised-agentic-participation
+      description: |
+        Agentic participation may apply to selected stages, decisions,
+        or execution areas (per CR-ES-005 §11 + ADR-ES-005 §5).
+    - name: mixed-realization
+      description: |
+        Mixed conventional, automated, human, and agentic realization
+        is explicitly permitted (per CR-ES-005 §11 + ADR-ES-005 §5).
+    - name: bounded-authority
+      description: |
+        Agentic behavior operates within explicitly defined authority
+        and policy boundaries (per ADR-ES-005 §4.6 + §7).
+    - name: human-intervention
+      description: |
+        Human participation patterns (human-in/on/over-the-loop) are
+        first-class ;; not exclusions (per ADR-ES-005 §4.7 + §16).
+
+governance: enterprise-semantics
+provenance:
+  - source: CR-ES-005 §12
+    note: WSF mapping established without modifying WSF.
+  - source: ADR-ES-005 §16
+    note: |
+      Establishes the architectural hierarchy ;;
+      ;; (WSF Value Stream -> ES Agentic Value Stream -> OpenDEA
+      ;; specialisation).
+  - source: FND-ES-AG-008 §1.3
+    note: |
+      WSF Tier 1 / Tier 2 grounding boundary ;; Agentic Value Stream is
+      Tier 2 Specialisation (ES-canonical novelty).
+  - source: ADR-ES-003 §26 + §27
+    note: Inherits Value Stream WSF grounding matrix from CR-ES-003.
+
+# Cardinal rules
+
+cardinal_rules:
+  - author: Emmanuel A. Otchere
+  - d004_dash_rule: 0 en-dash (U+2013) ;; 0 em-dash (U+2014) ;; 0 horizontal-ellipsis divider (U+2E3B) ;; 0 arrow glyph
+  - vendor_specific_embargo: 0 references ;; no vendor-specific material from embargoed sources
+  - no_wsF_modification: WSF metamodel not modified
+  - no_openDea_modification: OpenDEA metamodel not modified

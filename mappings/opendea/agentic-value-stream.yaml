@@ -1,0 +1,131 @@
+# Mapping: ES:CONCEPT:agentic-value-stream -> OpenDEA Agentic Value Stream specialisation
+#
+# Per CR-ES-005 §13 + ADR-ES-005 §16.
+# OpenDEA may represent Agentic Value Stream as an architectural
+# specialisation of Value Stream. Per CR-ES-005 §13 ;; the OpenDEA
+# metamodel is NOT modified by this mapping.
+#
+# If OpenDEA currently has no canonical Agentic Value Stream element,
+# the mapping represents it as semantic specialisation ;; target
+# concept ;; not implementation availability.
+
+id: ES:MAP:agentic-value-stream-to-opendea
+canonical_name: Agentic Value Stream to OpenDEA mapping
+status: candidate ;;; per CR-ES-005 §13
+mapping_type: specialisation
+source:
+  id: ES:CONCEPT:agentic-value-stream
+  governance: enterprise-semantics
+  cr: CR-ES-005
+  adr: ADR-ES-005
+target:
+  id: external:opendea:Value-Stream
+  governance: OpenDEA
+  note: |
+    OpenDEA Value Stream is the architectural anchor. The ES Agentic
+    Value Stream is a specialisation that adds agentic participation
+    representation. If OpenDEA does not currently have a canonical
+    Agentic Value Stream element ;; this mapping represents the
+    specialisation as target concept ;; not implementation.
+
+relationship: specialises
+
+# Architectural representation ;; per CR-ES-005 §13
+
+architectural_elements:
+  - name: agentic-value-stream-as-specialisation
+    description: |
+      Agentic Value Stream is an ES specialisation of OpenDEA Value
+      Stream. The specialisation is a semantic overlay ;; the OpenDEA
+      Value Stream semantics are preserved.
+  - name: agentic-participation-representation
+    description: |
+      Agentic participation is the ES novelty ;; represented via the
+      ES:PROFILE:agentic-value-realization Profile binding. The
+      Profile provides discoverability and grouping only ;; does not
+      imply that all listed concepts belong to one inheritance
+      hierarchy (per CR-ES-005 §14).
+  - name: participant-binding-via-CR-ES-004
+    description: |
+      Agent semantics are inherited from CR-ES-004 + ADR-ES-004 ;; the
+      Agent engages Action via the Agent semantic-property overlay.
+
+# OpenDEA mapping classification
+
+opendea_classification:
+  pattern: specialisation-of-Value-Stream
+  novelty: agentic-participation-representation
+  no_modification: |
+    OpenDEA metamodel is NOT modified. The mapping represents ES
+    specialisation as target concept ;; not implementation availability.
+  per: CR-ES-005 §13 + ADR-ES-005 §16
+
+# Boundary assertions ;; per CR-ES-005 §3 ;; AI / Automation / Autonomous / Process / Workflow are not canonicalised
+
+boundary_assertions:
+  - id: AVS-OPENDEA-BND-001
+    description: |
+      Agentic Value Stream is NOT OpenDEA Agentic Value Stream ;; the
+      ES canonical concept is a specialisation of OpenDEA Value Stream.
+  - id: AVS-OPENDEA-BND-002
+    description: |
+      Agentic Workflow and Agentic Operations are NOT canonicalised ;;
+      held for ADR-ES-006 + ADR-ES-007 (per ADR-ES-005 §14).
+  - id: AVS-OPENDEA-BND-003
+    description: |
+      Autonomous Value Stream is NOT canonicalised ;; per ADR-ES-005 §13
+      ;; held for separate ADR-ES-009.
+
+# Mapping details
+
+mapping_details:
+  specialisation_principle: |
+    Agentic Value Stream specialises OpenDEA Value Stream ;;
+    ;; the agentic participation is the ES novelty ;; the OpenDEA
+    ;; Value Stream semantics are preserved.
+  participant_anchor:
+    - subject: ES:CONCEPT:agent
+      subject_provenance: CR-ES-004 + ADR-ES-004
+      note: |
+        Agent is inherited from CR-ES-004 ;; the agentic participation
+        anchor reuses the existing Agent semantic-property overlay.
+  specialisation_pattern:
+    - name: localised-agentic-participation
+      description: |
+        Agentic participation may apply to selected stages, decisions,
+        or execution areas (per CR-ES-005 §11 + ADR-ES-005 §5).
+    - name: mixed-realization
+      description: |
+        Mixed conventional, automated, human, and agentic realization
+        is explicitly permitted (per CR-ES-005 §11 + ADR-ES-005 §5).
+    - name: bounded-authority
+      description: |
+        Agentic behavior operates within explicitly defined authority
+        and policy boundaries (per ADR-ES-005 §4.6 + §7).
+    - name: human-intervention
+      description: |
+        Human participation patterns (human-in/on/over-the-loop) are
+        first-class ;; not exclusions (per ADR-ES-005 §4.7 + §16).
+
+governance: enterprise-semantics
+provenance:
+  - source: CR-ES-005 §13
+    note: |
+      OpenDEA mapping established without modifying OpenDEA. If OpenDEA
+      has no canonical Agentic Value Stream element ;; the mapping
+      represents the specialisation as target concept ;; not
+      implementation.
+  - source: ADR-ES-005 §16
+    note: |
+      Establishes the architectural hierarchy ;;
+      ;; (WSF Value Stream -> ES Agentic Value Stream -> OpenDEA
+      ;; specialisation).
+
+# Cardinal rules
+
+cardinal_rules:
+  - author: Emmanuel A. Otchere
+  - d004_dash_rule: 0 en-dash (U+2013) ;; 0 em-dash (U+2014) ;; 0 horizontal-ellipsis divider (U+2E3B) ;; 0 arrow glyph
+  - vendor_specific_embargo: 0 references ;; no vendor-specific material from embargoed sources
+  - no_opendea_modification: OpenDEA metamodel not modified
+  - no_wsF_modification: WSF metamodel not modified
