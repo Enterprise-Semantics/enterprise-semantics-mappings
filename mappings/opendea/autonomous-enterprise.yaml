@@ -1,0 +1,104 @@
+# Mapping: ES:CONCEPT:autonomous-enterprise -> OpenDEA (enterprise-level grounding)
+#
+# Per CR-ES-011 §31 + ADR-ES-011 §31.
+# OpenDEA may represent Autonomous Enterprise as an enterprise-level
+# specialisation of OpenDEA Enterprise. No OpenDEA metamodel
+# modification is required by this CR.
+#
+# Per CR-ES-011 §31 the mapping documents the intended OpenDEA
+# correspondence rather than asserting implementation availability.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:MAP:autonomous-enterprise-to-opendea
+canonical_name: Autonomous Enterprise -> OpenDEA mapping
+status: Candidate
+version: 1.0.0
+mapping_type: specialization
+authority: opendea
+
+# Per CR-ES-011 §31
+
+source:
+  id: ES:CONCEPT:autonomous-enterprise
+  canonical_name: Autonomous Enterprise
+  defined_by: CR-ES-011 §2 + ADR-ES-011 §1 + §3.1
+
+target:
+  # OpenDEA may not have a canonical Autonomous Enterprise element.
+  # Per CR-ES-011 §31 the mapping represents semantic correspondence
+  # rather than implementation availability.
+  id: external:opendea:Enterprise
+  canonical_name: OpenDEA Enterprise
+  note: |
+    If OpenDEA does not have a directly corresponding Autonomous
+    Enterprise element; the mapping documents the intended
+    enterprise-level correspondence rather than asserting
+    implementation availability.
+
+# Mapping semantic
+
+relationship: |
+  Autonomous Enterprise is an enterprise-level specialisation of
+  OpenDEA Enterprise. The specialisation adds autonomous
+  decision-making, autonomous coordination, autonomous execution,
+  autonomous adaptation, autonomous value progression, bounded
+  authority, and human intervention compatibility at the enterprise
+  boundary, while preserving the OpenDEA Enterprise semantics.
+
+# The mapping distinguishes enterprise architecture context from
+# enterprise autonomy semantic characteristic.
+
+mapping_relationship:
+  - predicate: specializes
+    subject: ES:CONCEPT:autonomous-enterprise
+    object: external:opendea:Enterprise
+  - predicate: orthogonal-to
+    subject: ES:CONCEPT:autonomous-enterprise
+    object: ES:CONCEPT:agentic-enterprise
+    note: |
+      Autonomous Enterprise and Agentic Enterprise are orthogonal
+      semantic dimensions per ADR-ES-011 §11. Both specialise
+      Enterprise (and OpenDEA Enterprise). The orthogonality is
+      preserved in the mapping layer.
+
+# Per CR-ES-011 §31 ; the mapping must distinguish:
+# enterprise architecture context != enterprise autonomy semantic characteristic
+
+context_vs_characteristic:
+  enterprise_architecture_context: |
+    OpenDEA provides the architectural context for the enterprise
+    (governance, capability mapping, operational context). This
+    context is independent of the autonomy semantic characteristic.
+  enterprise_autonomy_characteristic: |
+    Autonomous Enterprise describes an enterprise-level semantic
+    condition; the autonomy characteristic is independent of the
+    enterprise architecture context. An enterprise may have the
+    OpenDEA architecture context without satisfying the
+    Autonomous Enterprise semantic condition.
+
+# Provenance
+
+provenance:
+  - source: CR-ES-011 §31
+    note: "OpenDEA mapping for Autonomous Enterprise ; no OpenDEA metamodel modification authorised"
+  - source: ADR-ES-011 §31
+    note: "Autonomous Enterprise OpenDEA grounding ; enterprise-level specialisation"
+
+# Cardinal rules
+
+cardinal_rules:
+  author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+  d_004: |
+    Zero en-dash, zero em-dash, zero U+2E3B. Comma separators used
+    for sentence-internal punctuation per user directive 2026-09-24.
+  embargo: |
+    Zero references to material from embargoed sources.
+
+# Unresolved grounding dependencies
+
+unresolved_grounding_dependencies:
+  - dependency: external:concept:enterprise-objective
+    reason: Enterprise Objective concept is not yet canonical on main
+  - dependency: external:concept:enterprise-outcome
+    reason: Enterprise Outcome concept is not yet canonical on main
