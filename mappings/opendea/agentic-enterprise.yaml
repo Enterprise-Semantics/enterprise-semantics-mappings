@@ -1,0 +1,154 @@
+# Mapping: ES:CONCEPT:agentic-enterprise -> OpenDEA Enterprise Construct
+#
+# Per CR-ES-010 §8 + ADR-ES-010 §1 + §3 + ADR-ES-010 §16.
+# OpenDEA may represent Agentic Enterprise as an enterprise
+# architecture construct. No OpenDEA metamodel modification is
+# required by this CR.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:MAP:agentic-enterprise-to-opendea
+canonical_name: Agentic Enterprise -> OpenDEA mapping
+status: Candidate
+version: 0.9.0
+mapping_type: specialization
+authority: opendea
+
+# Per CR-ES-010 §8
+
+source:
+  id: ES:CONCEPT:agentic-enterprise
+  canonical_name: Agentic Enterprise
+  defined_by: CR-ES-010 §2 + ADR-ES-010 §1
+  prior_hypothesis_superseded: >
+    Profile-of-Enterprise via profile_bindings to
+    ES:PROFILE:agentic-execution (FND-ES-AG-005 + ADR-ES-AG-001
+    §3.3).
+  new_hypothesis: >
+    Specialisation-of-Enterprise via predicate specializes
+    (CR-ES-010 §2 + ADR-ES-010 §1).
+  canonical_identity_preserved: true
+
+target:
+  # OpenDEA may not have a canonical Agentic Enterprise construct.
+  # Per CR-ES-010 §8 the mapping represents semantic correspondence
+  # rather than implementation availability.
+  id: external:opendea:Enterprise
+  canonical_name: OpenDEA Enterprise
+  note: |
+    If OpenDEA does not have a directly corresponding Agentic
+    Enterprise element ;; the mapping documents the intended
+    enterprise-architecture correspondence rather than asserting
+    implementation availability.
+
+# Mapping semantic
+
+relationship: |
+  Agentic Enterprise is a Tier 2 Specialisation of OpenDEA Enterprise
+  (enterprise-architecture level). The specialisation adds material
+  agentic participation ;; enterprise-intent-anchored behaviour ;;
+  enterprise-outcome-oriented behaviour ;; enterprise-level authority ;;
+  policy ;; governance ;; and escalation boundaries while preserving
+  the OpenDEA Enterprise semantics.
+
+mapping_relationship:
+  - predicate: specializes
+    subject: ES:CONCEPT:agentic-enterprise
+    object: external:opendea:Enterprise
+    qualification: enterprise-architecture-specialisation
+
+  - predicate: engages
+    subject: ES:CONCEPT:agentic-enterprise
+    object: external:opendea:Agent
+    qualification: agent-engagement
+
+  - predicate: enterprise-realizes-through
+    subject: ES:CONCEPT:agentic-enterprise
+    object: external:opendea:Agentic Value Stream
+    qualification: enterprise-realisation-via-value-stream
+
+  - predicate: enterprise-operates-through
+    subject: ES:CONCEPT:agentic-enterprise
+    object: external:opendea:Agentic Operations
+    qualification: enterprise-operation-mechanism
+
+  - predicate: uses
+    subject: ES:CONCEPT:agentic-enterprise
+    object: external:opendea:Agentic Workflow
+    qualification: enterprise-execution-mechanism
+
+  - predicate: operates-within
+    subject: ES:CONCEPT:agentic-enterprise
+    object: external:opendea:Authority
+    qualification: authority-bound
+
+  - predicate: governed-by
+    subject: ES:CONCEPT:agentic-enterprise
+    object: external:opendea:Policy
+    qualification: governance-bound
+
+  - predicate: pursues
+    subject: ES:CONCEPT:agentic-enterprise
+    object: external:opendea:Enterprise Objective
+    qualification: intent-bound
+
+  - predicate: produces
+    subject: ES:CONCEPT:agentic-enterprise
+    object: external:opendea:Enterprise Outcome
+    qualification: outcome-oriented
+
+  - predicate: adapts-to
+    subject: ES:CONCEPT:agentic-enterprise
+    object: external:opendea:Enterprise Context
+    qualification: adaptive
+
+# Per CR-ES-010 §8: implementation availability
+
+implementation_availability: |
+  Per CR-ES-010 §8 , if no canonical OpenDEA Agentic Enterprise
+  element exists ;; the mapping is marked as a target semantic
+  correspondence rather than an implementation claim. The mapping
+  documents how OpenDEA may subsequently specialise and
+  operationalise the Enterprise-Semantics concept within its
+  enterprise architecture metamodel.
+
+# Per ADR-ES-010 §1 + §3 + CR-ES-010 §24: no OpenDEA metamodel modification
+
+metamodel_modification: none
+metamodel_modification_rationale: |
+  Per CR-ES-010 §8 + §24 + ADR-ES-010 §1 + §16 , no OpenDEA
+  metamodel change is authorised by this CR. The mapping documents
+  the intended specialisation boundary ;; it does not require OpenDEA
+  to introduce a new construct.
+
+# Per ADR-ES-010 §11: Agentic Enterprise is orthogonal to Autonomous Enterprise
+
+orthogonality_note: |
+  Per ADR-ES-010 §11 + ADR-ES-011 §11 , the Agentic Enterprise
+  mapping is orthogonal to the Autonomous Enterprise mapping ;; both
+  are parallel specialisations of Enterprise. The Agentic Enterprise
+  mapping does NOT imply Autonomous Enterprise , the Autonomous
+  Enterprise mapping does NOT imply Agentic Enterprise. An OpenDEA
+  deployment may satisfy either ;; both ;; or neither.
+
+# Cardinal rules
+
+cardinal_rules:
+  - author: Emmanuel A. Otchere
+  - d004_dash_rule: 0 forbidden glyphs
+  - vendor_specific_embargo: 0 references ;; no vendor-specific material from embargoed sources
+  - naming: lowercase kebab-case per ADR-ES-002 §11
+
+# Provenance
+
+provenance:
+  - source: CR-ES-010 §8
+    note: OpenDEA mapping specification.
+  - source: ADR-ES-010 §1 + §3
+    note: Architectural decision ;; Agentic Enterprise is a specialisation of Enterprise ;; not of Agentic Operations / Agentic Value Stream / Agentic Workflow.
+  - source: ADR-ES-010 §11
+    note: Orthogonality with Autonomous Enterprise ;; the mapping does NOT imply Autonomous Enterprise.
+  - source: FND-ES-AG-005
+    note: Prior Profile hypothesis ;; superseded by CR-ES-010 + ADR-ES-010 specialisation hypothesis.
+  - source: https://github.com/Enterprise-Semantics/open-dea
+    note: OpenDEA canonical Enterprise reference.
