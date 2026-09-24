@@ -1,0 +1,86 @@
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+# Filing: VS-C of CR-ES-013 , Autonomous Capability mapping record (OpenDEA) , per CR-ES-013 §15 + ADR-ES-013 §17 + FND-ES-AG-008 §1.3
+#
+# This file documents the semantic correspondence between ES:CONCEPT:autonomous-capability
+# (established by ADR-ES-013 + CR-ES-013) and the OpenDEA Capability semantic kind.
+# It does not modify OpenDEA or the OpenDEA metamodel. It does not assert equivalence.
+# It documents that Autonomous Capability is a contextual specialization of the
+# universal Capability concept (which itself maps to OpenDEA Capability via the
+# established lineage at opendea/capability.yaml + opendea/agentic.yaml).
+#
+# Per CR-ES-013 §15, mappings document semantic correspondence only. No unsupported
+# equivalence shall be asserted.
+
+source:
+  registry: enterprise-semantics
+  concept_id: ES:CONCEPT:autonomous-capability
+  concept_version: v1.2.0
+  ratified_by: ADR-ES-013
+  implemented_by: CR-ES-013
+
+target:
+  registry: opendea
+  concept_id: external:opendea:Capability
+  concept_kind: capability
+  note: |
+    OpenDEA Capability is the foundational semantic kind at the
+    OpenDEA layer. Autonomous Capability is a contextual
+    specialization of the universal Capability concept, which
+    itself maps to OpenDEA Capability via the established lineage.
+    Autonomous Capability does not modify the OpenDEA metamodel.
+
+correspondence:
+  type: specialization
+  direction: enterprise-semantics -> opendea
+  qualification: |
+    Autonomous Capability specializes Capability, which corresponds
+    to OpenDEA Capability. The specialization is contextual, not
+    foundational. The Capability concept remains the universal
+    semantic kind at both the ES and OpenDEA layers.
+
+boundaries:
+  - Autonomous Capability is NOT a new OpenDEA semantic kind
+  - Autonomous Capability is NOT equivalent to OpenDEA Capability ; it is a specialization
+  - Autonomous Capability does NOT modify the OpenDEA metamodel ; it references OpenDEA Capability via the parent Capability
+  - Autonomous Capability does NOT imply Autonomous Operations ; the two are distinct semantic kinds
+  - Autonomous Capability does NOT imply Autonomous Value Stream ; the two are distinct semantic kinds
+  - Autonomous Capability does NOT imply Autonomous Enterprise ; the two are distinct semantic kinds
+
+realization_mapping:
+  autonomous_capability_to_opendea_capability:
+    direction: specialization
+    qualification: |
+      Enterprise-Semantics establishes Autonomous Capability as a
+      contextual specialization of the universal Capability concept.
+      The universal Capability concept corresponds to OpenDEA Capability.
+      Therefore Autonomous Capability is a contextual specialization
+      that references OpenDEA Capability via the Capability parent.
+  bounded_autonomy:
+    direction: governance-bounded
+    qualification: |
+      The bounded-autonomy property (Authority, Policy, Constraints,
+      Governance, Escalation) is a CR-ES-013 governance requirement
+      that does not change the OpenDEA Capability semantic kind.
+
+related_mappings:
+  - enterprise-semantics/concepts/capability.concept.yaml
+  - enterprise-semantics/concepts/agentic-capability.concept.yaml
+  - enterprise-semantics/concepts/autonomous-capability.concept.yaml
+  - enterprise-semantics-mappings/opendea/capability.yaml
+  - enterprise-semantics-mappings/opendea/agentic.yaml
+  - enterprise-semantics-mappings/opendea/autonomous-capability.yaml (this file)
+  - enterprise-semantics-mappings/wsf/autonomous-capability.yaml
+
+provenance:
+  - ADR-ES-002 (Enterprise Semantic Model)
+  - ADR-ES-008 (Autonomous Operations Semantic Grounding)
+  - ADR-ES-009 (Autonomous Value Stream Semantic Grounding)
+  - ADR-ES-011 (Autonomous Enterprise Semantic Grounding)
+  - ADR-ES-012 (Agentic Capability Semantic Grounding)
+  - ADR-ES-013 (Autonomous Capability Semantic Grounding)
+  - CR-ES-013 (Implement Autonomous Capability)
+  - FND-ES-AG-008 (WSF Tier 1 / Tier 2 Grounding Boundary)
+
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+filing_date: 2026-09-24
+status: candidate , awaiting CR-ES-013 implementation acceptance per the canonicalization ritual
