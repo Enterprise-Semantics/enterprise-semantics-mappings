@@ -1,0 +1,75 @@
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+# Filing: VS-C of CR-ES-014 , Agentic Service mapping record (WSF) , per CR-ES-014 §15 + ADR-ES-014 §15 + FND-ES-AG-008 §1.3
+#
+# This file documents the semantic correspondence between ES:CONCEPT:agentic-service
+# (established by ADR-ES-014 + CR-ES-014) and the WSF Service semantic kind.
+# It does not modify WSF. It does not assert equivalence. It documents that
+# Agentic Service is a contextual specialization of the universal Service concept
+# (which itself maps to WSF Service via the established lineage).
+#
+# Per CR-ES-014 §15, mappings document semantic correspondence only. No unsupported
+# equivalence shall be asserted.
+
+source:
+  registry: enterprise-semantics
+  concept_id: ES:CONCEPT:agentic-service
+  concept_version: v1.3.0
+  ratified_by: ADR-ES-014
+  implemented_by: CR-ES-014
+
+target:
+  registry: wsf
+  concept_id: external:wsf:Service
+  concept_kind: service
+  note: |
+    WSF Service is the foundational semantic kind. Agentic Service
+    is a contextual specialization of the universal Service concept,
+    which itself maps to WSF Service via the established lineage.
+    Agentic Service does not introduce a new WSF semantic kind.
+
+correspondence:
+  type: specialization
+  direction: enterprise-semantics -> wsf
+  qualification: |
+    Agentic Service specializes Service, which corresponds to WSF
+    Service. The specialization is contextual, not foundational. The
+    Service concept remains the universal semantic kind at both the
+    ES and WSF layers.
+
+boundaries:
+  - Agentic Service is NOT a new WSF semantic kind
+  - Agentic Service is NOT equivalent to WSF Service ; it is a specialization
+  - Agentic Service does NOT modify WSF ; it references WSF Service via the parent Service
+  - Agentic Service does NOT imply Agent ; an Agent may participate without being the Service
+  - Agentic Service does NOT imply Agentic Capability ; distinct semantic kinds
+  - Agentic Service does NOT imply Agentic Workflow ; workflow is execution mechanism
+  - Agentic Service does NOT imply Agentic Operations ; Agentic Operations do NOT make every Service Agentic
+  - Agentic Service does NOT imply Agentic Value Stream ; may be consumed by Agentic Value Stream without implying it
+  - Agentic Service does NOT imply Autonomous Service ; orthogonal at service boundary
+  - Agentic Service does NOT require AI ; AI-enabled Service is NOT automatically Agentic Service
+  - Agentic Service does NOT require Automation ; Automated Service is NOT automatically Agentic Service
+  - Agentic Service does NOT require removal of humans ; human participation remains valid
+  - Agentic behavior must be material to service realization
+
+related_mappings:
+  - enterprise-semantics/concepts/service.concept.yaml
+  - enterprise-semantics/concepts/agentic-service.concept.yaml
+  - enterprise-semantics-mappings/wsf/service.yaml
+  - enterprise-semantics-mappings/wsf/agentic.yaml
+  - enterprise-semantics-mappings/wsf/agentic-service.yaml (this file)
+  - enterprise-semantics-mappings/opendea/agentic-service.yaml
+
+provenance:
+  - ADR-ES-002 (Enterprise Semantic Model)
+  - ADR-ES-004 (Agentic Semantic Grounding)
+  - ADR-ES-005 (Agentic Value Stream)
+  - ADR-ES-006 (Agentic Workflow)
+  - ADR-ES-007 (Agentic Operations)
+  - ADR-ES-012 (Agentic Capability)
+  - ADR-ES-014 (Agentic Service Semantic Grounding)
+  - CR-ES-014 (Implement Agentic Service)
+  - FND-ES-AG-008 (WSF Tier 1 / Tier 2 Grounding Boundary)
+
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+filing_date: 2026-09-25
+status: candidate , awaiting CR-ES-014 implementation acceptance per the canonicalization ritual
