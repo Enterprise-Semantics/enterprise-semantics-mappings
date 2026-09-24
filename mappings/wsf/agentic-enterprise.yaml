@@ -53,8 +53,8 @@ target:
   note: |
     WSF live baseline grounds Enterprise via WSF Entity (Tier 1).
     The Agentic Enterprise specialisation adds ES-canonical novelty ;;
-    ;; the 5 characteristics ;;; 16 properties ;;; 10 canonical
-    relationships ;;; 22 invariants ;; 2 mapping records documented
+    ;; the 5 characteristics , 16 properties , 10 canonical
+    relationships , 22 invariants ;; 2 mapping records documented
     in the source concept record.
 
 # Mapping semantic
@@ -154,7 +154,7 @@ agentic_enterprise_relationships:
     wsf_correspondence: external:wsf:Authority (CR-ES-004 reuse)
     note: |
       Authority boundary ;; per CR-ES-010 §4 + ADR-ES-010 §17 +
-      AE-CON-007. Authority = unrestricted fails conformance ;;; per
+      AE-CON-007. Authority = unrestricted fails conformance , per
       AE-CON-018 (analogous to AE-AUTO-CON bound).
 
   - subject: ES:CONCEPT:agentic-enterprise
@@ -202,9 +202,9 @@ cardinal_rules:
 # Cardinal mappings note: ES-canonical novelty
 
 canonical_mappings_note: |
-  Per FND-ES-AG-008 §1.3 ;;; the Agentic Enterprise mapping is a
-  Tier 2 Specialisation. The 5 characteristics ;;; 16 properties ;;
-  10 canonical relationships ;;; 22 invariants ;; 2 mapping records ;;
+  Per FND-ES-AG-008 §1.3 , the Agentic Enterprise mapping is a
+  Tier 2 Specialisation. The 5 characteristics , 16 properties ;;
+  10 canonical relationships , 22 invariants ;; 2 mapping records ;;
   1 new Profile are ES-canonical novelty. The mapping does not
   introduce a new WSF foundational concept ;; it documents how
   Enterprise-Semantics extends WSF Entity (via Enterprise) with
