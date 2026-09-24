@@ -1,0 +1,105 @@
+# Mapping: ES:CONCEPT:agentic-capability -> OpenDEA Capability (correspondence, no metamodel modification)
+#
+# Per CR-ES-012 §26 + ADR-ES-012 §6.
+# Per CR-ES-012 §26 ; this mapping documents intended correspondence
+# with OpenDEA Capability semantics. NO OpenDEA metamodel modification
+# is authorised.
+
+id: ES:MAP:agentic-capability-to-opendea
+canonical_name: Agentic Capability to OpenDEA mapping
+status: candidate , per CR-ES-012 §26
+mapping_type: correspondence
+source:
+  id: ES:CONCEPT:agentic-capability
+  governance: enterprise-semantics
+  cr: CR-ES-012
+  adr: ADR-ES-012
+target:
+  id: external:opendea:Capability
+  governance: opendea
+  note: |
+    OpenDEA Capability semantics referenced for correspondence ; no
+    metamodel modification authorised per CR-ES-012 §26 + §27.
+
+relationship: references
+
+opendea_classification:
+  category: capability-specialisation
+  basis: OpenDEA Capability
+  novelty: agentic-realization-context
+  per: CR-ES-012 §26
+
+semantic_authority:
+  source: enterprise-semantics
+  per: CR-ES-012 §26 + ADR-ES-012 §6
+  no_modification: |
+    The OpenDEA metamodel is NOT modified by this mapping. The
+    OpenDEA live baseline remains authoritative. ES specialises, not
+    redefines.
+
+boundary_assertions:
+  - id: ACAP-MAP-ODA-001
+    description: |
+      Agentic Capability is a contextual specialization of
+      Capability ; not a new OpenDEA concept type. The distinction
+      between Business Capability and Technical/Operational
+      realization is preserved per CR-ES-012 §26.
+  - id: ACAP-MAP-ODA-002
+    description: |
+      Agentic Capability is not premature canonicalisation of an
+      OpenDEA-specific specialization ; the mapping documents
+      correspondence only.
+  - id: ACAP-MAP-ODA-003
+    description: |
+      AI Capability, Autonomous Capability, Agentic Capability
+      Maturity, and Agentic Capability Levels are NOT canonicalised
+      in this mapping ; held for separate ADR/CR pairs per
+      ADR-ES-012 §25.
+
+mapping_details:
+  correspondence_principle: |
+    Agentic Capability corresponds to OpenDEA Capability with an
+    additional agentic realization context. The Capability universal
+    concept is preserved per ADR-ES-002 ; OpenDEA Capability semantics
+    are not modified per CR-ES-012 §26.
+  realisation_correspondence:
+    - name: business-capability-anchor
+      description: |
+        Agentic Capability remains a Business Capability with an
+        additional agentic realization mode (per CR-ES-012 §26
+        three-way distinction: Capability, Agentic Capability,
+        Business Capability).
+    - name: technical-operational-realization
+      description: |
+        The technical/operational realization layer of Agentic
+        Capability may engage Agent, Agentic Workflow, Agentic
+        Operations, Service, or System ; the realization layer
+        does not redefine the Capability semantic boundary.
+    - name: openDea-correspondence-only
+      description: |
+        This mapping documents correspondence with OpenDEA Capability
+        semantics ; no OpenDEA metamodel modification is authorised
+        per CR-ES-012 §26.
+
+governance: enterprise-semantics
+provenance:
+  - source: CR-ES-012 §26
+    note: |
+      OpenDEA mapping established without modifying the OpenDEA
+      metamodel ; correspondence-only mapping.
+  - source: ADR-ES-012 §6
+    note: |
+      Establishes the capability-level bridge ; Agentic Capability
+      inherits the Capability universal concept grounding.
+  - source: CR-ES-002
+    note: |
+      Inherits OpenDEA Capability correspondence matrix from CR-ES-002
+      ; CR-ES-012 §26 references this correspondence without
+      modification.
+
+cardinal_rules:
+  - author: Emmanuel A. Otchere
+  - d004_dash_rule: "0 en-dash (U+2013), 0 em-dash (U+2014), 0 horizontal-ellipsis divider (U+2E3B), 0 arrow glyph"
+  - vendor_specific_embargo: "0 references, no vendor-specific material from embargoed sources"
+  - no_openDea_modification: "OpenDEA metamodel not modified"
+  - no_wsF_modification: "WSF metamodel not modified"

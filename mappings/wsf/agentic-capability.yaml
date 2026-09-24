@@ -1,0 +1,145 @@
+# Mapping: ES:CONCEPT:agentic-capability -> WSF Capability (Tier 1 Kernel Reference, ES-canonical specialisation)
+#
+# Per CR-ES-012 §25 + ADR-ES-012 §6 + §13 + FND-ES-AG-008 §1.3.
+# Per FND-ES-AG-008 §1.3 ;; Tier 1 Kernel Reference: the WSF Tier 1
+# Capability construct is the WSF grounding basis ; the ES canonical
+# contribution is the agentic realization representation (an ES novelty
+# that WSF does not define).
+#
+# Per CR-ES-012 §25 + §27 ; this mapping shall NOT modify the WSF. The WSF
+# live baseline remains the authoritative construct.
+
+id: ES:MAP:agentic-capability-to-wsf
+canonical_name: Agentic Capability to WSF mapping
+status: candidate , per CR-ES-012 §25
+mapping_type: specialisation
+source:
+  id: ES:CONCEPT:agentic-capability
+  governance: enterprise-semantics
+  cr: CR-ES-012
+  adr: ADR-ES-012
+target:
+  id: external:wsf:Capability
+  governance: World-Semantic-Foundation
+  note: |
+    WSF live baseline ;; Capability is a Tier 1 kernel reference.
+    Agentic Capability is a Tier 2 Specialisation that adds agentic
+    realization representation to the WSF Capability construct.
+
+relationship: specialises
+
+wsf_classification:
+  tier: 2
+  basis: WSF Tier 1 Capability
+  novelty: agentic-realization-representation
+  per: FND-ES-AG-008 §1.3
+
+semantic_authority:
+  source: enterprise-semantics
+  per: CR-ES-012 §25 + ADR-ES-012 §6 + §13
+  no_modification: |
+    The WSF metamodel is NOT modified by this mapping. The WSF live
+    baseline remains authoritative. ES specialises, not redefines.
+
+boundary_assertions:
+  - id: ACAP-MAP-BND-001
+    description: |
+      Agentic Capability is NOT WSF Agentic Capability (the WSF does
+      not define an Agentic Capability construct). The ES canonical
+      concept is a Tier 2 Specialisation that adds agentic realization
+      to the WSF Capability.
+  - id: ACAP-MAP-BND-002
+    description: |
+      Agentic behavior must be material to capability realization. AI,
+      automation, Agent participation, or autonomy alone do not
+      qualify (per ADR-ES-012 §7 + §15-§17).
+  - id: ACAP-MAP-BND-003
+    description: |
+      Capability universality is preserved ; Agentic Capability is a
+      contextual specialization of Capability, not a replacement
+      (per ADR-ES-012 §2 + §4).
+  - id: ACAP-MAP-BND-004
+    description: |
+      Autonomous Capability is NOT canonicalised ; held for ADR-ES-013
+      per ADR-ES-012 §13 + §25.
+  - id: ACAP-MAP-BND-005
+    description: |
+      AI Capability, Agentic Capability Maturity, Agentic Capability
+      Levels, Agentic Organization, Autonomous Organization,
+      Agentic Culture, Autonomous Culture, Agentic Ecosystem,
+      Autonomous Ecosystem are NOT canonicalised here ; held for
+      separate ADR/CR pairs per ADR-ES-012 §25.
+
+mapping_details:
+  specialisation_principle: |
+    Agentic Capability specialises WSF Capability ; the agentic
+    realization representation is the ES novelty ; the WSF
+    Capability semantics are preserved (per CR-ES-012 §3 + §4
+    inheritance requirements).
+  realisation_anchor:
+    - subject: ES:CONCEPT:agent
+      subject_provenance: CR-ES-004 + ADR-ES-004
+      note: |
+        Agent is inherited from CR-ES-004 ; the agentic realization
+        anchor reuses the existing Agent semantic-property overlay.
+  specialisation_pattern:
+    - name: material-agentic-realization
+      description: |
+        Agentic behavior is material to capability realization
+        (per ADR-ES-012 §7 + CR-ES-012 §8). Mere Agent participation
+        does not qualify ; the Agent must engage in contextual
+        decision-making, dynamic action selection, adaptive
+        coordination, delegated execution, or other material
+        agentic behaviors.
+    - name: outcome-orientation
+      description: |
+        Agentic Capability retains the Capability -> Outcome semantic
+        anchor. Outcome orientation is preserved per ACAP-CON-004.
+    - name: bounded-authority
+      description: |
+        Agentic Capability operates within explicitly defined
+        authority, policy, and contextual boundaries (per ADR-ES-012
+        §1 + ACAP-CON-017).
+    - name: human-participation-permitted
+      description: |
+        Human participation patterns (human-in/on/over-the-loop)
+        are first-class ; not exclusions. Agentic Capability may
+        include Human, Agent, Human+Agent, Human+System, Agent+System,
+        or Human+Agent+System (per CR-ES-012 §18).
+    - name: agentic-autonomous-orthogonality
+      description: |
+        Capability can be Agentic, Autonomous, both, or neither. The
+        2x2 matrix at the capability boundary permits autonomous
+        Capability as a future orthogonal specialization (per
+        ADR-ES-012 §14 + §25).
+
+governance: enterprise-semantics
+provenance:
+  - source: CR-ES-012 §25
+    note: WSF mapping established without modifying WSF.
+  - source: ADR-ES-012 §6
+    note: |
+      Establishes the capability-level bridge between the universal
+      Capability concept and the agentic realization model.
+  - source: FND-ES-AG-008 §1.3
+    note: |
+      WSF Tier 1 / Tier 2 grounding boundary ; Agentic Capability is
+      Tier 2 Specialisation (ES-canonical novelty).
+  - source: ADR-ES-002
+    note: |
+      Inherits Capability WSF grounding matrix from CR-ES-002 ; the
+      WSF Capability grounding is the Tier 1 kernel reference basis
+      for this Tier 2 Specialisation.
+  - source: ADR-ES-012 §13 + §25
+    note: |
+      Autonomous Capability explicitly deferred ; the 2x2 matrix at
+      the capability boundary permits Autonomous Capability as a
+      future orthogonal specialization, but is held for ADR-ES-013
+      per ADR-ES-012 §25.
+
+cardinal_rules:
+  - author: Emmanuel A. Otchere
+  - d004_dash_rule: "0 en-dash (U+2013), 0 em-dash (U+2014), 0 horizontal-ellipsis divider (U+2E3B), 0 arrow glyph"
+  - vendor_specific_embargo: "0 references, no vendor-specific material from embargoed sources"
+  - no_wsF_modification: "WSF metamodel not modified"
+  - no_openDea_modification: "OpenDEA metamodel not modified"
