@@ -37,9 +37,9 @@ target:
 
 relationship: |
   Agentic Operations is a Tier 2 Specialisation of OpenDEA Operations
-  (operating-mode level). The specialisation adds agentic behaviour ;;;
-  bounded authority ;;; policy governance ;;; operational sensing ;;;
-  dynamic decision ;;; coordination ;;; and runtime adaptation while
+  (operating-mode level). The specialisation adds agentic behaviour, 
+  bounded authority, policy governance, operational sensing, 
+  dynamic decision, coordination, and runtime adaptation while
   preserving the OpenDEA Operations semantics.
 
 mapping_relationship:
@@ -66,7 +66,7 @@ mapping_relationship:
 # Per CR-ES-007 §18: implementation availability
 
 implementation_availability: |
-  Per CR-ES-007 §18 ;;; if no canonical OpenDEA Agentic Operations
+  Per CR-ES-007 §18, if no canonical OpenDEA Agentic Operations
   element exists ;; the mapping is marked as a target semantic
   correspondence rather than an implementation claim. The mapping
   documents how OpenDEA may subsequently specialise and operationalise
@@ -77,9 +77,9 @@ implementation_availability: |
 
 metamodel_modification: none
 metamodel_modification_rationale: |
-  Per CR-ES-007 §3 + §18 + ADR-ES-007 §16 ;;; no OpenDEA metamodel
+  Per CR-ES-007 §3 + §18 + ADR-ES-007 §16, no OpenDEA metamodel
   change is authorised by this CR. The mapping documents the
-  intended specialisation boundary ;;; it does not require OpenDEA to
+  intended specialisation boundary, it does not require OpenDEA to
   introduce a new construct.
 
 # Cardinal rules

@@ -38,8 +38,8 @@ target:
 relationship: |
   Autonomous Operations is a Tier 2 Specialisation of OpenDEA Operations
   (operating-mode level). The specialisation adds independent
-  operational decision and action ;; bounded authority ;;; policy
-  governance ;;; constraint enforcement ;;; escalation boundaries ;;;
+  operational decision and action ;; bounded authority, policy
+  governance, constraint enforcement, escalation boundaries, 
   and outcome orientation while preserving the OpenDEA Operations
   semantics.
 
@@ -67,7 +67,7 @@ mapping_relationship:
 # Per CR-ES-008 §20: implementation availability
 
 implementation_availability: |
-  Per CR-ES-008 §20 ;;; if no canonical OpenDEA Autonomous Operations
+  Per CR-ES-008 §20, if no canonical OpenDEA Autonomous Operations
   element exists ;; the mapping is marked as a target semantic
   correspondence rather than an implementation claim. The mapping
   documents how OpenDEA may subsequently specialise and operationalise
@@ -78,9 +78,9 @@ implementation_availability: |
 
 metamodel_modification: none
 metamodel_modification_rationale: |
-  Per CR-ES-008 §3 + §20 + ADR-ES-008 §16 ;;; no OpenDEA metamodel
+  Per CR-ES-008 §3 + §20 + ADR-ES-008 §16, no OpenDEA metamodel
   change is authorised by this CR. The mapping documents the
-  intended specialisation boundary ;;; it does not require OpenDEA to
+  intended specialisation boundary, it does not require OpenDEA to
   introduce a new construct.
 
 # Cardinal rules

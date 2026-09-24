@@ -40,17 +40,17 @@ target:
   note: |
     WSF live baseline grounds Operations via WSF Activity (Tier 1).
     The Agentic Operations specialisation adds ES-canonical novelty ;;
-    ;; the 8 characteristics ;;; 10 properties ;;; 9 canonical
-    relationships ;;; 8 invariants ;;; 2 mappings documented in the
+    ;; the 8 characteristics, 10 properties, 9 canonical
+    relationships, 8 invariants, 2 mappings documented in the
     source concept record.
 
 # Mapping semantic
 
 relationship: |
   Agentic Operations is a Tier 2 Specialisation of WSF Operations.
-  The specialisation adds agentic behaviour ;; bounded authority ;;;
-  policy governance ;;; operational sensing ;;; dynamic decision ;;;
-  coordination ;;; and runtime adaptation while preserving the WSF
+  The specialisation adds agentic behaviour ;; bounded authority, 
+  policy governance, operational sensing, dynamic decision, 
+  coordination, and runtime adaptation while preserving the WSF
   Operations semantics.
 
 mapping_relationship:
@@ -63,7 +63,7 @@ mapping_relationship:
     object: external:wsf:Activity
     qualification: operations-grounding-inherited
     rationale: |
-      Per CR-ES-007 §17 + ADR-ES-007 §16 + §26 ;;; Agentic
+      Per CR-ES-007 §17 + ADR-ES-007 §16 + §26, Agentic
       Operations inherits the Operations grounding ;; which itself
       grounds WSF Activity. The chain is:
         WSF Activity (Tier 1) -> WSF Operations (Tier 1) -> ES Operations (Established) -> ES Agentic Operations (Candidate)
@@ -75,11 +75,11 @@ mapping_relationship:
 wsf_foundational_inheritance:
   - foundation_concept: external:wsf:Activity
     relationship: specializes
-    via: external:wsf:Operations ;;; ES:CONCEPT:operations
+    via: external:wsf:Operations, ES:CONCEPT:operations
     note: |
       WSF Activity grounds the kernel. The Agentic Operations
       specialisation is established on top of the Operations
-      specialisation ;;; which itself specialises WSF Activity.
+      specialisation, which itself specialises WSF Activity.
 
 # Per CR-ES-007 §8 + ADR-ES-007 §21: 9 Agentic Operations relationships
 
@@ -167,11 +167,11 @@ cardinal_rules:
 # Cardinal mappings note: ES-canonical novelty
 
 canonical_mappings_note: |
-  Per FND-ES-AG-008 §1.3 ;;; the Agentic Operations mapping is a
-  Tier 2 Specialisation. The 8 characteristics ;;; 10 properties ;;;
-  9 canonical relationships ;;; 8 invariants ;; 2 mapping records
+  Per FND-ES-AG-008 §1.3, the Agentic Operations mapping is a
+  Tier 2 Specialisation. The 8 characteristics, 10 properties, 
+  9 canonical relationships, 8 invariants ;; 2 mapping records
   are ES-canonical novelty. The mapping does not introduce a new WSF
-  foundational concept ;;; it documents how Enterprise-Semantics
+  foundational concept, it documents how Enterprise-Semantics
   extends WSF Operations with agentic operational semantics.
 
 # Provenance

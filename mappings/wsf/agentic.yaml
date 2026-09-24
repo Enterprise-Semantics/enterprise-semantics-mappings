@@ -1,23 +1,23 @@
 # Mapping: ES:CONCEPT:agentic -> WSF Agentic construct (Tier 2 Specialisation, ES-canonical novelty)
 #
 # Per CR-ES-004 §19 + ADR-ES-004 §1.7 + FND-ES-AG-008 §1.3.
-# Per FND-ES-AG-008 §1.3 ;;; Tier 2 Specialisation classification.
+# Per FND-ES-AG-008 §1.3, Tier 2 Specialisation classification.
 #
-# Agentic is an ES-canonical novelty ;;; WSF does not define an Agentic
+# Agentic is an ES-canonical novelty, WSF does not define an Agentic
 # construct at Tier 1 (kernel) or Tier 2 (specialisation). The mapping
 # therefore records the absence of a direct WSF correspondence while
 # documenting the ES-side canonical definition for downstream integration.
 #
-# Per ADR-ES-004 §13 + §14 + CR-ES-004 §17 ;;; no WSF modification is
-# authorised ;;; only ES-canonical novelty is recorded.
+# Per ADR-ES-004 §13 + §14 + CR-ES-004 §17, no WSF modification is
+# authorised, only ES-canonical novelty is recorded.
 #
 # Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-23)
 
 source: ES:CONCEPT:agentic
-target: external:wsf:Agentic ;;; Tier 2 placeholder ;;; WSF does not currently define this construct
+target: external:wsf:Agentic, Tier 2 placeholder, WSF does not currently define this construct
 mapping_type: novelty-record
 relationship: es-canonical-novelty
-confidence: 0.00 ;;; per FND-ES-AG-008 §1.3 ;;; Tier 2 Specialisation classification does NOT imply a confident WSF correspondence ;;; the mapping records the ES-side canonical definition for future WSF integration
+confidence: 0.00, per FND-ES-AG-008 §1.3, Tier 2 Specialisation classification does NOT imply a confident WSF correspondence, the mapping records the ES-side canonical definition for future WSF integration
 status: PROPOSED
 provenance:
   source: ES
@@ -28,26 +28,26 @@ provenance:
 governing_adr: ADR-ES-004
 governing_cr: CR-ES-004
 
-qualification: tier-2-specialisation ;;; ES-canonical novelty ;;; no direct WSF correspondence
+qualification: tier-2-specialisation, ES-canonical novelty, no direct WSF correspondence
 
-# Per FND-ES-AG-001-Grounding-Result ;;; ES specialises, does not duplicate.
-# Per ADR-ES-004 §13 ;;; Agentic is a semantic property (mode of operation)
-# rather than an Entity subtype ;;; the WSF Tier 2 classification applies
+# Per FND-ES-AG-001-Grounding-Result, ES specialises, does not duplicate.
+# Per ADR-ES-004 §13, Agentic is a semantic property (mode of operation)
+# rather than an Entity subtype, the WSF Tier 2 classification applies
 # to the Agentic construct as a whole (mode of operation), not to a
 # specific Entity class.
 
 boundary_record:
-  - agentic_vs_ai ;;; per ADR-ES-004 §10 ;;; Agentic != AI ;;; WSF does not equate AI with Agentic
-  - agentic_vs_automation ;;; per ADR-ES-004 §8 ;;; Agentic != Automation ;;; WSF does not equate Automation with Agentic
-  - agentic_vs_autonomy ;;; per ADR-ES-004 §9 ;;; Agentic != Autonomous ;;; Autonomy requires separate semantic grounding (ADR-ES-007)
+  - agentic_vs_ai, per ADR-ES-004 §10, Agentic != AI, WSF does not equate AI with Agentic
+  - agentic_vs_automation, per ADR-ES-004 §8, Agentic != Automation, WSF does not equate Automation with Agentic
+  - agentic_vs_autonomy, per ADR-ES-004 §9, Agentic != Autonomous, Autonomy requires separate semantic grounding (ADR-ES-007)
 
 exclusions:
-  - ES:CONCEPT:agent ;;; the Agent entity is mapped separately per CR-ES-004 §19 ;;; this mapping is for the Agentic mode of operation
-  - ES:CONCEPT:intent ;;; intent is mapped separately
-  - ES:CONCEPT:authority ;;; authority is mapped separately
-  - ES:CONCEPT:action ;;; action is mapped separately
-  - WSF modification ;;; per CR-ES-004 §3 ;;; only ES-canonical novelty is recorded
+  - ES:CONCEPT:agent, the Agent entity is mapped separately per CR-ES-004 §19, this mapping is for the Agentic mode of operation
+  - ES:CONCEPT:intent, intent is mapped separately
+  - ES:CONCEPT:authority, authority is mapped separately
+  - ES:CONCEPT:action, action is mapped separately
+  - WSF modification, per CR-ES-004 §3, only ES-canonical novelty is recorded
 
 held:
-  - future WSF Tier 2 integration ;;; governed by separate ADR/CR when WSF Tier 2 Agentic construct is added
-  - Agentic Value Stream specialization ;;; per CR-ES-004 §3 ;;; out of scope ;;; governed by prospective CR-ES-005
+  - future WSF Tier 2 integration, governed by separate ADR/CR when WSF Tier 2 Agentic construct is added
+  - Agentic Value Stream specialization, per CR-ES-004 §3, out of scope, governed by prospective CR-ES-005

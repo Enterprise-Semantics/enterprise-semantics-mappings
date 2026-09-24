@@ -24,7 +24,7 @@ governing_cr: CR-ES-003
 
 qualification: |
   This mapping establishes the downstream relationship without creating
-  catalog content. Per CR-ES-003 §23 ;;; the eventual catalog
+  catalog content. Per CR-ES-003 §23, the eventual catalog
   architecture may contain:
 
   Value Stream
@@ -35,21 +35,21 @@ qualification: |
       +-- Outcome
       +-- Stakeholder Value
 
-  ;;; but the actual catalog population requires a separate governed
+  - but the actual catalog population requires a separate governed
   catalog change. This mapping record is the boundary declaration, not
   the catalog population.
 
-  Per ADR-ES-003 §28 ;;; the expected semantic authority chain is:
+  Per ADR-ES-003 §28, the expected semantic authority chain is:
 
-  Semantic Concept ;;; Enterprise-Semantics ;;; OpenDEA
-  representation ;;; DEA Catalog ;;; Value Stream Instance
+  Semantic Concept, Enterprise-Semantics, OpenDEA
+  representation, DEA Catalog, Value Stream Instance
 
   Catalog classification, industry specialisation, architecture
   coordinates, and implementation views remain downstream concerns.
   Catalog entries do NOT redefine the foundational meaning of Value
   Stream.
 
-  Per CR-ES-003 §3 ;;; this CR does NOT create an industry Value Stream
+  Per CR-ES-003 §3, this CR does NOT create an industry Value Stream
   catalog or an enterprise-specific Value Stream catalog. Both are
   explicit out-of-scope items held for separate governed catalog
   changes.
