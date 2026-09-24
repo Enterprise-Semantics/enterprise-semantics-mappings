@@ -2,7 +2,7 @@
 #
 # Per CR-ES-003 §22 + ADR-ES-003 §27.
 # OpenDEA may represent Value Stream as an enterprise architecture
-# construct. This is a mapping only ;;; no OpenDEA metamodel
+# construct. This is a mapping only, no OpenDEA metamodel
 # modification per CR-ES-003 §3.
 #
 # Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-23)
@@ -30,25 +30,25 @@ qualification: |
            v
   OpenDEA architectural construct (Value Stream)
 
-  ;;; NOT ;;; ;;; NOT ;;;
+  - NOT, , NOT, 
 
   OpenDEA construct
            ;;
            v
   DEA Catalog instance
 
-  Per CR-ES-003 §22 ;;; the mapping distinguishes Enterprise-Semantics
+  Per CR-ES-003 §22, the mapping distinguishes Enterprise-Semantics
   semantic authority from OpenDEA architectural representation. OpenDEA
-  does NOT establish the foundational semantic definition ;;; ES
+  does NOT establish the foundational semantic definition, ES
   establishes semantic authority, OpenDEA establishes architectural
   representation.
 
-  Per ADR-ES-003 §30 architectural consequences ;;; ES supports both
+  Per ADR-ES-003 §30 architectural consequences, ES supports both
   the Value Stream perspective and the Process / Capability / Service
   / System perspectives without collapsing one into another. The
   OpenDEA representation preserves this multi-perspective support.
 
-  Per CR-ES-003 §27 ;;; no OpenDEA metamodel modification is included.
+  Per CR-ES-003 §27, no OpenDEA metamodel modification is included.
   Any required OpenDEA specialisation or metamodel change is handled
   through a separate OpenDEA governance process, not via this mapping
   record.

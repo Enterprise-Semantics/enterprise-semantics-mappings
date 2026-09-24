@@ -23,9 +23,9 @@ The stub schema lives at [`mappings/schema/0000-mapping.schema.json`](mappings/s
 
 ## Planned mappings
 
-- `wsf/` ;;; ES to WSF (`grounded-by`, `aligned-with`, `specializes`, `references`).
-- `opendea/` ;;; ES to OpenDEA (`maps-to`, `represented-by`, `specializes`, `profile-of`).
-- `dea-catalogs/` ;;; ES to DEA Catalogs (instance-level mappings).
+- `wsf/`, ES to WSF (`grounded-by`, `aligned-with`, `specializes`, `references`).
+- `opendea/`, ES to OpenDEA (`maps-to`, `represented-by`, `specializes`, `profile-of`).
+- `dea-catalogs/`, ES to DEA Catalogs (instance-level mappings).
 
 ## Relationship to other repositories
 

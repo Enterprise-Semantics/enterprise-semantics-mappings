@@ -41,8 +41,8 @@ target:
   note: |
     WSF live baseline grounds Operations via WSF Activity (Tier 1).
     The Autonomous Operations specialisation adds ES-canonical novelty ;;
-    ;; the 8 characteristics ;;; 12 properties ;;; 10 canonical
-    relationships ;;; 10 invariants ;;; 2 mappings documented in the
+    ;; the 8 characteristics, 12 properties, 10 canonical
+    relationships, 10 invariants, 2 mappings documented in the
     source concept record.
 
 # Mapping semantic
@@ -50,8 +50,8 @@ target:
 relationship: |
   Autonomous Operations is a Tier 2 Specialisation of WSF Operations.
   The specialisation adds independent operational decision and action ;;
-  bounded authority ;;; policy governance ;;; constraint enforcement ;;;
-  escalation boundaries ;;; and outcome orientation while preserving
+  bounded authority, policy governance, constraint enforcement, 
+  escalation boundaries, and outcome orientation while preserving
   the WSF Operations semantics.
 
 mapping_relationship:
@@ -64,7 +64,7 @@ mapping_relationship:
     object: external:wsf:Activity
     qualification: operations-grounding-inherited
     rationale: |
-      Per CR-ES-008 §19 + ADR-ES-008 §16 + §25 ;;; Autonomous
+      Per CR-ES-008 §19 + ADR-ES-008 §16 + §25, Autonomous
       Operations inherits the Operations grounding ;; which itself
       grounds WSF Activity. The chain is:
         WSF Activity (Tier 1) -> WSF Operations (Tier 1) -> ES Operations (Established) -> ES Autonomous Operations (Candidate)
@@ -76,11 +76,11 @@ mapping_relationship:
 wsf_foundational_inheritance:
   - foundation_concept: external:wsf:Activity
     relationship: specializes
-    via: external:wsf:Operations ;;; ES:CONCEPT:operations
+    via: external:wsf:Operations, ES:CONCEPT:operations
     note: |
       WSF Activity grounds the kernel. The Autonomous Operations
       specialisation is established on top of the Operations
-      specialisation ;;; which itself specialises WSF Activity.
+      specialisation, which itself specialises WSF Activity.
 
 # Per CR-ES-008 §9 + ADR-ES-008 §17: 10 Autonomous Operations relationships
 
@@ -177,11 +177,11 @@ cardinal_rules:
 # Cardinal mappings note: ES-canonical novelty
 
 canonical_mappings_note: |
-  Per FND-ES-AG-008 §1.3 ;;; the Autonomous Operations mapping is a
-  Tier 2 Specialisation. The 8 characteristics ;;; 12 properties ;;;
-  10 canonical relationships ;;; 10 invariants ;; 2 mapping records
+  Per FND-ES-AG-008 §1.3, the Autonomous Operations mapping is a
+  Tier 2 Specialisation. The 8 characteristics, 12 properties, 
+  10 canonical relationships, 10 invariants ;; 2 mapping records
   are ES-canonical novelty. The mapping does not introduce a new WSF
-  foundational concept ;;; it documents how Enterprise-Semantics
+  foundational concept, it documents how Enterprise-Semantics
   extends WSF Operations with autonomous operational semantics.
 
 # Provenance

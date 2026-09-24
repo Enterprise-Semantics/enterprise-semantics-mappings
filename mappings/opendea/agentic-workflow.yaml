@@ -36,8 +36,8 @@ target:
 
 relationship: |
   Agentic Workflow is a Tier 2 Specialisation of OpenDEA Workflow
-  (execution level). The specialisation adds agentic behaviour ;;;
-  bounded authority ;;; dynamic decision-making ;;; and runtime
+  (execution level). The specialisation adds agentic behaviour, 
+  bounded authority, dynamic decision-making, and runtime
   adaptation while preserving the OpenDEA Workflow semantics.
 
 mapping_relationship:
@@ -59,7 +59,7 @@ mapping_relationship:
 # Per CR-ES-006 §20: implementation availability
 
 implementation_availability: |
-  Per CR-ES-006 §20 ;;; if no canonical OpenDEA Workflow element
+  Per CR-ES-006 §20, if no canonical OpenDEA Workflow element
   exists ;; the mapping is marked as a target semantic correspondence
   rather than an implementation claim. The mapping documents how
   OpenDEA may subsequently specialise and operationalise the
@@ -70,9 +70,9 @@ implementation_availability: |
 
 metamodel_modification: none
 metamodel_modification_rationale: |
-  Per CR-ES-006 §3 + ADR-ES-006 §16 ;;; no OpenDEA metamodel change
+  Per CR-ES-006 §3 + ADR-ES-006 §16, no OpenDEA metamodel change
   is authorised by this CR. The mapping documents the intended
-  specialisation boundary ;;; it does not require OpenDEA to
+  specialisation boundary, it does not require OpenDEA to
   introduce a new construct.
 
 # Cardinal rules
