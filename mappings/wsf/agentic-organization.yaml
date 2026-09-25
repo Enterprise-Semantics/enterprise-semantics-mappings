@@ -1,0 +1,174 @@
+# Mapping: ES:CONCEPT:agentic-organization -> WSF Organization (Tier 2 Specialisation, ES-canonical novelty)
+#
+# Per CR-ES-020 section 22 + ADR-ES-020 section 19.
+# Per FND-ES-AG-008 section 1.3 ;; the WSF Tier 1 Organization
+# construct is the WSF grounding basis ;; the ES canonical
+# contribution is the agentic organizational-coordination
+# representation at the Organization boundary (an ES novelty that
+# WSF does not define).
+#
+# Per CR-ES-020 section 22 + ADR-ES-020 section 19 ;; this mapping
+# shall NOT modify the WSF. The WSF live baseline remains the
+# authoritative construct.
+#
+# FOUNDATIONAL DEPENDENCY GATE (per ADR-ES-020 section 2 + CR-ES-020
+# section 2): The parent Organization concept is NOT yet canonical in
+# Enterprise-Semantics as of 2026-09-25. Per user directive messages
+# 1552900782440058902 ("Proceed with 18") + 1552912455527571546
+# ("save, read, understand, implement"), this mapping is established
+# with the dependency documented rather than blocked.
+
+id: ES:MAP:agentic-organization-to-wsf
+canonical_name: Agentic Organization to WSF mapping
+status: candidate  # per CR-ES-020 section 22 ; gated on Organization canonical grounding
+mapping_type: specialisation
+source:
+  id: ES:CONCEPT:agentic-organization
+  governance: enterprise-semantics
+  cr: CR-ES-020
+  adr: ADR-ES-020
+target:
+  id: external:wsf:Organization
+  governance: World-Semantic-Foundation
+  note: |
+    WSF live baseline ;; Organization is a Tier 1 kernel reference.
+    Agentic Organization is a Tier 2 Specialisation that adds
+    agentic organizational-coordination representation to the WSF
+    Organization construct.
+
+relationship: specialises
+
+wsf_classification:
+  tier: 2
+  basis: WSF Tier 1 Organization
+  novelty: agentic-organizational-coordination-representation
+  per: FND-ES-AG-008 section 1.3
+
+semantic_authority:
+  source: enterprise-semantics
+  per: CR-ES-020 section 22 + ADR-ES-020 section 19
+  no_modification: |
+    The WSF metamodel is NOT modified by this mapping. The WSF live
+    baseline remains authoritative. ES specialises, not redefines.
+
+boundary_assertions:
+  - id: AORG-MAP-BND-001
+    description: |
+      Agentic Organization is NOT WSF Agentic Organization (the
+      WSF does not define an Agentic Organization construct). The
+      ES canonical concept is a Tier 2 Specialisation that adds
+      agentic organizational-coordination to the WSF Organization.
+  - id: AORG-MAP-BND-002
+    description: |
+      Agentic Organization is NOT Agent ;; per ADR-ES-020 section 6
+      + AORG-NEG-001.
+  - id: AORG-MAP-BND-003
+    description: |
+      Agentic Organization is NOT Agentic Workflow ;; per
+      ADR-ES-020 section 11 + AORG-NEG-002.
+  - id: AORG-MAP-BND-004
+    description: |
+      Agentic Organization is NOT Agentic Operations ;; per
+      ADR-ES-020 section 7 + AORG-NEG-003.
+  - id: AORG-MAP-BND-005
+    description: |
+      Agentic Organization is NOT Agentic Enterprise ;; per
+      ADR-ES-020 section 5 + AORG-NEG-004.
+  - id: AORG-MAP-BND-006
+    description: |
+      Agentic Organization is NOT Agentic Culture ;; per
+      ADR-ES-020 section 14 + AORG-NEG-005.
+  - id: AORG-MAP-BND-007
+    description: |
+      AI is NOT a required implementation ;; per ADR-ES-020
+      section 9 + AORG-NEG-006.
+  - id: AORG-MAP-BND-008
+    description: |
+      Automation is NOT sufficient ;; per ADR-ES-020 section 10
+      + AORG-NEG-008.
+  - id: AORG-MAP-BND-009
+    description: |
+      Human participation remains valid ;; per ADR-ES-020
+      section 11 + AORG-CON-014.
+  - id: AORG-MAP-BND-010
+    description: |
+      Foundational Organization dependency documented ;; per
+      ADR-ES-020 section 2 + CR-ES-020 section 2. The parent
+      Organization concept is NOT yet canonical in
+      Enterprise-Semantics. Per user directive messages
+      1552900782440058902 + 1552912455527571546 the dependency is
+      documented rather than blocking implementation.
+      ADR-ES-021 (Organization canonical grounding) remains the
+      next-foundational tranche.
+
+mapping_details:
+  specialisation_principle: |
+    Agentic Organization specialises WSF Organization ;; the
+    agentic organizational-coordination is the ES novelty ;; the
+    WSF Organization semantics are preserved (per CR-ES-020
+    section 3 inheritance requirements).
+  specialisation_pattern:
+    - name: material-agentic-organizational-behaviour
+      description: |
+        Agentic material behaviour must affect a substantive
+        aspect of organizational decision-making, coordination,
+        execution, adaptation, delegation, exception management,
+        or organizational response ;; per ADR-ES-020 section 3 +
+        CR-ES-020 section 8.
+    - name: bounded-authority
+      description: |
+        Agentic organizational behaviour operates within
+        explicitly defined authority, policy, governance,
+        accountability, and escalation boundaries ;; per
+        ADR-ES-020 section 13.
+    - name: human-intervention
+      description: |
+        Human organizational participation patterns (human
+        decision-makers, supervisors, escalation, human-in/on/over
+        -the-loop, delegated agent participation, mixed
+        human/agent coordination) are first-class. Not exclusions
+        ;; per ADR-ES-020 section 11 + CR-ES-020 section 16.
+    - name: ai-independence
+      description: |
+        AI is not required for agentic organizational behaviour
+        ;; per ADR-ES-020 section 9 + CR-ES-020 section 14 +
+        AORG-CON-018 + AORG-NEG-006.
+    - name: automation-independence
+      description: |
+        Automation is not sufficient for agentic organizational
+        behaviour ;; per ADR-ES-020 section 10 + CR-ES-020
+        section 15 + AORG-CON-019 + AORG-NEG-008.
+    - name: agentic-autonomous-orthogonality
+      description: |
+        Agentic and Autonomous are independent semantic
+        dimensions ;; per ADR-ES-020 section 8 + AORG-NEG-013.
+
+governance: enterprise-semantics
+provenance:
+  - source: CR-ES-020 section 22
+    note: WSF mapping established without modifying WSF.
+  - source: ADR-ES-020 section 19
+    note: |
+      Establishes the architectural hierarchy ;;
+      (WSF Organization -> ES Agentic Organization -> OpenDEA
+      specialisation).
+  - source: FND-ES-AG-008 section 1.3
+    note: |
+      WSF Tier 1 / Tier 2 grounding boundary ;; Agentic
+      Organization is Tier 2 Specialisation (ES-canonical novelty).
+  - source: ADR-ES-020 section 20
+    note: |
+      Organization introduces a new semantic branch distinct from
+      Product/Service/Offering ;; Agentic and Autonomous remain
+      orthogonal semantic dimensions.
+  - source: USER-DIRECTIVE-1552900782440058902
+    note: "User explicit override of Path X BLOCK ;; dependency documented per CR-ES-020 section 2."
+  - source: USER-DIRECTIVE-1552912455527571546
+    note: "Paired tranche filing + implementation directive."
+
+cardinal_rules:
+  - author: Emmanuel A. Otchere
+  - d004_dash_rule: "0 en-dash (U+2013), 0 em-dash (U+2014), 0 horizontal-ellipsis divider (U+2E3B), 0 arrow glyph"
+  - vendor_specific_embargo: "0 references; no vendor-specific material from embargoed sources"
+  - no_wsF_modification: WSF metamodel not modified
+  - no_openDea_modification: OpenDEA metamodel not modified
