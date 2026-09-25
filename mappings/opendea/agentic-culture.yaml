@@ -1,0 +1,65 @@
+# Mapping: ES:CONCEPT:agentic-culture -> OpenDEA Agentic Culture ; Agentic Culture semantic grounding
+#
+# Per CR-ES-023 section 9 + ADR-ES-023. OpenDEA correspondence for
+# the Agentic Culture specialization.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:OpenDEA:agentic-culture
+canonical_name: OpenDEA Agentic Culture Correspondence
+status: established
+version: 2.1.0
+date: 2026-09-25
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+concept: ES:CONCEPT:agentic-culture
+
+source_concept:
+  id: ES:CONCEPT:agentic-culture
+  canonical_name: Agentic Culture
+  governance: enterprise-semantics
+
+target_concept:
+  id: opendea:AgenticCulture
+  canonical_name: OpenDEA Agentic Culture
+  governance: OpenDEA
+
+correspondence:
+  - predicate: specializes
+    target_predicate: specialization-of
+    note: |
+      OpenDEA Agentic Culture specialization-of OpenDEA Culture
+      correspondence per CR-ES-023 section 9 + ADR-ES-023 section 1.
+  - predicate: supports
+    target_predicate: supports
+    note: |
+      OpenDEA Agentic Culture supports OpenDEA Agentic Organization
+      per CR-ES-023 section 9 + ADR-ES-023 section 7.
+  - predicate: shapes
+    target_predicate: shapes
+    note: |
+      OpenDEA Agentic Culture shapes OpenDEA Delegation/Authority/
+      Accountability/Collaboration/Decision Practice per
+      CR-ES-023 section 9 + ADR-ES-023 section 7.
+
+boundary_assertions:
+  - id: ACULT-MAP-OpenDEA-BND-001
+    description: Agentic Culture is NOT AI Culture per OpenDEA correspondence + ADR-ES-023 section 4 + section 12.
+  - id: ACULT-MAP-OpenDEA-BND-002
+    description: Agentic Culture is NOT Automated Culture per OpenDEA correspondence + ADR-ES-023 section 4 + section 12.
+  - id: ACULT-MAP-OpenDEA-BND-003
+    description: Agentic Culture is NOT Agentic Organization per OpenDEA correspondence + ADR-ES-023 section 8.
+  - id: ACULT-MAP-OpenDEA-BND-004
+    description: Agentic Culture is NOT Agentic Enterprise per OpenDEA correspondence + ADR-ES-023 section 9.
+  - id: ACULT-MAP-OpenDEA-BND-005
+    description: Agentic Culture is NOT Autonomous Culture per OpenDEA correspondence + ADR-ES-023 section 10 + ADR-ES-022 section 5.
+
+provenance:
+  source:
+    - ADR-ES-023
+    - CR-ES-023
+    - ADR-ES-026
+  decision:
+    - ADR-ES-023
+  implementation:
+    - CR-ES-023
