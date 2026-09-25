@@ -1,0 +1,69 @@
+# Mapping: ES:CONCEPT:culture -> OpenDEA Culture ; Culture semantic grounding
+#
+# Per CR-ES-026 section 8 ; OpenDEA correspondence for the Culture
+# foundational concept.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:OpenDEA:culture
+canonical_name: OpenDEA Culture Correspondence
+status: established
+version: 2.4.0
+date: 2026-09-25
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+concept: ES:CONCEPT:culture
+
+source_concept:
+  id: ES:CONCEPT:culture
+  canonical_name: Culture
+  governance: enterprise-semantics
+
+target_concept:
+  id: opendea:Culture
+  canonical_name: OpenDEA Culture
+  governance: OpenDEA
+
+correspondence:
+  - predicate: specializes
+    target_predicate: specializes
+    note: |
+      OpenDEA Culture specialization-of OpenDEA Entity
+      correspondence per CR-ES-026 section 8 + ADR-ES-026
+      section 1.
+  - predicate: supports
+    target_predicate: supports
+    note: |
+      OpenDEA Culture supports OpenDEA Organization per
+      CR-ES-026 section 5 + ADR-ES-026 section 5.
+  - predicate: shapes
+    target_predicate: shapes
+    note: |
+      OpenDEA Culture shapes OpenDEA Governance/Policy/Authority
+      per CR-ES-026 section 5 + ADR-ES-026 section 5.
+
+boundary_assertions:
+  - id: CULT-MAP-OpenDEA-BND-001
+    description: Culture is NOT Organization per OpenDEA correspondence + Recon-ES-003 + ADR-ES-026 section 6.
+  - id: CULT-MAP-OpenDEA-BND-002
+    description: Culture is NOT Governance per OpenDEA correspondence + Recon-ES-003 + ADR-ES-026 section 6.
+  - id: CULT-MAP-OpenDEA-BND-003
+    description: Culture is NOT Policy per OpenDEA correspondence + Recon-ES-003 + ADR-ES-026 section 6.
+  - id: CULT-MAP-OpenDEA-BND-004
+    description: Culture is NOT Process per OpenDEA correspondence + Recon-ES-003 + ADR-ES-026 section 6.
+  - id: CULT-MAP-OpenDEA-BND-005
+    description: Culture is NOT Capability per OpenDEA correspondence + Recon-ES-003 + ADR-ES-026 section 6.
+  - id: CULT-MAP-OpenDEA-BND-006
+    description: Culture is NOT IT system per OpenDEA correspondence + ADR-ES-026 section 6.
+  - id: CULT-MAP-OpenDEA-BND-007
+    description: Culture is NOT Agentic Culture per OpenDEA correspondence + ADR-ES-022 section 5.
+
+provenance:
+  source:
+    - ADR-ES-026
+    - CR-ES-026
+    - Recon-ES-003
+  decision:
+    - ADR-ES-026
+  implementation:
+    - CR-ES-026
