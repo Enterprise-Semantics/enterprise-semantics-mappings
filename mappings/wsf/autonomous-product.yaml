@@ -1,0 +1,166 @@
+# Mapping: ES:CONCEPT:autonomous-product -> WSF Product (Tier 2 Specialisation, ES-canonical novelty)
+#
+# Per CR-ES-017 §14 + ADR-ES-017 §15.
+# Per FND-ES-AG-008 §1.3 ;; Tier 2 Specialisation: the WSF Tier 1
+# Product construct is the WSF grounding basis ;; the ES canonical
+# contribution is the autonomous material-progression representation
+# (an ES novelty that WSF does not define).
+#
+# Per CR-ES-017 §14 + ADR-ES-017 §15 ;; this mapping shall NOT modify
+# the WSF. The WSF live baseline remains the authoritative construct.
+
+id: ES:MAP:autonomous-product-to-wsf
+canonical_name: Autonomous Product to WSF mapping
+status: candidate  # per CR-ES-017 §14
+mapping_type: specialisation
+source:
+  id: ES:CONCEPT:autonomous-product
+  governance: enterprise-semantics
+  cr: CR-ES-017
+  adr: ADR-ES-017
+target:
+  id: external:wsf:Product
+  governance: World-Semantic-Foundation
+  note: |
+    WSF live baseline ;; Product is a Tier 1 kernel reference.
+    Autonomous Product is a Tier 2 Specialisation that adds autonomous
+    material-progression representation to the WSF Product construct.
+
+relationship: specialises
+
+wsf_classification:
+  tier: 2
+  basis: WSF Tier 1 Product
+  novelty: autonomous-material-progression-representation
+  per: FND-ES-AG-008 §1.3
+
+semantic_authority:
+  source: enterprise-semantics
+  per: CR-ES-017 §14 + ADR-ES-017 §15
+  no_modification: |
+    The WSF metamodel is NOT modified by this mapping. The WSF live
+    baseline remains authoritative. ES specialises, not redefines.
+
+boundary_assertions:
+  - id: APROD-AUTO-MAP-BND-001
+    description: |
+      Autonomous Product is NOT WSF Autonomous Product (the WSF does
+      not define an Autonomous Product construct). The ES canonical
+      concept is a Tier 2 Specialisation that adds autonomous
+      material-progression to the WSF Product.
+  - id: APROD-AUTO-MAP-BND-002
+    description: |
+      AI is NOT a required implementation ;; per ADR-ES-017 §9 +
+      CR-ES-017 §10 + APROD-AUTO-NEG-006.
+  - id: APROD-AUTO-MAP-BND-003
+    description: |
+      Automation is NOT sufficient ;; per ADR-ES-017 §10 + CR-ES-017
+      §10 + APROD-AUTO-NEG-008.
+  - id: APROD-AUTO-MAP-BND-004
+    description: |
+      Autonomous Product is NOT Agentic Product ;; per ADR-ES-017 §2
+      + §3 + §8 + APROD-AUTO-NEG-001.
+  - id: APROD-AUTO-MAP-BND-005
+    description: |
+      Autonomous Product is NOT Autonomous Service ;; per ADR-ES-017
+      §11 + APROD-AUTO-NEG-002.
+  - id: APROD-AUTO-MAP-BND-006
+    description: |
+      Autonomous Product is NOT Autonomous Capability ;; per ADR-ES-017
+      §11 + APROD-AUTO-NEG-003.
+  - id: APROD-AUTO-MAP-BND-007
+    description: |
+      Autonomous Product is NOT Autonomous Operations ;; per ADR-ES-017
+      §11 + APROD-AUTO-NEG-004.
+  - id: APROD-AUTO-MAP-BND-008
+    description: |
+      Autonomous Product is NOT Autonomous Value Stream ;; per
+      ADR-ES-017 §11 + APROD-AUTO-NEG-005.
+  - id: APROD-AUTO-MAP-BND-009
+    description: |
+      Autonomous Product is NOT Autonomous Enterprise ;; per
+      ADR-ES-017 §13 + APROD-AUTO-NEG-015.
+  - id: APROD-AUTO-MAP-BND-010
+    description: |
+      Human participation remains compatible ;; per ADR-ES-017 §6 +
+      CR-ES-017 §10 + APROD-AUTO-CON-014.
+  - id: APROD-AUTO-MAP-BND-011
+    description: |
+      Autonomy must be bounded ;; per ADR-ES-017 §4 ;; not unrestricted
+      operation. Authority + Policy + Constraints + Governance
+      fences required.
+
+mapping_details:
+  specialisation_principle: |
+    Autonomous Product specialises WSF Product ;; the autonomous
+    material-progression is the ES novelty ;; the WSF Product
+    semantics are preserved (per CR-ES-017 §2 inheritance
+    requirements).
+  autonomy_anchor:
+    - subject: ES:CONCEPT:authority
+      subject_provenance: CR-ES-001 + ADR-ES-001
+      note: |
+        Authority is inherited from CR-ES-001 ;; the autonomous
+        progression anchor reuses the existing Authority semantic-
+        property overlay.
+  specialisation_pattern:
+    - name: material-autonomous-progression
+      description: |
+        Autonomous material-progression must affect a substantive
+        aspect of the product's realization or adaptation ;; per
+        ADR-ES-017 §5 + CR-ES-017 §8.
+    - name: mixed-realization
+      description: |
+        Mixed conventional, automated, human, and autonomous
+        realization is explicitly permitted ;; per ADR-ES-017 §6 +
+        §13.
+    - name: bounded-authority
+      description: |
+        Autonomous progression operates within explicitly defined
+        authority, policy, constraints, and governance boundaries ;;
+        per ADR-ES-017 §4 + §17.
+    - name: human-participation-compatible
+      description: |
+        Human participation patterns (human-in/on/over-the-loop)
+        remain first-class ;; per ADR-ES-017 §6 + CR-ES-017 §10.
+    - name: ai-independence
+      description: |
+        AI is not required for autonomous behavior ;; per ADR-ES-017
+        §9 + CR-ES-017 §10 + APROD-AUTO-CON-015 + APROD-AUTO-NEG-006.
+    - name: automation-independence
+      description: |
+        Automation is not sufficient for autonomous behavior ;; per
+        ADR-ES-017 §10 + CR-ES-017 §10 + APROD-AUTO-CON-016 +
+        APROD-AUTO-NEG-008.
+    - name: agentic-autonomous-orthogonality
+      description: |
+        Agentic and Autonomous are independent semantic dimensions ;;
+        per ADR-ES-017 §2 + §3 + §8 + CR-ES-017 §7 +
+        APROD-AUTO-CON-020 + APROD-AUTO-NEG-001.
+
+governance: enterprise-semantics
+provenance:
+  - source: CR-ES-017 §14
+    note: WSF mapping established without modifying WSF.
+  - source: ADR-ES-017 §15
+    note: |
+      Establishes the architectural hierarchy ;;
+      (WSF Product -> ES Autonomous Product -> OpenDEA
+      specialisation).
+  - source: FND-ES-AG-008 §1.3
+    note: |
+      WSF Tier 1 / Tier 2 grounding boundary ;; Autonomous Product is
+      Tier 2 Specialisation (ES-canonical novelty).
+  - source: ADR-ES-017 §3 + §22 implicit
+    note: |
+      Capability -> Product -> Service progression ;; Agentic and
+      Autonomous remain orthogonal semantic dimensions ;; the
+      Product 2x2 matrix is now structurally complete (Agentic v1.5.0
+      + Autonomous v1.6.0).
+
+cardinal_rules:
+  - author: Emmanuel A. Otchere
+  - d004_dash_rule: "0 en-dash (U+2013), 0 em-dash (U+2014), 0 horizontal-ellipsis divider (U+2E3B), 0 arrow glyph"
+  - vendor_specific_embargo: "0 references; no vendor-specific material from embargoed sources"
+  - no_wsF_modification: WSF metamodel not modified
+  - no_openDea_modification: OpenDEA metamodel not modified

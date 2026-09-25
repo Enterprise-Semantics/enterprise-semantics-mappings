@@ -1,0 +1,120 @@
+# Mapping: ES:CONCEPT:autonomous-product -> OpenDEA Product (Specialisation)
+#
+# Per CR-ES-017 §14 + ADR-ES-017 §15.
+# Per FND-ES-AG-008 §1.3 ;; the OpenDEA Product construct is the
+# OpenDEA grounding basis ;; the ES canonical contribution is the
+# autonomous material-progression representation (an ES novelty that
+# OpenDEA does not define).
+#
+# Per CR-ES-017 §14 + ADR-ES-017 §15 ;; this mapping shall NOT modify
+# the OpenDEA metamodel. The OpenDEA live baseline remains
+# authoritative.
+
+id: ES:MAP:autonomous-product-to-opendea
+canonical_name: Autonomous Product to OpenDEA mapping
+status: candidate  # per CR-ES-017 §14
+mapping_type: specialisation
+source:
+  id: ES:CONCEPT:autonomous-product
+  governance: enterprise-semantics
+  cr: CR-ES-017
+  adr: ADR-ES-017
+target:
+  id: external:opendea:Product
+  governance: opendea
+  note: |
+    OpenDEA live baseline ;; Product is an OpenDEA architectural
+    reference. Autonomous Product is a Specialisation that adds
+    autonomous material-progression representation to the OpenDEA
+    Product construct.
+
+relationship: specialises
+
+opendea_classification:
+  classification: specialisation
+  basis: OpenDEA Product
+  novelty: autonomous-material-progression-representation
+  per: CR-ES-017 §14 + ADR-ES-017 §15
+
+semantic_authority:
+  source: enterprise-semantics
+  per: CR-ES-017 §14 + ADR-ES-017 §15
+  no_modification: |
+    The OpenDEA metamodel is NOT modified by this mapping. The
+    OpenDEA live baseline remains authoritative. ES specialises,
+    not redefines.
+
+boundary_assertions:
+  - id: APROD-AUTO-OPENDEA-BND-001
+    description: |
+      Autonomous Product is NOT OpenDEA Autonomous Product
+      (OpenDEA does not define an Autonomous Product construct).
+      The ES canonical concept is a Specialisation that adds
+      autonomous material-progression to the OpenDEA Product.
+  - id: APROD-AUTO-OPENDEA-BND-002
+    description: |
+      AI is NOT a required implementation ;; per ADR-ES-017 §9 +
+      CR-ES-017 §10.
+  - id: APROD-AUTO-OPENDEA-BND-003
+    description: |
+      Automation is NOT sufficient ;; per ADR-ES-017 §10 + CR-ES-017
+      §10.
+  - id: APROD-AUTO-OPENDEA-BND-004
+    description: |
+      Material autonomous progression required ;; per ADR-ES-017 §5
+      + CR-ES-017 §8.
+  - id: APROD-AUTO-OPENDEA-BND-005
+    description: |
+      Human participation remains compatible ;; per ADR-ES-017 §6 +
+      CR-ES-017 §10 + APROD-AUTO-CON-014.
+
+mapping_details:
+  specialisation_principle: |
+    Autonomous Product specialises OpenDEA Product ;; the autonomous
+    material-progression is the ES novelty ;; the OpenDEA Product
+    semantics are preserved.
+  specialisation_pattern:
+    - name: material-autonomous-progression
+      description: |
+        Autonomous material-progression must affect a substantive
+        aspect of the product's realization or adaptation ;; per
+        ADR-ES-017 §5 + CR-ES-017 §8.
+    - name: bounded-authority
+      description: |
+        Autonomous progression operates within explicitly defined
+        authority, policy, constraints, and governance boundaries ;;
+        per ADR-ES-017 §4.
+    - name: ai-independence
+      description: |
+        AI is not required for autonomous behavior ;; per ADR-ES-017
+        §9 + CR-ES-017 §10.
+    - name: automation-independence
+      description: |
+        Automation is not sufficient for autonomous behavior ;; per
+        ADR-ES-017 §10 + CR-ES-017 §10.
+    - name: agentic-autonomous-orthogonality
+      description: |
+        Agentic and Autonomous are independent semantic dimensions ;;
+        per ADR-ES-017 §2 + §3 + §8.
+
+governance: enterprise-semantics
+provenance:
+  - source: CR-ES-017 §14
+    note: OpenDEA mapping established without modifying OpenDEA.
+  - source: ADR-ES-017 §15
+    note: |
+      Establishes the architectural hierarchy ;;
+      (WSF Product -> ES Autonomous Product -> OpenDEA
+      specialisation).
+  - source: ADR-ES-017 §3 + §22 implicit
+    note: |
+      Capability -> Product -> Service progression ;; Agentic and
+      Autonomous remain orthogonal semantic dimensions ;; the
+      Product 2x2 matrix is now structurally complete.
+
+cardinal_rules:
+  - author: Emmanuel A. Otchere
+  - d004_dash_rule: "0 en-dash (U+2013), 0 em-dash (U+2014), 0 horizontal-ellipsis divider (U+2E3B), 0 arrow glyph"
+  - vendor_specific_embargo: "0 references; no vendor-specific material from embargoed sources"
+  - no_wsF_modification: WSF metamodel not modified
+  - no_openDea_modification: OpenDEA metamodel not modified
