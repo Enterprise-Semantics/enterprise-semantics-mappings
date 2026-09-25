@@ -1,0 +1,81 @@
+# Mapping: ES:CONCEPT:autonomous-organization -> OpenDEA Autonomous Organization ; Autonomous Organization semantic grounding
+#
+# Per CR-ES-021 section 10 ; OpenDEA correspondence for the
+# Autonomous Organization specialization.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:OpenDEA:autonomous-organization
+canonical_name: OpenDEA Autonomous Organization Correspondence
+status: established
+version: 2.0.0
+date: 2026-09-25
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+concept: ES:CONCEPT:autonomous-organization
+
+source_concept:
+  id: ES:CONCEPT:autonomous-organization
+  canonical_name: Autonomous Organization
+  governance: enterprise-semantics
+
+target_concept:
+  id: opendea:AutonomousOrganization
+  canonical_name: OpenDEA Autonomous Organization
+  governance: OpenDEA
+
+correspondence:
+  - predicate: specialization-of
+    target_predicate: specialization-of
+    note: |
+      OpenDEA Autonomous Organization specialization-of OpenDEA
+      Organization correspondence per CR-ES-021 section 10.
+  - predicate: operates-within
+    target_predicate: operates-within
+    note: |
+      OpenDEA Autonomous Organization operates-within Authority
+      per CR-ES-021 section 10.
+  - predicate: governed-by
+    target_predicate: governed-by
+    note: |
+      OpenDEA Autonomous Organization governed-by Policy per
+      CR-ES-021 section 10.
+  - predicate: constrained-by
+    target_predicate: constrained-by
+    note: |
+      OpenDEA Autonomous Organization constrained-by Constraint
+      per CR-ES-021 section 10.
+  - predicate: pursues
+    target_predicate: pursues
+    note: |
+      OpenDEA Autonomous Organization pursues Organizational
+      Objective per CR-ES-021 section 10.
+  - predicate: produces
+    target_predicate: produces
+    note: |
+      OpenDEA Autonomous Organization produces Organizational
+      Outcome per CR-ES-021 section 10.
+
+boundary_assertions:
+  - id: AORG-AUTO-MAP-OpenDEA-BND-001
+    description: Autonomous Organization is NOT Autonomous Enterprise per OpenDEA correspondence + ADR-ES-021 section 10.
+  - id: AORG-AUTO-MAP-OpenDEA-BND-002
+    description: Autonomous Organization is NOT Autonomous Operations per OpenDEA correspondence + ADR-ES-021 section 10.
+  - id: AORG-AUTO-MAP-OpenDEA-BND-003
+    description: Autonomous Organization is NOT Autonomous Service per OpenDEA correspondence + ADR-ES-021 section 10.
+  - id: AORG-AUTO-MAP-OpenDEA-BND-004
+    description: Autonomous Organization is NOT Autonomous Product per OpenDEA correspondence + ADR-ES-021 section 10.
+  - id: AORG-AUTO-MAP-OpenDEA-BND-005
+    description: Autonomous Organization is NOT Autonomous Offering per OpenDEA correspondence + ADR-ES-021 section 10.
+  - id: AORG-AUTO-MAP-OpenDEA-BND-006
+    description: Autonomous Organization is NOT Agentic Organization per OpenDEA correspondence + ADR-ES-021 section 3.
+
+provenance:
+  source:
+    - ADR-ES-021
+    - CR-ES-021
+    - ADR-ES-022
+  decision:
+    - ADR-ES-021
+  implementation:
+    - CR-ES-021

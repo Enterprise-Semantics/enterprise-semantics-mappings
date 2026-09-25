@@ -1,0 +1,83 @@
+# Mapping: ES:CONCEPT:autonomous-organization -> WSF Autonomous Organization ; Autonomous Organization semantic grounding
+#
+# Per CR-ES-021 section 10 ; WSF correspondence for the Autonomous
+# Organization specialization. Parent Organization concept is
+# canonical on the docs/cr-es-022-vs-a-organization-concepts branch
+# (per ADR-ES-022 + CR-ES-022 Accepted).
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:WSF:autonomous-organization
+canonical_name: WSF Autonomous Organization Correspondence
+status: established
+version: 2.0.0
+date: 2026-09-25
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+concept: ES:CONCEPT:autonomous-organization
+
+source_concept:
+  id: ES:CONCEPT:autonomous-organization
+  canonical_name: Autonomous Organization
+  governance: enterprise-semantics
+
+target_concept:
+  id: WSF:AutonomousOrganization
+  canonical_name: WSF Autonomous Organization
+  governance: WSF
+
+correspondence:
+  - predicate: specialization-of
+    target_predicate: specialization-of
+    note: |
+      WSF Autonomous Organization specialization-of WSF Organization
+      correspondence per CR-ES-021 section 10.
+  - predicate: operates-within
+    target_predicate: operates-within
+    note: |
+      WSF Autonomous Organization operates-within Authority per
+      CR-ES-021 section 10 + ADR-ES-021 section 9.
+  - predicate: governed-by
+    target_predicate: governed-by
+    note: |
+      WSF Autonomous Organization governed-by Policy per CR-ES-021
+      section 10 + ADR-ES-021 section 9.
+  - predicate: constrained-by
+    target_predicate: constrained-by
+    note: |
+      WSF Autonomous Organization constrained-by Constraint per
+      CR-ES-021 section 10 + ADR-ES-021 section 9.
+  - predicate: pursues
+    target_predicate: pursues
+    note: |
+      WSF Autonomous Organization pursues Organizational Objective
+      per CR-ES-021 section 10 + ADR-ES-021 section 9.
+  - predicate: produces
+    target_predicate: produces
+    note: |
+      WSF Autonomous Organization produces Organizational Outcome
+      per CR-ES-021 section 10 + ADR-ES-021 section 9.
+
+boundary_assertions:
+  - id: AORG-AUTO-MAP-WSF-BND-001
+    description: Autonomous Organization is NOT Autonomous Enterprise per WSF correspondence + ADR-ES-021 section 10.
+  - id: AORG-AUTO-MAP-WSF-BND-002
+    description: Autonomous Organization is NOT Autonomous Operations per WSF correspondence + ADR-ES-021 section 10.
+  - id: AORG-AUTO-MAP-WSF-BND-003
+    description: Autonomous Organization is NOT Autonomous Service per WSF correspondence + ADR-ES-021 section 10.
+  - id: AORG-AUTO-MAP-WSF-BND-004
+    description: Autonomous Organization is NOT Autonomous Product per WSF correspondence + ADR-ES-021 section 10.
+  - id: AORG-AUTO-MAP-WSF-BND-005
+    description: Autonomous Organization is NOT Autonomous Offering per WSF correspondence + ADR-ES-021 section 10.
+  - id: AORG-AUTO-MAP-WSF-BND-006
+    description: Autonomous Organization is NOT Agentic Organization per WSF correspondence + ADR-ES-021 section 3.
+
+provenance:
+  source:
+    - ADR-ES-021
+    - CR-ES-021
+    - ADR-ES-022
+  decision:
+    - ADR-ES-021
+  implementation:
+    - CR-ES-021
