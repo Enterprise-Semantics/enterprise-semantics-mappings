@@ -1,0 +1,74 @@
+# Mapping: ES:CONCEPT:offering -> WSF Offering ; Offering canonical grounding
+#
+# Per CR-ES-021 section 14 ; WSF correspondence for the canonical
+# Offering concept.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:WSF:offering
+canonical_name: WSF Offering Correspondence
+status: established
+version: 1.8.1
+date: 2026-09-25
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+concept: ES:CONCEPT:offering
+
+source_concept:
+  id: ES:CONCEPT:offering
+  canonical_name: Offering
+  governance: enterprise-semantics
+
+target_concept:
+  id: WSF:Offering
+  canonical_name: WSF Offering
+  governance: WSF
+
+correspondence:
+  - predicate: addresses
+    target_predicate: addresses
+    note: |
+      WSF Offering correspondence as documented in CR-ES-021
+      section 14. Offering canonical grounding established per
+      ADR-ES-021 section 1.
+  - predicate: composes
+    target_predicate: composes
+    note: |
+      WSF Offering composes Product + Service + Capability. Per
+      CR-ES-021 section 14 + ADR-ES-021 section 4.
+  - predicate: exercises
+    target_predicate: exercises
+    note: |
+      WSF Offering exercises Capability. Per CR-ES-021 section 14.
+  - predicate: produces
+    target_predicate: produces
+    note: |
+      WSF Offering produces Customer Outcome. Per CR-ES-021
+      section 14.
+  - predicate: realizes
+    target_predicate: realizes
+    note: |
+      WSF Offering realizes Value. Per CR-ES-021 section 14.
+
+boundary_assertions:
+  - id: OFFR-MAP-WSF-BND-001
+    description: Offering is NOT a Product per WSF correspondence.
+  - id: OFFR-MAP-WSF-BND-002
+    description: Offering is NOT a Service per WSF correspondence.
+  - id: OFFR-MAP-WSF-BND-003
+    description: Offering is NOT a Capability per WSF correspondence.
+  - id: OFFR-MAP-WSF-BND-004
+    description: Offering is NOT a Value Stream per WSF correspondence.
+  - id: OFFR-MAP-WSF-BND-005
+    description: Offering is NOT an Enterprise per WSF correspondence.
+  - id: OFFR-MAP-WSF-BND-006
+    description: Offering is NOT a Customer Need per WSF correspondence.
+
+provenance:
+  source:
+    - ADR-ES-021
+    - CR-ES-021
+  decision:
+    - ADR-ES-021
+  implementation:
+    - CR-ES-021

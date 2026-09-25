@@ -1,0 +1,75 @@
+# Mapping: ES:CONCEPT:offering -> OpenDEA Offering ; Offering canonical grounding
+#
+# Per CR-ES-021 section 14 ; OpenDEA correspondence for the
+# canonical Offering concept.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:OpenDEA:offering
+canonical_name: OpenDEA Offering Correspondence
+status: established
+version: 1.8.1
+date: 2026-09-25
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+concept: ES:CONCEPT:offering
+
+source_concept:
+  id: ES:CONCEPT:offering
+  canonical_name: Offering
+  governance: enterprise-semantics
+
+target_concept:
+  id: opendea:Offering
+  canonical_name: OpenDEA Offering
+  governance: OpenDEA
+
+correspondence:
+  - predicate: addresses
+    target_predicate: addresses
+    note: |
+      OpenDEA Offering correspondence as documented in CR-ES-021
+      section 14. Offering canonical grounding established per
+      ADR-ES-021 section 1.
+  - predicate: composes
+    target_predicate: composes
+    note: |
+      OpenDEA Offering composes Product + Service + Capability.
+      Per CR-ES-021 section 14.
+  - predicate: exercises
+    target_predicate: exercises
+    note: |
+      OpenDEA Offering exercises Capability. Per CR-ES-021
+      section 14.
+  - predicate: produces
+    target_predicate: produces
+    note: |
+      OpenDEA Offering produces Customer Outcome. Per CR-ES-021
+      section 14.
+  - predicate: realizes
+    target_predicate: realizes
+    note: |
+      OpenDEA Offering realizes Value. Per CR-ES-021 section 14.
+
+boundary_assertions:
+  - id: OFFR-MAP-OpenDEA-BND-001
+    description: Offering is NOT a Product per OpenDEA correspondence.
+  - id: OFFR-MAP-OpenDEA-BND-002
+    description: Offering is NOT a Service per OpenDEA correspondence.
+  - id: OFFR-MAP-OpenDEA-BND-003
+    description: Offering is NOT a Capability per OpenDEA correspondence.
+  - id: OFFR-MAP-OpenDEA-BND-004
+    description: Offering is NOT a Value Stream per OpenDEA correspondence.
+  - id: OFFR-MAP-OpenDEA-BND-005
+    description: Offering is NOT an Enterprise per OpenDEA correspondence.
+  - id: OFFR-MAP-OpenDEA-BND-006
+    description: Offering is NOT a Customer Need per OpenDEA correspondence.
+
+provenance:
+  source:
+    - ADR-ES-021
+    - CR-ES-021
+  decision:
+    - ADR-ES-021
+  implementation:
+    - CR-ES-021
