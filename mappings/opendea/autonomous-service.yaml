@@ -1,0 +1,69 @@
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+# Filing: VS-C of CR-ES-015 , Autonomous Service mapping record (OpenDEA) , per CR-ES-015 §16 + ADR-ES-015 §15 + FND-ES-AG-008 §1.3
+#
+# This file documents the semantic correspondence between ES:CONCEPT:autonomous-service
+# (established by ADR-ES-015 + CR-ES-015) and the OpenDEA Service semantic kind.
+# It does not modify OpenDEA or the OpenDEA metamodel. It does not assert equivalence.
+
+source:
+  registry: enterprise-semantics
+  concept_id: ES:CONCEPT:autonomous-service
+  concept_version: v1.4.0
+  ratified_by: ADR-ES-015
+  implemented_by: CR-ES-015
+
+target:
+  registry: opendea
+  concept_id: external:opendea:Service
+  concept_kind: service
+  note: |
+    OpenDEA Service is the foundational semantic kind at the
+    OpenDEA layer. Autonomous Service is a contextual
+    specialization of the universal Service concept, which
+    itself maps to OpenDEA Service via the established lineage.
+
+correspondence:
+  type: specialization
+  direction: enterprise-semantics -> opendea
+  qualification: |
+    Autonomous Service specializes Service, which corresponds
+    to OpenDEA Service. The specialization is contextual, not
+    foundational.
+
+boundaries:
+  - Autonomous Service is NOT a new OpenDEA semantic kind
+  - Autonomous Service is NOT equivalent to OpenDEA Service ; it is a specialization
+  - Autonomous Service does NOT modify the OpenDEA metamodel ; it references OpenDEA Service via the parent Service
+  - Autonomous Service does NOT imply Agentic Service ; orthogonal at service boundary
+  - Autonomous Service does NOT imply Autonomous Capability ; distinct semantic kinds
+  - Autonomous Service does NOT imply Autonomous Operations ; distinct semantic kinds
+  - Autonomous Service does NOT imply Autonomous Value Stream ; distinct semantic kinds
+  - Autonomous Service does NOT imply Autonomous Enterprise ; distinct semantic kinds
+  - Autonomous Service does NOT require AI
+  - Autonomous Service does NOT require Automation
+  - Autonomous Service does NOT require removal of humans
+
+related_mappings:
+  - enterprise-semantics/concepts/service.concept.yaml
+  - enterprise-semantics/concepts/agentic-service.concept.yaml
+  - enterprise-semantics/concepts/autonomous-service.concept.yaml
+  - enterprise-semantics-mappings/opendea/service.yaml
+  - enterprise-semantics-mappings/opendea/agentic-service.yaml
+  - enterprise-semantics-mappings/opendea/autonomous-service.yaml (this file)
+  - enterprise-semantics-mappings/wsf/autonomous-service.yaml
+
+provenance:
+  - ADR-ES-003 (Value Stream Semantic Grounding)
+  - ADR-ES-004 (Agentic Semantic Grounding)
+  - ADR-ES-007 (Agentic Operations Semantic Grounding)
+  - ADR-ES-008 (Autonomous Operations Semantic Grounding)
+  - ADR-ES-009 (Autonomous Value Stream Semantic Grounding)
+  - ADR-ES-011 (Autonomous Enterprise Semantic Grounding)
+  - ADR-ES-014 (Agentic Service Semantic Grounding)
+  - ADR-ES-015 (Autonomous Service Semantic Grounding)
+  - CR-ES-015 (Implement Autonomous Service)
+  - FND-ES-AG-008 (WSF Tier 1 / Tier 2 Grounding Boundary)
+
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+filing_date: 2026-09-25
+status: candidate , awaiting CR-ES-015 implementation acceptance per the canonicalization ritual

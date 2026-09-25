@@ -1,0 +1,94 @@
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+# Filing: VS-C of CR-ES-015 , Autonomous Service mapping record (WSF) , per CR-ES-015 §16 + ADR-ES-015 §15 + FND-ES-AG-008 §1.3
+#
+# This file documents the semantic correspondence between ES:CONCEPT:autonomous-service
+# (established by ADR-ES-015 + CR-ES-015) and the WSF Service semantic kind.
+# It does not modify WSF. It does not assert equivalence. It documents that
+# Autonomous Service is a contextual specialization of the universal Service concept
+# (which itself maps to WSF Service via the established lineage).
+#
+# Per CR-ES-015 §16, mappings document semantic correspondence only. No unsupported
+# equivalence shall be asserted.
+
+source:
+  registry: enterprise-semantics
+  concept_id: ES:CONCEPT:autonomous-service
+  concept_version: v1.4.0
+  ratified_by: ADR-ES-015
+  implemented_by: CR-ES-015
+
+target:
+  registry: wsf
+  concept_id: external:wsf:Service
+  concept_kind: service
+  note: |
+    WSF Service is the foundational semantic kind. Autonomous Service
+    is a contextual specialization of the universal Service concept,
+    which itself maps to WSF Service via the established lineage.
+    Autonomous Service does not introduce a new WSF semantic kind.
+
+correspondence:
+  type: specialization
+  direction: enterprise-semantics -> wsf
+  qualification: |
+    Autonomous Service specializes Service, which corresponds to WSF
+    Service. The specialization is contextual, not foundational. The
+    Service concept remains the universal semantic kind at both the
+    ES and WSF layers.
+
+boundaries:
+  - Autonomous Service is NOT a new WSF semantic kind
+  - Autonomous Service is NOT equivalent to WSF Service ; it is a specialization
+  - Autonomous Service does NOT modify WSF ; it references WSF Service via the parent Service
+  - Autonomous Service does NOT imply Agentic Service ; orthogonal at service boundary
+  - Autonomous Service does NOT imply Autonomous Capability ; distinct semantic kinds
+  - Autonomous Service does NOT imply Autonomous Operations ; distinct semantic kinds
+  - Autonomous Service does NOT imply Autonomous Value Stream ; distinct semantic kinds
+  - Autonomous Service does NOT imply Autonomous Enterprise ; distinct semantic kinds
+  - Autonomous Service does NOT require AI ; AI-enabled Service is NOT automatically Autonomous Service
+  - Autonomous Service does NOT require Automation ; Automated Service is NOT automatically Autonomous Service
+  - Autonomous Service does NOT require removal of humans ; human participation remains valid
+  - Autonomous progression must be material to service realization (Autonomy Materiality rule)
+
+realization_mapping:
+  autonomous_service_to_wsf_service:
+    direction: specialization
+    qualification: |
+      Enterprise-Semantics establishes Autonomous Service as a
+      contextual specialization of the universal Service concept.
+      The universal Service concept corresponds to WSF Service.
+      Therefore Autonomous Service is a contextual specialization
+      that references WSF Service via the Service parent.
+  bounded_autonomy:
+    direction: governance-bounded
+    qualification: |
+      The bounded-autonomy property (Authority, Policy, Constraints,
+      Governance, Service Contract, Escalation) is a CR-ES-015
+      governance requirement that does not change the WSF Service
+      semantic kind.
+
+related_mappings:
+  - enterprise-semantics/concepts/service.concept.yaml
+  - enterprise-semantics/concepts/agentic-service.concept.yaml
+  - enterprise-semantics/concepts/autonomous-service.concept.yaml
+  - enterprise-semantics-mappings/wsf/service.yaml
+  - enterprise-semantics-mappings/wsf/agentic-service.yaml
+  - enterprise-semantics-mappings/wsf/autonomous-service.yaml (this file)
+  - enterprise-semantics-mappings/opendea/autonomous-service.yaml
+
+provenance:
+  - ADR-ES-003 (Value Stream Semantic Grounding)
+  - ADR-ES-004 (Agentic Semantic Grounding)
+  - ADR-ES-006 (Agentic Workflow Semantic Grounding)
+  - ADR-ES-007 (Agentic Operations Semantic Grounding)
+  - ADR-ES-008 (Autonomous Operations Semantic Grounding)
+  - ADR-ES-009 (Autonomous Value Stream Semantic Grounding)
+  - ADR-ES-011 (Autonomous Enterprise Semantic Grounding)
+  - ADR-ES-014 (Agentic Service Semantic Grounding)
+  - ADR-ES-015 (Autonomous Service Semantic Grounding)
+  - CR-ES-015 (Implement Autonomous Service)
+  - FND-ES-AG-008 (WSF Tier 1 / Tier 2 Grounding Boundary)
+
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+filing_date: 2026-09-25
+status: candidate , awaiting CR-ES-015 implementation acceptance per the canonicalization ritual
