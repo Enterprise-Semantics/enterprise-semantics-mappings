@@ -1,0 +1,57 @@
+# Mapping: ES:COVERAGE:agentic-autonomous -> OpenDEA Semantic Integrity ; Agentic/Autonomous semantic integrity model correspondence
+#
+# Per CR-ES-022 section 2 + ADR-ES-022 ; OpenDEA correspondence for
+# the semantic integrity and coverage model.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:OpenDEA:semantic-integrity
+canonical_name: OpenDEA Semantic Integrity Correspondence
+status: established
+version: 2.0.0
+date: 2026-09-25
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+source_concept: ES:COVERAGE:agentic-autonomous
+target_concept: opendea:SemanticIntegrity
+
+correspondence:
+  - predicate: governs
+    target_predicate: governs
+    note: |
+      OpenDEA Semantic Integrity governs the Agentic/Autonomous
+      semantic family per ADR-ES-022 section 1.
+  - predicate: applies-to
+    target_predicate: applies-to
+    note: |
+      OpenDEA Semantic Integrity applies to the established
+      family per ADR-ES-022 section 6.
+  - predicate: prohibits-symmetry
+    target_predicate: prohibits-symmetry
+    note: |
+      OpenDEA Semantic Integrity prohibits mechanical symmetry
+      per ADR-ES-022 section 13.
+  - predicate: requires-dependency
+    target_predicate: requires-dependency
+    note: |
+      OpenDEA Semantic Integrity requires base concept canonical
+      per ADR-ES-022 section 9.
+
+boundary_assertions:
+  - id: AAI-MAP-OpenDEA-BND-001
+    description: Semantic Integrity does NOT establish Agentic by symmetry.
+  - id: AAI-MAP-OpenDEA-BND-002
+    description: Semantic Integrity does NOT establish Autonomous by symmetry.
+  - id: AAI-MAP-OpenDEA-BND-003
+    description: Semantic Integrity prohibits AI as canonicalization rationale.
+  - id: AAI-MAP-OpenDEA-BND-004
+    description: Semantic Integrity prohibits Automation as canonicalization rationale.
+
+provenance:
+  source:
+    - ADR-ES-022
+    - CR-ES-022
+  decision:
+    - ADR-ES-022
+  implementation:
+    - CR-ES-022
