@@ -1,0 +1,83 @@
+# Mapping: ES:CONCEPT:organization -> OpenDEA Organization ; Organization canonical grounding
+#
+# Per CR-ES-022 section 14 ; OpenDEA correspondence for the
+# canonical Organization concept.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:OpenDEA:organization
+canonical_name: OpenDEA Organization Correspondence
+status: established
+version: 1.9.1
+date: 2026-09-25
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+concept: ES:CONCEPT:organization
+
+source_concept:
+  id: ES:CONCEPT:organization
+  canonical_name: Organization
+  governance: enterprise-semantics
+
+target_concept:
+  id: opendea:Organization
+  canonical_name: OpenDEA Organization
+  governance: OpenDEA
+
+correspondence:
+  - predicate: pursues
+    target_predicate: pursues
+    note: |
+      OpenDEA Organization correspondence as documented in
+      CR-ES-022 section 14. Organization canonical grounding
+      established per ADR-ES-022 section 1.
+  - predicate: coordinates
+    target_predicate: coordinates
+    note: |
+      OpenDEA Organization coordinates Actor. Per CR-ES-022
+      section 14.
+  - predicate: allocates
+    target_predicate: allocates
+    note: |
+      OpenDEA Organization allocates Role + Responsibility. Per
+      CR-ES-022 section 14.
+  - predicate: undertakes
+    target_predicate: undertakes
+    note: |
+      OpenDEA Organization undertakes Activity. Per CR-ES-022
+      section 14.
+  - predicate: produces
+    target_predicate: produces
+    note: |
+      OpenDEA Organization produces Organizational Outcome. Per
+      CR-ES-022 section 14.
+  - predicate: accountable-under
+    target_predicate: accountable-under
+    note: |
+      OpenDEA Organization accountable-under Accountability. Per
+      CR-ES-022 section 14.
+
+boundary_assertions:
+  - id: ORG-MAP-OpenDEA-BND-001
+    description: Organization is NOT an Enterprise per OpenDEA correspondence.
+  - id: ORG-MAP-OpenDEA-BND-002
+    description: Organization is NOT a Process per OpenDEA correspondence.
+  - id: ORG-MAP-OpenDEA-BND-003
+    description: Organization is NOT an Activity per OpenDEA correspondence.
+  - id: ORG-MAP-OpenDEA-BND-004
+    description: Organization is NOT a Capability per OpenDEA correspondence.
+  - id: ORG-MAP-OpenDEA-BND-005
+    description: Organization is NOT a Value Stream per OpenDEA correspondence.
+  - id: ORG-MAP-OpenDEA-BND-006
+    description: Organization is NOT Operations per OpenDEA correspondence.
+  - id: ORG-MAP-OpenDEA-BND-007
+    description: Organization is NOT an Agent per OpenDEA correspondence.
+
+provenance:
+  source:
+    - ADR-ES-022
+    - CR-ES-022
+  decision:
+    - ADR-ES-022
+  implementation:
+    - CR-ES-022

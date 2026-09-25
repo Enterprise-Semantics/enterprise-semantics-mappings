@@ -1,0 +1,78 @@
+# Mapping: ES:CONCEPT:organization -> WSF Organization ; Organization canonical grounding
+#
+# Per CR-ES-022 section 14 ; WSF correspondence for the canonical
+# Organization concept.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:WSF:organization
+canonical_name: WSF Organization Correspondence
+status: established
+version: 1.9.1
+date: 2026-09-25
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+concept: ES:CONCEPT:organization
+
+source_concept:
+  id: ES:CONCEPT:organization
+  canonical_name: Organization
+  governance: enterprise-semantics
+
+target_concept:
+  id: WSF:Organization
+  canonical_name: WSF Organization
+  governance: WSF
+
+correspondence:
+  - predicate: pursues
+    target_predicate: pursues
+    note: |
+      WSF Organization correspondence as documented in CR-ES-022
+      section 14. Organization canonical grounding established per
+      ADR-ES-022 section 1.
+  - predicate: coordinates
+    target_predicate: coordinates
+    note: |
+      WSF Organization coordinates Actor. Per CR-ES-022
+      section 14 + ADR-ES-022 section 4.
+  - predicate: allocates
+    target_predicate: allocates
+    note: |
+      WSF Organization allocates Role + Responsibility. Per
+      CR-ES-022 section 14.
+  - predicate: undertakes
+    target_predicate: undertakes
+    note: |
+      WSF Organization undertakes Activity. Per CR-ES-022
+      section 14.
+  - predicate: produces
+    target_predicate: produces
+    note: |
+      WSF Organization produces Organizational Outcome. Per
+      CR-ES-022 section 14.
+
+boundary_assertions:
+  - id: ORG-MAP-WSF-BND-001
+    description: Organization is NOT an Enterprise per WSF correspondence.
+  - id: ORG-MAP-WSF-BND-002
+    description: Organization is NOT a Process per WSF correspondence.
+  - id: ORG-MAP-WSF-BND-003
+    description: Organization is NOT an Activity per WSF correspondence.
+  - id: ORG-MAP-WSF-BND-004
+    description: Organization is NOT a Capability per WSF correspondence.
+  - id: ORG-MAP-WSF-BND-005
+    description: Organization is NOT a Value Stream per WSF correspondence.
+  - id: ORG-MAP-WSF-BND-006
+    description: Organization is NOT Operations per WSF correspondence.
+  - id: ORG-MAP-WSF-BND-007
+    description: Organization is NOT an Agent per WSF correspondence.
+
+provenance:
+  source:
+    - ADR-ES-022
+    - CR-ES-022
+  decision:
+    - ADR-ES-022
+  implementation:
+    - CR-ES-022
