@@ -1,0 +1,181 @@
+# Mapping: ES:CONCEPT:autonomous-offering -> WSF Offering (Tier 2 Specialisation, ES-canonical novelty)
+#
+# Per CR-ES-019 section 18 + ADR-ES-019 section 20.
+# Per FND-ES-AG-008 section 1.3 ;; the WSF Tier 1 Offering construct
+# is the WSF grounding basis ;; the ES canonical contribution is
+# the autonomous material-realization representation at the Offering
+# boundary (an ES novelty that WSF does not define).
+#
+# Per CR-ES-019 section 18 + ADR-ES-019 section 20 ;; this mapping
+# shall NOT modify the WSF. The WSF live baseline remains the
+# authoritative construct.
+#
+# FOUNDATIONAL DEPENDENCY GATE (per ADR-ES-019 section 2 + CR-ES-019
+# section 2): The parent Offering concept is NOT yet canonical in
+# Enterprise-Semantics as of 2026-09-25. Per user directive messages
+# 1552900782440058902 ("Proceed with 18") + 1552912455527571546
+# ("save, read, understand, implement"), this mapping is established
+# with the dependency documented rather than blocked.
+
+id: ES:MAP:autonomous-offering-to-wsf
+canonical_name: Autonomous Offering to WSF mapping
+status: candidate  # per CR-ES-019 section 18 ; gated on Offering canonical grounding
+mapping_type: specialisation
+source:
+  id: ES:CONCEPT:autonomous-offering
+  governance: enterprise-semantics
+  cr: CR-ES-019
+  adr: ADR-ES-019
+target:
+  id: external:wsf:Offering
+  governance: World-Semantic-Foundation
+  note: |
+    WSF live baseline ;; Offering is a Tier 1 kernel reference.
+    Autonomous Offering is a Tier 2 Specialisation that adds
+    autonomous material-realization representation to the WSF
+    Offering construct.
+
+relationship: specialises
+
+wsf_classification:
+  tier: 2
+  basis: WSF Tier 1 Offering
+  novelty: autonomous-material-realization-representation
+  per: FND-ES-AG-008 section 1.3
+
+semantic_authority:
+  source: enterprise-semantics
+  per: CR-ES-019 section 18 + ADR-ES-019 section 20
+  no_modification: |
+    The WSF metamodel is NOT modified by this mapping. The WSF live
+    baseline remains authoritative. ES specialises, not redefines.
+
+boundary_assertions:
+  - id: AOFF-AUTO-MAP-BND-001
+    description: |
+      Autonomous Offering is NOT WSF Autonomous Offering (the WSF
+      does not define an Autonomous Offering construct). The ES
+      canonical concept is a Tier 2 Specialisation that adds
+      autonomous material-realization to the WSF Offering.
+  - id: AOFF-AUTO-MAP-BND-002
+    description: |
+      AI is NOT a required implementation ;; per ADR-ES-019
+      section 14 + CR-ES-019 section 14 + AOFF-AUTO-NEG-006.
+  - id: AOFF-AUTO-MAP-BND-003
+    description: |
+      Automation is NOT sufficient ;; per ADR-ES-019 section 15
+      + CR-ES-019 section 14 + AOFF-AUTO-NEG-008.
+  - id: AOFF-AUTO-MAP-BND-004
+    description: |
+      Autonomous Offering is NOT Autonomous Product ;; per
+      ADR-ES-019 section 9 + AOFF-AUTO-NEG-002.
+  - id: AOFF-AUTO-MAP-BND-005
+    description: |
+      Autonomous Offering is NOT Autonomous Service ;; per
+      ADR-ES-019 section 10 + AOFF-AUTO-NEG-003.
+  - id: AOFF-AUTO-MAP-BND-006
+    description: |
+      Autonomous Offering is NOT Autonomous Operations ;; per
+      CR-ES-019 section 12 + AOFF-AUTO-NEG-004.
+  - id: AOFF-AUTO-MAP-BND-007
+    description: |
+      Autonomous Offering is NOT Autonomous Value Stream ;; per
+      ADR-ES-019 section 11 + AOFF-AUTO-NEG-005.
+  - id: AOFF-AUTO-MAP-BND-008
+    description: |
+      Autonomous Offering is NOT Autonomous Enterprise ;; per
+      ADR-ES-019 section 12 + AOFF-AUTO-NEG-016.
+  - id: AOFF-AUTO-MAP-BND-009
+    description: |
+      Autonomous Offering is NOT Agentic Offering ;; per
+      ADR-ES-019 section 13 + AOFF-AUTO-NEG-001.
+  - id: AOFF-AUTO-MAP-BND-010
+    description: |
+      Human participation remains valid ;; per ADR-ES-019
+      section 7 + CR-ES-019 section 14 + AOFF-AUTO-CON-014.
+  - id: AOFF-AUTO-MAP-BND-011
+    description: |
+      Foundational Offering dependency documented ;; per
+      ADR-ES-019 section 2 + CR-ES-019 section 2. The parent
+      Offering concept is NOT yet canonical in
+      Enterprise-Semantics. Per user directive messages
+      1552900782440058902 + 1552912455527571546 the dependency
+      is documented rather than blocking implementation.
+      ADR-ES-019 (Offering canonical grounding) remains the
+      next-foundational tranche.
+
+mapping_details:
+  specialisation_principle: |
+    Autonomous Offering specialises WSF Offering ;; the autonomous
+    material-realization is the ES novelty ;; the WSF Offering
+    semantics are preserved (per CR-ES-019 section 3 inheritance
+    requirements).
+  specialisation_pattern:
+    - name: material-autonomous-realization
+      description: |
+        Autonomous material-realization must affect a substantive
+        aspect of the offering's composition, interaction,
+        configuration, fulfillment, or value realization ;; per
+        ADR-ES-019 section 6 + CR-ES-019 section 13.
+    - name: bounded-authority
+      description: |
+        Autonomous behavior operates within explicitly defined
+        authority, policy, constraint, and governance boundaries
+        ;; per ADR-ES-019 section 5.
+    - name: escalation
+      description: |
+        Escalation is a first-class mechanism when authority or
+        governance boundaries are exceeded ;; per ADR-ES-019
+        section 5.
+    - name: human-intervention
+      description: |
+        Human participation patterns (human-in/on/over-the-loop,
+        approval, exception handling, escalation, oversight,
+        human-controlled boundaries) are first-class. Not
+        exclusions ;; per ADR-ES-019 section 7 + CR-ES-019
+        section 14.
+    - name: ai-independence
+      description: |
+        AI is not required for autonomous behavior ;; per
+        ADR-ES-019 section 14 + CR-ES-019 section 14 +
+        AOFF-AUTO-CON-018 + AOFF-AUTO-NEG-006.
+    - name: automation-independence
+      description: |
+        Automation is not sufficient for autonomous behavior ;;
+        per ADR-ES-019 section 15 + CR-ES-019 section 14 +
+        AOFF-AUTO-CON-019 + AOFF-AUTO-NEG-008.
+    - name: agentic-autonomous-orthogonality
+      description: |
+        Agentic and Autonomous are independent semantic
+        dimensions ;; per ADR-ES-019 section 13 + CR-ES-019
+        section 12 + AOFF-AUTO-CON-020 + AOFF-AUTO-NEG-001.
+
+governance: enterprise-semantics
+provenance:
+  - source: CR-ES-019 section 18
+    note: WSF mapping established without modifying WSF.
+  - source: ADR-ES-019 section 20
+    note: |
+      Establishes the architectural hierarchy ;;
+      (WSF Offering -> ES Autonomous Offering -> OpenDEA
+      specialisation).
+  - source: FND-ES-AG-008 section 1.3
+    note: |
+      WSF Tier 1 / Tier 2 grounding boundary ;; Autonomous
+      Offering is Tier 2 Specialisation (ES-canonical novelty).
+  - source: ADR-ES-019 section 21
+    note: |
+      Capability -> Product -> Service -> Offering progression
+      ;; Agentic and Autonomous remain orthogonal semantic
+      dimensions.
+  - source: USER-DIRECTIVE-1552900782440058902
+    note: "User explicit override of Path X BLOCK ;; dependency documented per CR-ES-019 section 2."
+  - source: USER-DIRECTIVE-1552912455527571546
+    note: "Paired tranche filing + implementation directive."
+
+cardinal_rules:
+  - author: Emmanuel A. Otchere
+  - d004_dash_rule: "0 en-dash (U+2013), 0 em-dash (U+2014), 0 horizontal-ellipsis divider (U+2E3B), 0 arrow glyph"
+  - vendor_specific_embargo: "0 references; no vendor-specific material from embargoed sources"
+  - no_wsF_modification: WSF metamodel not modified
+  - no_openDea_modification: OpenDEA metamodel not modified

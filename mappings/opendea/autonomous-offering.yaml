@@ -1,0 +1,138 @@
+# Mapping: ES:CONCEPT:autonomous-offering -> OpenDEA Offering (Specialisation)
+#
+# Per CR-ES-019 section 18 + ADR-ES-019 section 20.
+# Per FND-ES-AG-008 section 1.3 ;; the OpenDEA Offering construct
+# is the OpenDEA grounding basis ;; the ES canonical contribution
+# is the autonomous material-realization representation at the
+# Offering boundary (an ES novelty that OpenDEA does not define).
+#
+# Per CR-ES-019 section 18 + ADR-ES-019 section 20 ;; this mapping
+# shall NOT modify the OpenDEA metamodel. The OpenDEA live baseline
+# remains authoritative.
+#
+# FOUNDATIONAL DEPENDENCY GATE (per ADR-ES-019 section 2 + CR-ES-019
+# section 2): The parent Offering concept is NOT yet canonical in
+# Enterprise-Semantics as of 2026-09-25. Per user directive messages
+# 1552900782440058902 ("Proceed with 18") + 1552912455527571546
+# ("save, read, understand, implement"), this mapping is
+# established with the dependency documented rather than blocked.
+
+id: ES:MAP:autonomous-offering-to-opendea
+canonical_name: Autonomous Offering to OpenDEA mapping
+status: candidate  # per CR-ES-019 section 18 ; gated on Offering canonical grounding
+mapping_type: specialisation
+source:
+  id: ES:CONCEPT:autonomous-offering
+  governance: enterprise-semantics
+  cr: CR-ES-019
+  adr: ADR-ES-019
+target:
+  id: external:opendea:Offering
+  governance: opendea
+  note: |
+    OpenDEA live baseline ;; Offering is an OpenDEA architectural
+    reference. Autonomous Offering is a Specialisation that adds
+    autonomous material-realization representation to the OpenDEA
+    Offering construct.
+
+relationship: specialises
+
+opendea_classification:
+  classification: specialisation
+  basis: OpenDEA Offering
+  novelty: autonomous-material-realization-representation
+  per: CR-ES-019 section 18 + ADR-ES-019 section 20
+
+semantic_authority:
+  source: enterprise-semantics
+  per: CR-ES-019 section 18 + ADR-ES-019 section 20
+  no_modification: |
+    The OpenDEA metamodel is NOT modified by this mapping. The
+    OpenDEA live baseline remains authoritative. ES specialises,
+    not redefines.
+
+boundary_assertions:
+  - id: AOFF-AUTO-OPENDEA-BND-001
+    description: |
+      Autonomous Offering is NOT OpenDEA Autonomous Offering
+      (OpenDEA does not define an Autonomous Offering construct).
+      The ES canonical concept is a Specialisation that adds
+      autonomous material-realization to the OpenDEA Offering.
+  - id: AOFF-AUTO-OPENDEA-BND-002
+    description: |
+      AI is NOT a required implementation ;; per ADR-ES-019
+      section 14 + CR-ES-019 section 14.
+  - id: AOFF-AUTO-OPENDEA-BND-003
+    description: |
+      Automation is NOT sufficient ;; per ADR-ES-019 section 15
+      + CR-ES-019 section 14.
+  - id: AOFF-AUTO-OPENDEA-BND-004
+    description: |
+      Material autonomous realization required ;; per ADR-ES-019
+      section 6 + CR-ES-019 section 13.
+  - id: AOFF-AUTO-OPENDEA-BND-005
+    description: |
+      Human participation remains valid ;; per ADR-ES-019
+      section 7 + CR-ES-019 section 14 + AOFF-AUTO-CON-014.
+
+mapping_details:
+  specialisation_principle: |
+    Autonomous Offering specialises OpenDEA Offering ;; the
+    autonomous material-realization is the ES novelty ;; the
+    OpenDEA Offering semantics are preserved.
+  specialisation_pattern:
+    - name: material-autonomous-realization
+      description: |
+        Autonomous material-realization must affect a substantive
+        aspect of the offering's composition, interaction,
+        configuration, fulfillment, or value realization ;; per
+        ADR-ES-019 section 6 + CR-ES-019 section 13.
+    - name: bounded-authority
+      description: |
+        Autonomous behavior operates within explicitly defined
+        authority, policy, constraint, and governance boundaries
+        ;; per ADR-ES-019 section 5.
+    - name: escalation
+      description: |
+        Escalation is a first-class mechanism when authority or
+        governance boundaries are exceeded ;; per ADR-ES-019
+        section 5.
+    - name: ai-independence
+      description: |
+        AI is not required for autonomous behavior ;; per
+        ADR-ES-019 section 14 + CR-ES-019 section 14.
+    - name: automation-independence
+      description: |
+        Automation is not sufficient for autonomous behavior ;;
+        per ADR-ES-019 section 15 + CR-ES-019 section 14.
+    - name: agentic-autonomous-orthogonality
+      description: |
+        Agentic and Autonomous are independent semantic
+        dimensions ;; per ADR-ES-019 section 13 + CR-ES-019
+        section 12.
+
+governance: enterprise-semantics
+provenance:
+  - source: CR-ES-019 section 18
+    note: OpenDEA mapping established without modifying OpenDEA.
+  - source: ADR-ES-019 section 20
+    note: |
+      Establishes the architectural hierarchy ;;
+      (WSF Offering -> ES Autonomous Offering -> OpenDEA
+      specialisation).
+  - source: ADR-ES-019 section 21
+    note: |
+      Capability -> Product -> Service -> Offering progression
+      ;; Agentic and Autonomous remain orthogonal semantic
+      dimensions.
+  - source: USER-DIRECTIVE-1552900782440058902
+    note: "User explicit override of Path X BLOCK ;; dependency documented per CR-ES-019 section 2."
+  - source: USER-DIRECTIVE-1552912455527571546
+    note: "Paired tranche filing + implementation directive."
+
+cardinal_rules:
+  - author: Emmanuel A. Otchere
+  - d004_dash_rule: "0 en-dash (U+2013), 0 em-dash (U+2014), 0 horizontal-ellipsis divider (U+2E3B), 0 arrow glyph"
+  - vendor_specific_embargo: "0 references; no vendor-specific material from embargoed sources"
+  - no_wsF_modification: WSF metamodel not modified
+  - no_openDea_modification: OpenDEA metamodel not modified
