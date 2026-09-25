@@ -1,0 +1,157 @@
+# Mapping: ES:CONCEPT:agentic-product -> WSF Product (Tier 2 Specialisation, ES-canonical novelty)
+#
+# Per CR-ES-016 §21 + ADR-ES-016 §21.
+# Per FND-ES-AG-008 §1.3 ;; Tier 2 Specialisation: the WSF Tier 1
+# Product construct is the WSF grounding basis ;; the ES canonical
+# contribution is the agentic material-realization representation
+# (an ES novelty that WSF does not define).
+#
+# Per CR-ES-016 §21 + ADR-ES-016 §21 ;; this mapping shall NOT modify
+# the WSF. The WSF live baseline remains the authoritative construct.
+
+id: ES:MAP:agentic-product-to-wsf
+canonical_name: Agentic Product to WSF mapping
+status: candidate  # per CR-ES-016 §21
+mapping_type: specialisation
+source:
+  id: ES:CONCEPT:agentic-product
+  governance: enterprise-semantics
+  cr: CR-ES-016
+  adr: ADR-ES-016
+target:
+  id: external:wsf:Product
+  governance: World-Semantic-Foundation
+  note: |
+    WSF live baseline ;; Product is a Tier 1 kernel reference.
+    Agentic Product is a Tier 2 Specialisation that adds agentic
+    material-realization representation to the WSF Product construct.
+
+relationship: specialises
+
+wsf_classification:
+  tier: 2
+  basis: WSF Tier 1 Product
+  novelty: agentic-material-realization-representation
+  per: FND-ES-AG-008 §1.3
+
+semantic_authority:
+  source: enterprise-semantics
+  per: CR-ES-016 §21 + ADR-ES-016 §21
+  no_modification: |
+    The WSF metamodel is NOT modified by this mapping. The WSF live
+    baseline remains authoritative. ES specialises, not redefines.
+
+boundary_assertions:
+  - id: APROD-MAP-BND-001
+    description: |
+      Agentic Product is NOT WSF Agentic Product (the WSF does not
+      define an Agentic Product construct). The ES canonical concept
+      is a Tier 2 Specialisation that adds agentic material-realization
+      to the WSF Product.
+  - id: APROD-MAP-BND-002
+    description: |
+      AI is NOT a required implementation ;; the agentic behavior may
+      be human, software-based, computational, organizational, or
+      socio-technical per ADR-ES-016 §15 + CR-ES-016 §12.
+  - id: APROD-MAP-BND-003
+    description: |
+      Autonomous Product is NOT canonicalised ;; per ADR-ES-016 §19
+      ;; held for separate ADR-ES-017 (Autonomous Product).
+  - id: APROD-MAP-BND-004
+    description: |
+      Agentic Product is NOT Agent ;; per ADR-ES-016 §5 + APROD-NEG-001.
+  - id: APROD-MAP-BND-005
+    description: |
+      Agentic Product is NOT Agentic Capability ;; per ADR-ES-016 §10
+      + APROD-NEG-002.
+  - id: APROD-MAP-BND-006
+    description: |
+      Agentic Product is NOT Agentic Service ;; per ADR-ES-016 §9
+      + APROD-NEG-003.
+  - id: APROD-MAP-BND-007
+    description: |
+      Agentic Product is NOT Agentic Workflow ;; per ADR-ES-016 §5
+      + APROD-NEG-004.
+  - id: APROD-MAP-BND-008
+    description: |
+      Agentic Product is NOT Agentic Operations ;; per ADR-ES-016 §5
+      + APROD-NEG-005.
+  - id: APROD-MAP-BND-009
+    description: |
+      Agentic Product is NOT Agentic Value Stream ;; per ADR-ES-016 §11
+      + APROD-NEG-006.
+  - id: APROD-MAP-BND-010
+    description: |
+      AI-enabled Product is NOT automatically Agentic Product ;; per
+      ADR-ES-016 §13 + APROD-NEG-007 + APROD-NEG-008.
+  - id: APROD-MAP-BND-011
+    description: |
+      Automated Product is NOT automatically Agentic Product ;; per
+      ADR-ES-016 §14 + APROD-NEG-009.
+
+mapping_details:
+  specialisation_principle: |
+    Agentic Product specialises WSF Product ;; the agentic material-
+    realization is the ES novelty ;; the WSF Product semantics are
+    preserved (per CR-ES-016 §3 inheritance requirements).
+  agentic_anchor:
+    - subject: ES:CONCEPT:agent
+      subject_provenance: CR-ES-004 + ADR-ES-004
+      note: |
+        Agent is inherited from CR-ES-004 ;; the agentic participation
+        anchor reuses the existing Agent semantic-property overlay.
+  specialisation_pattern:
+    - name: material-agentic-realization
+      description: |
+        Agentic material-realization must affect a substantive aspect
+        of the product's realization or interaction ;; per ADR-ES-016
+        §6 + CR-ES-016 §5.
+    - name: mixed-realization
+      description: |
+        Mixed conventional, automated, human, and agentic realization
+        is explicitly permitted ;; per ADR-ES-016 §8 + §15.
+    - name: bounded-authority
+      description: |
+        Agentic behavior operates within explicitly defined authority
+        and policy boundaries ;; per ADR-ES-016 §17 + CR-ES-016 §8.
+    - name: human-intervention
+      description: |
+        Human participation patterns (human-in/on/over-the-loop) are
+        first-class ;; not exclusions ;; per ADR-ES-016 §15 + CR-ES-016 §12.
+    - name: ai-independence
+      description: |
+        AI is not required for agentic behavior ;; per ADR-ES-016 §13
+        + CR-ES-016 §10 + APROD-CON-017 + APROD-NEG-007.
+    - name: automation-independence
+      description: |
+        Automation is not sufficient for agentic behavior ;; per
+        ADR-ES-016 §14 + CR-ES-016 §11 + APROD-CON-018 + APROD-NEG-009.
+    - name: agentic-autonomous-orthogonality
+      description: |
+        Agentic and Autonomous are independent semantic dimensions ;;
+        per ADR-ES-016 §12 + CR-ES-016 §9 + APROD-CON-019 + APROD-NEG-011.
+
+governance: enterprise-semantics
+provenance:
+  - source: CR-ES-016 §21
+    note: WSF mapping established without modifying WSF.
+  - source: ADR-ES-016 §21
+    note: |
+      Establishes the architectural hierarchy ;;
+      ;; (WSF Product -> ES Agentic Product -> OpenDEA
+      ;; specialisation).
+  - source: FND-ES-AG-008 §1.3
+    note: |
+      WSF Tier 1 / Tier 2 grounding boundary ;; Agentic Product is
+      Tier 2 Specialisation (ES-canonical novelty).
+  - source: ADR-ES-016 §20 + §31
+    note: |
+      Capability -> Product -> Service progression ;; Agentic and
+      Autonomous remain orthogonal semantic dimensions.
+
+cardinal_rules:
+  - author: Emmanuel A. Otchere
+  - d004_dash_rule: "0 en-dash (U+2013), 0 em-dash (U+2014), 0 horizontal-ellipsis divider (U+2E3B), 0 arrow glyph"
+  - vendor_specific_embargo: "0 references; no vendor-specific material from embargoed sources"
+  - no_wsF_modification: WSF metamodel not modified
+  - no_openDea_modification: OpenDEA metamodel not modified
