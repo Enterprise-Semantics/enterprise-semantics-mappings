@@ -1,0 +1,171 @@
+# Mapping: ES:CONCEPT:agentic-offering -> WSF Offering (Tier 2 Specialisation, ES-canonical novelty)
+#
+# Per CR-ES-018 §18 + ADR-ES-018 §18.
+# Per FND-ES-AG-008 §1.3 ;; Tier 2 Specialisation: the WSF Tier 1
+# Offering construct is the WSF grounding basis ;; the ES canonical
+# contribution is the agentic material-realization representation
+# at the Offering boundary (an ES novelty that WSF does not define).
+#
+# Per CR-ES-018 §18 + ADR-ES-018 §18 ;; this mapping shall NOT
+# modify the WSF. The WSF live baseline remains the authoritative
+# construct.
+#
+# FOUNDATIONAL DEPENDENCY GATE (per ADR-ES-018 §16 + CR-ES-018 §2):
+# The parent Offering concept is NOT yet canonical in
+# Enterprise-Semantics as of 2026-09-25. Per user directive message
+# 1552900782440058902 ("Proceed with 18"), this mapping is
+# established with the dependency documented rather than blocked.
+
+id: ES:MAP:agentic-offering-to-wsf
+canonical_name: Agentic Offering to WSF mapping
+status: candidate  # per CR-ES-018 §18 ; gated on Offering canonical grounding
+mapping_type: specialisation
+source:
+  id: ES:CONCEPT:agentic-offering
+  governance: enterprise-semantics
+  cr: CR-ES-018
+  adr: ADR-ES-018
+target:
+  id: external:wsf:Offering
+  governance: World-Semantic-Foundation
+  note: |
+    WSF live baseline ;; Offering is a Tier 1 kernel reference.
+    Agentic Offering is a Tier 2 Specialisation that adds agentic
+    material-realization representation to the WSF Offering
+    construct.
+
+relationship: specialises
+
+wsf_classification:
+  tier: 2
+  basis: WSF Tier 1 Offering
+  novelty: agentic-material-realization-representation
+  per: FND-ES-AG-008 §1.3
+
+semantic_authority:
+  source: enterprise-semantics
+  per: CR-ES-018 §18 + ADR-ES-018 §18
+  no_modification: |
+    The WSF metamodel is NOT modified by this mapping. The WSF live
+    baseline remains authoritative. ES specialises, not redefines.
+
+boundary_assertions:
+  - id: AOFF-MAP-BND-001
+    description: |
+      Agentic Offering is NOT WSF Agentic Offering (the WSF does
+      not define an Agentic Offering construct). The ES canonical
+      concept is a Tier 2 Specialisation that adds agentic
+      material-realization to the WSF Offering.
+  - id: AOFF-MAP-BND-002
+    description: |
+      AI is NOT a required implementation ;; per ADR-ES-018 §7 +
+      CR-ES-018 §14 + AOFF-NEG-007.
+  - id: AOFF-MAP-BND-003
+    description: |
+      Automation is NOT sufficient ;; per ADR-ES-018 §8 + CR-ES-018
+      §14 + AOFF-NEG-009.
+  - id: AOFF-MAP-BND-004
+    description: |
+      Agentic Offering is NOT Agentic Product ;; per ADR-ES-018 §3
+      + AOFF-NEG-002.
+  - id: AOFF-MAP-BND-005
+    description: |
+      Agentic Offering is NOT Agentic Service ;; per ADR-ES-018 §4
+      + AOFF-NEG-003.
+  - id: AOFF-MAP-BND-006
+    description: |
+      Agentic Offering is NOT Agentic Workflow ;; per ADR-ES-018
+      §11 + AOFF-NEG-004.
+  - id: AOFF-MAP-BND-007
+    description: |
+      Agentic Offering is NOT Agentic Operations ;; per ADR-ES-018
+      §12 + AOFF-NEG-005.
+  - id: AOFF-MAP-BND-008
+    description: |
+      Agentic Offering is NOT Agentic Value Stream ;; per
+      ADR-ES-018 §12 + AOFF-NEG-006.
+  - id: AOFF-MAP-BND-009
+    description: |
+      Agentic Offering is NOT Agentic Enterprise ;; per ADR-ES-018
+      §13 + AOFF-NEG-013.
+  - id: AOFF-MAP-BND-010
+    description: |
+      Human participation remains valid ;; per ADR-ES-018 §9 +
+      CR-ES-018 §14 + AOFF-CON-013.
+  - id: AOFF-MAP-BND-011
+    description: |
+      Foundational Offering dependency documented ;; per ADR-ES-018
+      §16 + CR-ES-018 §2. The parent Offering concept is NOT
+      yet canonical in Enterprise-Semantics. Per user directive
+      message 1552900782440058902 the dependency is documented
+      rather than blocking implementation. ADR-ES-019 (Offering
+      canonical grounding) remains the next-foundational tranche.
+
+mapping_details:
+  specialisation_principle: |
+    Agentic Offering specialises WSF Offering ;; the agentic
+    material-realization is the ES novelty ;; the WSF Offering
+    semantics are preserved (per CR-ES-018 §3 inheritance
+    requirements).
+  specialisation_pattern:
+    - name: material-agentic-realization
+      description: |
+        Agentic material-realization must affect a substantive
+        aspect of the offering's composition, interaction,
+        configuration, fulfillment, or value realization ;; per
+        ADR-ES-018 §5 + CR-ES-018 §13.
+    - name: mixed-realization
+      description: |
+        Mixed conventional, automated, human, and agentic
+        realization is explicitly permitted ;; per ADR-ES-018 §9.
+    - name: bounded-authority
+      description: |
+        Agentic behavior operates within explicitly defined
+        authority and policy boundaries ;; per ADR-ES-018 §17.
+    - name: human-intervention
+      description: |
+        Human participation patterns (human-in/on/over-the-loop,
+        approval, exception handling, escalation, oversight,
+        human-controlled boundaries) are first-class. Not
+        exclusions ;; per ADR-ES-018 §9 + CR-ES-018 §14.
+    - name: ai-independence
+      description: |
+        AI is not required for agentic behavior ;; per ADR-ES-018
+        §7 + CR-ES-018 §14 + AOFF-CON-017 + AOFF-NEG-007.
+    - name: automation-independence
+      description: |
+        Automation is not sufficient for agentic behavior ;; per
+        ADR-ES-018 §8 + CR-ES-018 §14 + AOFF-CON-018 + AOFF-NEG-009.
+    - name: agentic-autonomous-orthogonality
+      description: |
+        Agentic and Autonomous are independent semantic dimensions
+        ;; per ADR-ES-018 §6 + CR-ES-018 §14 + AOFF-CON-019 +
+        AOFF-NEG-011.
+
+governance: enterprise-semantics
+provenance:
+  - source: CR-ES-018 §18
+    note: WSF mapping established without modifying WSF.
+  - source: ADR-ES-018 §18
+    note: |
+      Establishes the architectural hierarchy ;;
+      (WSF Offering -> ES Agentic Offering -> OpenDEA
+      specialisation).
+  - source: FND-ES-AG-008 §1.3
+    note: |
+      WSF Tier 1 / Tier 2 grounding boundary ;; Agentic Offering
+      is Tier 2 Specialisation (ES-canonical novelty).
+  - source: ADR-ES-018 §22
+    note: |
+      Capability -> Product -> Service -> Offering progression
+      ;; Agentic and Autonomous remain orthogonal semantic
+      dimensions.
+  - source: USER-DIRECTIVE-1552900782440058902
+    note: "User explicit override of Path X BLOCK ;; dependency documented per CR-ES-018 §2."
+
+cardinal_rules:
+  - author: Emmanuel A. Otchere
+  - d004_dash_rule: "0 en-dash (U+2013), 0 em-dash (U+2014), 0 horizontal-ellipsis divider (U+2E3B), 0 arrow glyph"
+  - vendor_specific_embargo: "0 references; no vendor-specific material from embargoed sources"
+  - no_wsF_modification: WSF metamodel not modified
+  - no_openDea_modification: OpenDEA metamodel not modified
