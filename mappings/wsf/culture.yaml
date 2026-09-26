@@ -1,0 +1,69 @@
+# Mapping: ES:CONCEPT:culture -> WSF Culture ; Culture semantic grounding
+#
+# Per CR-ES-026 section 8 ; WSF correspondence for the Culture
+# foundational concept. Per Recon-ES-003, Culture is NOT reducible
+# to Organization, Governance, Policy, Process, or Capability.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:WSF:culture
+canonical_name: WSF Culture Correspondence
+status: established
+version: 2.4.0
+date: 2026-09-25
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+concept: ES:CONCEPT:culture
+
+source_concept:
+  id: ES:CONCEPT:culture
+  canonical_name: Culture
+  governance: enterprise-semantics
+
+target_concept:
+  id: WSF:Culture
+  canonical_name: WSF Culture
+  governance: WSF
+
+correspondence:
+  - predicate: specializes
+    target_predicate: specializes
+    note: |
+      WSF Culture specialization-of WSF Entity correspondence
+      per CR-ES-026 section 8 + ADR-ES-026 section 1.
+  - predicate: supports
+    target_predicate: supports
+    note: |
+      WSF Culture supports WSF Organization per CR-ES-026
+      section 5 + ADR-ES-026 section 5.
+  - predicate: shapes
+    target_predicate: shapes
+    note: |
+      WSF Culture shapes WSF Governance/Policy/Authority
+      per CR-ES-026 section 5 + ADR-ES-026 section 5.
+
+boundary_assertions:
+  - id: CULT-MAP-WSF-BND-001
+    description: Culture is NOT Organization per WSF correspondence + Recon-ES-003 + ADR-ES-026 section 6.
+  - id: CULT-MAP-WSF-BND-002
+    description: Culture is NOT Governance per WSF correspondence + Recon-ES-003 + ADR-ES-026 section 6.
+  - id: CULT-MAP-WSF-BND-003
+    description: Culture is NOT Policy per WSF correspondence + Recon-ES-003 + ADR-ES-026 section 6.
+  - id: CULT-MAP-WSF-BND-004
+    description: Culture is NOT Process per WSF correspondence + Recon-ES-003 + ADR-ES-026 section 6.
+  - id: CULT-MAP-WSF-BND-005
+    description: Culture is NOT Capability per WSF correspondence + Recon-ES-003 + ADR-ES-026 section 6.
+  - id: CULT-MAP-WSF-BND-006
+    description: Culture is NOT IT system per WSF correspondence + ADR-ES-026 section 6.
+  - id: CULT-MAP-WSF-BND-007
+    description: Culture is NOT Agentic Culture per WSF correspondence + ADR-ES-022 section 5.
+
+provenance:
+  source:
+    - ADR-ES-026
+    - CR-ES-026
+    - Recon-ES-003
+  decision:
+    - ADR-ES-026
+  implementation:
+    - CR-ES-026
