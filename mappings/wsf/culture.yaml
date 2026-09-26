@@ -1,0 +1,98 @@
+# Mapping: ES:CULTURE -> WSF:CULTURE ; Culture Mapping
+#
+# Per CR-ES-026 section 6 + ADR-ES-026 section 5.
+# Establishes the authoritative correspondence between the
+# Enterprise-Semantics Culture dependency and the WSF Culture
+# foundational concept. The mapping represents semantic
+# identity/reference, NOT ownership transfer.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:WSF:culture
+canonical_name: Culture (WSF Reference Mapping)
+status: established
+version: 2.1.0
+date: 2026-09-26
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+
+source:
+  authority: Enterprise-Semantics
+  concept: CULTURE
+  governance: enterprise-semantics
+  semantic_role: dependency_reference
+
+target:
+  authority: WSF
+  concept: CULTURE
+  governance: world-semantic-foundation
+  semantic_role: foundational
+
+mapping_type: equivalent
+
+mapping_record:
+  mapping_kind: external_dependency
+  semantic_role: foundational_dependency_reference
+  ownership_transfer: false
+  semantic_authority: WSF
+
+correspondence:
+  - predicate: references
+    target_predicate: is-foundational-for
+    note: |
+      Enterprise-Semantics Culture reference identifies
+      WSF Culture as the foundational semantic per
+      ES-ADR-026 section 5 + CR-ES-026 section 6.
+  - predicate: specializes-via
+    target_predicate: is-specialized-by
+    note: |
+      WSF Culture is specialized by Enterprise-Semantics
+      specializations (Agentic Culture, Autonomous Culture).
+      ES does NOT redefine WSF Culture.
+
+mapping_documentation:
+  - id: ES-WSF-CULT-MAP-DOC-001
+    description: |
+      This mapping represents semantic identity/reference.
+      It does NOT transfer ownership. The semantic
+      authority is WSF (WSF-ADR-ES-026).
+  - id: ES-WSF-CULT-MAP-DOC-002
+    description: |
+      Enterprise-Semantics MAY constrain and specialize
+      WSF Culture characteristics when defining
+      enterprise-specific cultural concepts (per
+      ES-ADR-026 section 5). ES SHALL NOT redefine
+      Culture to mean organizational culture exclusively.
+  - id: ES-WSF-CULT-MAP-DOC-003
+    description: |
+      The mapping does NOT establish a second Culture
+      concept (per ES-ADR-026 section 10 + WSF-ES-ALIGN-01).
+
+boundary_assertions:
+  - id: ES-WSF-CULT-BND-001
+    description: Enterprise-Semantics SHALL NOT redefine Culture per ES-ADR-026 section 1 + section 3.
+  - id: ES-WSF-CULT-BND-002
+    description: Culture SHALL NOT collapse into Organization per ES-ADR-026 section 7.
+  - id: ES-WSF-CULT-BND-003
+    description: Culture SHALL NOT collapse into Collective per ES-ADR-026 section 7.
+  - id: ES-WSF-CULT-BND-004
+    description: Culture SHALL NOT collapse into Value per ES-ADR-026 section 7.
+  - id: ES-WSF-CULT-BND-005
+    description: Culture SHALL NOT collapse into Norm per ES-ADR-026 section 7.
+  - id: ES-WSF-CULT-BND-006
+    description: Culture SHALL NOT collapse into Policy per ES-ADR-026 section 7.
+  - id: ES-WSF-CULT-BND-007
+    description: Culture SHALL NOT collapse into Governance per ES-ADR-026 section 7.
+  - id: ES-WSF-CULT-BND-008
+    description: Culture SHALL NOT collapse into Behavior per ES-ADR-026 section 7.
+
+provenance:
+  source:
+    - ES-FOUND-001
+    - WSF-ADR-ES-026
+  decision:
+    - ES-ADR-026
+  implementation:
+    - CR-ES-026
+
+release_target: v2.1.0
