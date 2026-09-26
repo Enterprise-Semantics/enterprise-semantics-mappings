@@ -1,0 +1,77 @@
+# Mapping: ES:CONCEPT:agentic-system -> OpenDEA Agentic System ; Agentic System semantic grounding
+#
+# Per CR-ES-025 section 10 + ADR-ES-025. OpenDEA correspondence for
+# the Agentic System specialization.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:OpenDEA:agentic-system
+canonical_name: OpenDEA Agentic System Correspondence
+status: established
+version: 2.3.0
+date: 2026-09-25
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+concept: ES:CONCEPT:agentic-system
+
+source_concept:
+  id: ES:CONCEPT:agentic-system
+  canonical_name: Agentic System
+  governance: enterprise-semantics
+
+target_concept:
+  id: opendea:AgenticSystem
+  canonical_name: OpenDEA Agentic System
+  governance: OpenDEA
+
+correspondence:
+  - predicate: specializes
+    target_predicate: specialization-of
+    note: |
+      OpenDEA Agentic System specialization-of OpenDEA System
+      correspondence per CR-ES-025 section 10 + ADR-ES-025 section 1.
+  - predicate: engages
+    target_predicate: engages
+    note: |
+      OpenDEA Agentic System engages OpenDEA Agent per CR-ES-025
+      section 10 + ADR-ES-025 section 10.
+  - predicate: interprets
+    target_predicate: interprets
+    note: |
+      OpenDEA Agentic System interprets OpenDEA Intent per
+      CR-ES-025 section 10 + ADR-ES-025 section 10.
+  - predicate: uses
+    target_predicate: uses
+    note: |
+      OpenDEA Agentic System uses OpenDEA Agentic Workflow per
+      CR-ES-025 section 10 + ADR-ES-025 section 10.
+
+boundary_assertions:
+  - id: ASYS-MAP-OpenDEA-BND-001
+    description: Agentic System is NOT Agent per OpenDEA correspondence + ADR-ES-025 section 5.
+  - id: ASYS-MAP-OpenDEA-BND-002
+    description: Agentic System is NOT Agentic Workflow per OpenDEA correspondence + ADR-ES-025 section 6.
+  - id: ASYS-MAP-OpenDEA-BND-003
+    description: Agentic System is NOT Agentic Operations per OpenDEA correspondence + ADR-ES-025 section 7.
+  - id: ASYS-MAP-OpenDEA-BND-004
+    description: Agentic System is NOT Agentic Service per OpenDEA correspondence + ADR-ES-025 section 11.
+  - id: ASYS-MAP-OpenDEA-BND-005
+    description: Agentic System is NOT Agentic Organization per OpenDEA correspondence + ADR-ES-025 section 11.
+  - id: ASYS-MAP-OpenDEA-BND-006
+    description: Agentic System is NOT Agentic Enterprise per OpenDEA correspondence + ADR-ES-025 section 11.
+  - id: ASYS-MAP-OpenDEA-BND-007
+    description: Agentic System is NOT AI System merely because it uses AI per OpenDEA correspondence + ADR-ES-025 section 3 + section 11.
+  - id: ASYS-MAP-OpenDEA-BND-008
+    description: Agentic System is NOT Automated System merely because it automates execution per OpenDEA correspondence + ADR-ES-025 section 3 + section 11.
+  - id: ASYS-MAP-OpenDEA-BND-009
+    description: Autonomous System remains deferred per OpenDEA correspondence + ADR-ES-022 section 13 + ADR-ES-025 section 13.
+
+provenance:
+  source:
+    - ADR-ES-025
+    - CR-ES-025
+    - ADR-ES-027
+  decision:
+    - ADR-ES-025
+  implementation:
+    - CR-ES-025

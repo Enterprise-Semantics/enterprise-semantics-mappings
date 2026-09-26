@@ -1,0 +1,78 @@
+# Mapping: ES:CONCEPT:agentic-system -> WSF Agentic System ; Agentic System semantic grounding
+#
+# Per CR-ES-025 section 10 + ADR-ES-025. WSF correspondence for the
+# Agentic System specialization. Parent System canonical per
+# ADR-ES-027 + CR-ES-027.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:WSF:agentic-system
+canonical_name: WSF Agentic System Correspondence
+status: established
+version: 2.3.0
+date: 2026-09-25
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+concept: ES:CONCEPT:agentic-system
+
+source_concept:
+  id: ES:CONCEPT:agentic-system
+  canonical_name: Agentic System
+  governance: enterprise-semantics
+
+target_concept:
+  id: WSF:AgenticSystem
+  canonical_name: WSF Agentic System
+  governance: WSF
+
+correspondence:
+  - predicate: specializes
+    target_predicate: specialization-of
+    note: |
+      WSF Agentic System specialization-of WSF System correspondence
+      per CR-ES-025 section 10 + ADR-ES-025 section 1.
+  - predicate: engages
+    target_predicate: engages
+    note: |
+      WSF Agentic System engages WSF Agent per CR-ES-025 section 10
+      + ADR-ES-025 section 10.
+  - predicate: interprets
+    target_predicate: interprets
+    note: |
+      WSF Agentic System interprets WSF Intent per CR-ES-025
+      section 10 + ADR-ES-025 section 10.
+  - predicate: uses
+    target_predicate: uses
+    note: |
+      WSF Agentic System uses WSF Agentic Workflow per CR-ES-025
+      section 10 + ADR-ES-025 section 10.
+
+boundary_assertions:
+  - id: ASYS-MAP-WSF-BND-001
+    description: Agentic System is NOT Agent per WSF correspondence + ADR-ES-025 section 5.
+  - id: ASYS-MAP-WSF-BND-002
+    description: Agentic System is NOT Agentic Workflow per WSF correspondence + ADR-ES-025 section 6.
+  - id: ASYS-MAP-WSF-BND-003
+    description: Agentic System is NOT Agentic Operations per WSF correspondence + ADR-ES-025 section 7.
+  - id: ASYS-MAP-WSF-BND-004
+    description: Agentic System is NOT Agentic Service per WSF correspondence + ADR-ES-025 section 11.
+  - id: ASYS-MAP-WSF-BND-005
+    description: Agentic System is NOT Agentic Organization per WSF correspondence + ADR-ES-025 section 11.
+  - id: ASYS-MAP-WSF-BND-006
+    description: Agentic System is NOT Agentic Enterprise per WSF correspondence + ADR-ES-025 section 11.
+  - id: ASYS-MAP-WSF-BND-007
+    description: Agentic System is NOT AI System merely because it uses AI per WSF correspondence + ADR-ES-025 section 3 + section 11.
+  - id: ASYS-MAP-WSF-BND-008
+    description: Agentic System is NOT Automated System merely because it automates execution per WSF correspondence + ADR-ES-025 section 3 + section 11.
+  - id: ASYS-MAP-WSF-BND-009
+    description: Autonomous System remains deferred per WSF correspondence + ADR-ES-022 section 13 + ADR-ES-025 section 13.
+
+provenance:
+  source:
+    - ADR-ES-025
+    - CR-ES-025
+    - ADR-ES-027
+  decision:
+    - ADR-ES-025
+  implementation:
+    - CR-ES-025
