@@ -1,0 +1,30 @@
+id: ES:WSF:service
+canonical_name: Service (WSF Foundation Reference)
+status: established
+version: 1.0.0
+date: 2026-09-26
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+
+source:
+  authority: Enterprise-Semantics
+  concept: SERVICE
+target:
+  authority: WSF
+  concept: SERVICE
+mapping_type: foundation-reference
+
+mapping_record:
+  semantic_authority: WSF
+  base_decision: ADR-WSF-35 (Baseline, WSF PR #16 MERGED 2026-09-26)
+
+boundary_assertions:
+  - es_does_not_redefine_foundation: true
+  - specializations_reference_wsf_base: true
+
+provenance:
+  source: [ADR-WSF-35]
+  decision: [ES-ADR-031]
+  implementation: [CR-ES-031]
+
+release_target: v1.4.0
