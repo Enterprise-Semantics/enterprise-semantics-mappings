@@ -1,0 +1,82 @@
+# Mapping: ES:CONCEPT:system -> OpenDEA System ; System semantic grounding
+#
+# Per CR-ES-027 section 8 + ADR-ES-027. OpenDEA correspondence for
+# the System foundational concept.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:OpenDEA:system
+canonical_name: OpenDEA System Correspondence
+status: established
+version: 2.5.0
+date: 2026-09-25
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+concept: ES:CONCEPT:system
+
+source_concept:
+  id: ES:CONCEPT:system
+  canonical_name: System
+  governance: enterprise-semantics
+
+target_concept:
+  id: opendea:System
+  canonical_name: OpenDEA System
+  governance: OpenDEA
+
+correspondence:
+  - predicate: specializes
+    target_predicate: specialization-of
+    note: |
+      OpenDEA System specialization-of OpenDEA Entity correspondence
+      per CR-ES-027 section 8 + ADR-ES-027 section 1.
+  - predicate: contains
+    target_predicate: contains
+    note: |
+      OpenDEA System contains OpenDEA Element per CR-ES-027
+      section 5 + ADR-ES-027 section 5.
+  - predicate: operates-within
+    target_predicate: operates-within
+    note: |
+      OpenDEA System operates-within OpenDEA Context per
+      CR-ES-027 section 5 + ADR-ES-027 section 5.
+  - predicate: realizes
+    target_predicate: realizes
+    note: |
+      OpenDEA System realizes OpenDEA Function/Purpose per
+      CR-ES-027 section 5 + ADR-ES-027 section 5.
+  - predicate: produces
+    target_predicate: produces
+    note: |
+      OpenDEA System produces OpenDEA Outcome per CR-ES-027
+      section 5 + ADR-ES-027 section 5.
+
+boundary_assertions:
+  - id: SYS-MAP-OpenDEA-BND-001
+    description: System is NOT Entity per OpenDEA correspondence + Recon-ES-004 + ADR-ES-027 section 6.
+  - id: SYS-MAP-OpenDEA-BND-002
+    description: System is NOT Organization per OpenDEA correspondence + Recon-ES-004 + ADR-ES-027 section 6.
+  - id: SYS-MAP-OpenDEA-BND-003
+    description: System is NOT Service per OpenDEA correspondence + Recon-ES-004 + ADR-ES-027 section 6.
+  - id: SYS-MAP-OpenDEA-BND-004
+    description: System is NOT Resource per OpenDEA correspondence + Recon-ES-004 + ADR-ES-027 section 6.
+  - id: SYS-MAP-OpenDEA-BND-005
+    description: System is NOT Process per OpenDEA correspondence + Recon-ES-004 + ADR-ES-027 section 6.
+  - id: SYS-MAP-OpenDEA-BND-006
+    description: System is NOT Workflow per OpenDEA correspondence + Recon-ES-004 + ADR-ES-027 section 6.
+  - id: SYS-MAP-OpenDEA-BND-007
+    description: System is NOT Capability per OpenDEA correspondence + Recon-ES-004 + ADR-ES-027 section 6.
+  - id: SYS-MAP-OpenDEA-BND-008
+    description: System is NOT IT system specifically per OpenDEA correspondence + ADR-ES-027 section 6.
+  - id: SYS-MAP-OpenDEA-BND-009
+    description: Autonomous System remains deferred per OpenDEA correspondence + ADR-ES-022 section 13.
+
+provenance:
+  source:
+    - ADR-ES-027
+    - CR-ES-027
+    - Recon-ES-004
+  decision:
+    - ADR-ES-027
+  implementation:
+    - CR-ES-027
