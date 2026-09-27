@@ -1,0 +1,100 @@
+# Mapping: ES:SYSTEM -> WSF:SYSTEM ; System Mapping
+#
+# Per CR-ES-027 section 17 + ADR-ES-027 section 2.
+# Establishes the authoritative correspondence between the
+# Enterprise-Semantics System dependency and the WSF System
+# foundational concept. The mapping represents semantic
+# identity/reference, NOT ownership transfer.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:WSF:system
+canonical_name: System (WSF Reference Mapping)
+status: established
+version: 2.3.0
+date: 2026-09-26
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+
+source:
+  authority: Enterprise-Semantics
+  concept: SYSTEM
+  governance: enterprise-semantics
+  semantic_role: dependency_reference
+
+target:
+  authority: WSF
+  concept: SYSTEM
+  governance: world-semantic-foundation
+  semantic_role: foundational
+
+mapping_type: equivalent
+
+mapping_record:
+  mapping_kind: external_dependency
+  semantic_role: foundational_dependency_reference
+  ownership_transfer: false
+  semantic_authority: WSF
+
+correspondence:
+  - predicate: references
+    target_predicate: is-foundational-for
+    note: |
+      Enterprise-Semantics System reference identifies
+      WSF System as the foundational semantic per
+      ES-ADR-027 section 2 + CR-ES-027 section 17.
+  - predicate: specializes-via
+    target_predicate: is-specialized-by
+    note: |
+      WSF System is specialized by Enterprise-Semantics
+      specializations (Agentic System). Autonomous System
+      remains deferred per ES-ADR-027 section 9 + ES-022
+      section 13.
+      ES does NOT redefine WSF System.
+
+mapping_documentation:
+  - id: ES-WSF-SYS-MAP-DOC-001
+    description: |
+      This mapping represents semantic identity/reference.
+      It does NOT transfer ownership. The semantic
+      authority is WSF (WSF-ADR-ES-027).
+  - id: ES-WSF-SYS-MAP-DOC-002
+    description: |
+      System is technology-neutral per WSF-ADR-ES-027
+      section 4 + ES-ADR-027 section 5. A System may be
+      physical, biological, social, organizational,
+      informational, computational, technological,
+      socio-technical, or composite.
+  - id: ES-WSF-SYS-MAP-DOC-003
+    description: |
+      The mapping does NOT establish a second System
+      concept (per ES-ADR-027 section 11 + WSF-ES-ALIGN-01).
+
+boundary_assertions:
+  - id: ES-WSF-SYS-BND-001
+    description: System SHALL remain distinct from Process per ES-ADR-027 section 4.
+  - id: ES-WSF-SYS-BND-002
+    description: System SHALL remain distinct from Organization per ES-ADR-027 section 4.
+  - id: ES-WSF-SYS-BND-003
+    description: System SHALL remain distinct from Service per ES-ADR-027 section 4.
+  - id: ES-WSF-SYS-BND-004
+    description: System SHALL remain distinct from Resource per ES-ADR-027 section 4.
+  - id: ES-WSF-SYS-BND-005
+    description: System SHALL remain distinct from Capability per ES-ADR-027 section 4.
+  - id: ES-WSF-SYS-BND-006
+    description: System SHALL remain distinct from Workflow per ES-ADR-027 section 4.
+  - id: ES-WSF-SYS-BND-007
+    description: System SHALL remain distinct from Agent per ES-ADR-027 section 4.
+  - id: ES-WSF-SYS-BND-008
+    description: Autonomous System remains deferred per ES-022 section 13 + ES-ADR-027 section 9.
+
+provenance:
+  source:
+    - ES-FOUND-001
+    - WSF-ADR-ES-027
+  decision:
+    - ES-ADR-027
+  implementation:
+    - CR-ES-027
+
+release_target: v2.3.0

@@ -1,0 +1,44 @@
+# Mapping: ES:AUTONOMOUS_SYSTEM -> OpenDEA:AutonomousSystem ; OpenDEA architectural specialization
+#
+# Per CR-ES-028 section 18. Establishes architectural specialization
+# of Autonomous System in the OpenDEA architectural framework.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:OpenDEA:autonomous-system
+canonical_name: Autonomous System (OpenDEA Architectural Specialization)
+status: established
+version: 2.4.0
+date: 2026-09-26
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+
+source:
+  authority: Enterprise-Semantics
+  concept: AUTONOMOUS_SYSTEM
+  governance: enterprise-semantics
+
+target:
+  authority: OpenDEA
+  concept: AutonomousSystem
+  governance: opendea
+  semantic_role: architectural_specialization
+
+mapping_type: architectural_specialization
+
+correspondence:
+  - predicate: architectural-specializes
+    target_predicate: is-architecturally-specialized-by
+
+boundary_assertions:
+  - autonomous_system_distinct_from_agentic_system: true
+  - autonomous_system_distinct_from_autonomous_operations: true
+  - autonomy_requires_independent_progression: true
+
+provenance:
+  source:
+    - ES-ADR-028
+  implementation:
+    - CR-ES-028
+
+release_target: v2.4.0

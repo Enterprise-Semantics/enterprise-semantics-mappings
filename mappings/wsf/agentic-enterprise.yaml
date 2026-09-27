@@ -1,0 +1,231 @@
+# Mapping: ES:CONCEPT:agentic-enterprise -> WSF (Tier 2 Specialisation + ES-canonical novelty)
+#
+# Per CR-ES-010 §7 + ADR-ES-010 §1 + §3 + FND-ES-AG-008 §1.3.
+#
+# Per FND-ES-AG-008 §1.3:
+#   Enterprise = Tier 1 Kernel Reference (WSF Activity grounds Enterprise)
+#   Agentic Enterprise = Tier 2 Specialisation + ES-canonical novelty
+#     ;; 5 characteristics, 16 properties, 10 canonical relationships
+#     ;; 22 invariants, 2 mapping records (this file + the OpenDEA
+#     ;; mapping), 1 new Profile (ES:PROFILE:agentic-enterprise)
+#     ;; Agentic Enterprise inherits Enterprise grounding via
+#     ;; ES:CONCEPT:enterprise -> external:wsf:Entity
+#
+# No new WSF foundational Agentic Enterprise concept is asserted.
+# Reuses Enterprise grounding from CR-ES-001.
+# Reuses Authority grounding from CR-ES-004.
+# Reuses Agent grounding from CR-ES-007.
+# Reuses Agentic Value Stream grounding from CR-ES-005.
+# Reuses Agentic Operations grounding from CR-ES-007.
+# Reuses Agentic Workflow grounding from CR-ES-006.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:MAP:agentic-enterprise-to-wsf
+canonical_name: Agentic Enterprise -> WSF mapping
+status: Candidate
+version: 0.9.0
+mapping_type: specialization
+authority: wsf
+
+# Per CR-ES-010 §7 + FND-ES-AG-008 §1.3
+
+source:
+  id: ES:CONCEPT:agentic-enterprise
+  canonical_name: Agentic Enterprise
+  defined_by: CR-ES-010 §2 + ADR-ES-010 §1
+  tier: Tier 2 Specialisation + ES-canonical novelty
+  prior_hypothesis_superseded: >
+    Profile-of-Enterprise via profile_bindings to
+    ES:PROFILE:agentic-execution across eight enterprise areas
+    (FND-ES-AG-005 + ADR-ES-AG-001 §3.3).
+  new_hypothesis: >
+    Specialisation-of-Enterprise via predicate specializes
+    (CR-ES-010 §2 + ADR-ES-010 §1).
+  canonical_identity_preserved: true
+
+target:
+  # WSF does not have a direct Agentic Enterprise concept. The mapping
+  # targets the WSF Entity concept (Tier 1) which grounds Enterprise
+  # via ES:CONCEPT:enterprise.
+  id: external:wsf:Entity
+  canonical_name: WSF Entity
+  note: |
+    WSF live baseline grounds Enterprise via WSF Entity (Tier 1).
+    The Agentic Enterprise specialisation adds ES-canonical novelty ;;
+    ;; the 5 characteristics , 16 properties , 10 canonical
+    relationships , 22 invariants ;; 2 mapping records documented
+    in the source concept record.
+
+# Mapping semantic
+
+relationship: |
+  Agentic Enterprise is a Tier 2 Specialisation of WSF Entity (via
+  Enterprise). The specialisation adds material agentic
+  participation ;; enterprise-intent-anchored behaviour ;;
+  enterprise-outcome-oriented behaviour ;; enterprise-level
+  authority ;; policy ;; governance ;; and escalation boundaries
+  while preserving the WSF Entity semantics and Enterprise
+  grounding.
+
+mapping_relationship:
+  - predicate: specializes
+    subject: ES:CONCEPT:agentic-enterprise
+    object: external:wsf:Entity
+
+  - predicate: inherits
+    subject: ES:CONCEPT:agentic-enterprise
+    object: external:wsf:Entity
+    qualification: enterprise-grounding-inherited
+    rationale: |
+      Per CR-ES-010 §7 + ADR-ES-010 §1 + §3 + FND-ES-AG-008 §1.3 ;;
+      Agentic Enterprise inherits the Enterprise grounding ;; which
+      itself grounds WSF Entity. The chain is:
+        WSF Entity (Tier 1) -> ES Enterprise (Established) -> ES Agentic Enterprise (Proposed)
+      The Agentic Enterprise specialisation does not introduce a new
+      WSF foundational concept.
+
+# WSF foundational inheritance
+
+wsf_foundational_inheritance:
+  - foundation_concept: external:wsf:Entity
+    relationship: specializes
+    via: ES:CONCEPT:enterprise
+    note: |
+      WSF Entity grounds the kernel. The Agentic Enterprise
+      specialisation is established on top of the Enterprise
+      specialisation ;; which itself specialises WSF Entity.
+
+# Per CR-ES-010 §4 + ADR-ES-010 §5 + §14 + §15 + §16 + §17:
+# 10 Agentic Enterprise relationships
+
+agentic_enterprise_relationships:
+  - subject: ES:CONCEPT:agentic-enterprise
+    predicate: specializes
+    object: ES:CONCEPT:enterprise
+    wsf_correspondence: external:wsf:Entity
+    note: |
+      Direct Enterprise specialisation ;; per CR-ES-010 §2 +
+      ADR-ES-010 §1 + §3 + AE-CON-001.
+
+  - subject: ES:CONCEPT:agentic-enterprise
+    predicate: engages
+    object: ES:CONCEPT:agent
+    wsf_correspondence: external:wsf:Entity (Agent subclass, CR-ES-004 reuse)
+    note: |
+      Agent engagement ;; per CR-ES-010 §4 + ADR-ES-010 §5. Does NOT
+      imply Agentic Enterprise = an enterprise containing Agents
+      ;; per ADR-ES-010 §1 + AE-NEG-007.
+
+  - subject: ES:CONCEPT:agentic-enterprise
+    predicate: enterprise-realizes-through
+    object: ES:CONCEPT:agentic-value-stream
+    wsf_correspondence: external:wsf:Value Stream (CR-ES-005 reuse)
+    note: |
+      Agentic Value Stream realises-through ;; per CR-ES-010 §4 +
+      ADR-ES-010 §5 + §14. Subject-type namespaced predicate
+      registered in VS-B vocabulary (CR-ES-010 §4). Does NOT imply
+      Agentic Enterprise = enterprise containing Agentic Value
+      Streams ;; per AE-NEG-015.
+
+  - subject: ES:CONCEPT:agentic-enterprise
+    predicate: enterprise-operates-through
+    object: ES:CONCEPT:agentic-operations
+    wsf_correspondence: external:wsf:Operations (CR-ES-007 reuse)
+    note: |
+      Agentic Operations operates-through ;; per CR-ES-010 §4 +
+      ADR-ES-010 §5 + §15. Subject-type namespaced predicate
+      registered in VS-B vocabulary (CR-ES-010 §4). Does NOT imply
+      Agentic Enterprise = Agentic Operations ;; per AE-NEG-011 +
+      AE-NEG-014.
+
+  - subject: ES:CONCEPT:agentic-enterprise
+    predicate: uses
+    object: ES:CONCEPT:agentic-workflow
+    wsf_correspondence: external:wsf:Workflow (CR-ES-006 reuse)
+    note: |
+      Agentic Workflow usage ;; per CR-ES-010 §4 + ADR-ES-010 §5 +
+      §16. Does NOT imply Agentic Enterprise = an enterprise
+      containing Agentic Workflows ;; per AE-NEG-013.
+
+  - subject: ES:CONCEPT:agentic-enterprise
+    predicate: operates-within
+    object: ES:CONCEPT:authority
+    wsf_correspondence: external:wsf:Authority (CR-ES-004 reuse)
+    note: |
+      Authority boundary ;; per CR-ES-010 §4 + ADR-ES-010 §17 +
+      AE-CON-007. Authority = unrestricted fails conformance , per
+      AE-CON-018 (analogous to AE-AUTO-CON bound).
+
+  - subject: ES:CONCEPT:agentic-enterprise
+    predicate: governed-by
+    object: external:concept:policy
+    wsf_correspondence: external:wsf:Norm
+    note: |
+      Policy governance ;; per CR-ES-010 §4 + ADR-ES-010 §17 +
+      AE-CON-008. Policy is a forward-reference.
+
+  - subject: ES:CONCEPT:agentic-enterprise
+    predicate: pursues
+    object: external:concept:enterprise-objective
+    wsf_correspondence: external:wsf:Intent
+    note: |
+      Enterprise Objective pursuit ;; per CR-ES-010 §4 +
+      ADR-ES-010 §6 + §7. Enterprise Objective is a forward-
+      reference.
+
+  - subject: ES:CONCEPT:agentic-enterprise
+    predicate: produces
+    object: external:concept:enterprise-outcome
+    wsf_correspondence: external:wsf:Outcome
+    note: |
+      Enterprise Outcome production ;; per CR-ES-010 §4 +
+      ADR-ES-010 §6 + AE-CON-016. Enterprise Outcome is a forward-
+      reference.
+
+  - subject: ES:CONCEPT:agentic-enterprise
+    predicate: adapts-to
+    object: external:concept:enterprise-context
+    wsf_correspondence: external:wsf:Event
+    note: |
+      Enterprise Context adaptation ;; per CR-ES-010 §4 +
+      ADR-ES-010 §6.5. Enterprise Context is a forward-reference.
+
+# Cardinal rules
+
+cardinal_rules:
+  - author: Emmanuel A. Otchere
+  - d004_dash_rule: 0 forbidden glyphs
+  - vendor_specific_embargo: 0 references ;; no vendor-specific material from embargoed sources
+  - naming: lowercase kebab-case per ADR-ES-002 §11
+
+# Cardinal mappings note: ES-canonical novelty
+
+canonical_mappings_note: |
+  Per FND-ES-AG-008 §1.3 , the Agentic Enterprise mapping is a
+  Tier 2 Specialisation. The 5 characteristics , 16 properties ;;
+  10 canonical relationships , 22 invariants ;; 2 mapping records ;;
+  1 new Profile are ES-canonical novelty. The mapping does not
+  introduce a new WSF foundational concept ;; it documents how
+  Enterprise-Semantics extends WSF Entity (via Enterprise) with
+  material agentic participation at the enterprise boundary.
+
+# Provenance
+
+provenance:
+  - source: CR-ES-010 §7
+    note: WSF mapping specification.
+  - source: ADR-ES-010 §1 + §3
+    note: Architectural decision ;; Agentic Enterprise is a specialisation of Enterprise.
+  - source: FND-ES-AG-008 §1.3
+    note: Tier 1 / Tier 2 grounding classification.
+  - source: FND-ES-AG-005
+    note: Prior Profile hypothesis ;; superseded by CR-ES-010 + ADR-ES-010 specialisation hypothesis.
+  - source: ADR-ES-AG-001 §3.3
+    note: Prior Profile pattern ;; superseded.
+  - source: FND-ES-AG-001-Grounding-Result
+    note: WSF live baseline alignment.
+  - source: docs/finding/0009-wsf-tier1-tier2-grounding-boundary.md
+    note: "Established classification framework."
+  - source: https://github.com/World-Semantic-Foundation
+    note: WSF Entity + Enterprise Tier 1 grounding inherited.
