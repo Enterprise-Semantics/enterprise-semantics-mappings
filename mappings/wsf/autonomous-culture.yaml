@@ -1,0 +1,69 @@
+# Mapping: ES:CONCEPT:autonomous-culture -> WSF Autonomous Culture ; Autonomous Culture semantic grounding
+#
+# Per CR-ES-024 section 9 + ADR-ES-024. WSF correspondence for the
+# Autonomous Culture specialization.
+#
+# Authored by: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+
+id: ES:WSF:autonomous-culture
+canonical_name: WSF Autonomous Culture Correspondence
+status: established
+version: 2.2.0
+date: 2026-09-25
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+concept: ES:CONCEPT:autonomous-culture
+
+source_concept:
+  id: ES:CONCEPT:autonomous-culture
+  canonical_name: Autonomous Culture
+  governance: enterprise-semantics
+
+target_concept:
+  id: WSF:AutonomousCulture
+  canonical_name: WSF Autonomous Culture
+  governance: WSF
+
+correspondence:
+  - predicate: specializes
+    target_predicate: specialization-of
+    note: |
+      WSF Autonomous Culture specialization-of WSF Culture
+      correspondence per CR-ES-024 section 9 + ADR-ES-024 section 1.
+  - predicate: supports
+    target_predicate: supports
+    note: |
+      WSF Autonomous Culture supports WSF Autonomous Organization
+      per CR-ES-024 section 9 + ADR-ES-024 section 7.
+  - predicate: shapes
+    target_predicate: shapes
+    note: |
+      WSF Autonomous Culture shapes WSF Delegation/Authority/
+      Accountability/Intervention/Escalation/Decision/Adaptation
+      Practice per CR-ES-024 section 9 + ADR-ES-024 section 7.
+
+boundary_assertions:
+  - id: ACULT-AUTO-MAP-WSF-BND-001
+    description: Autonomous Culture is NOT AI Culture per WSF correspondence + ADR-ES-024 section 2.
+  - id: ACULT-AUTO-MAP-WSF-BND-002
+    description: Autonomous Culture is NOT Automated Culture per WSF correspondence + ADR-ES-024 section 2.
+  - id: ACULT-AUTO-MAP-WSF-BND-003
+    description: Autonomous Culture is NOT Autonomous Organization per WSF correspondence + ADR-ES-024 section 8.
+  - id: ACULT-AUTO-MAP-WSF-BND-004
+    description: Autonomous Culture is NOT Autonomous Enterprise per WSF correspondence + ADR-ES-024 section 8.
+  - id: ACULT-AUTO-MAP-WSF-BND-005
+    description: Autonomous Culture is NOT Autonomous Operations per WSF correspondence + ADR-ES-024 section 8.
+  - id: ACULT-AUTO-MAP-WSF-BND-006
+    description: Autonomous Culture is NOT Autonomous Workflow per WSF correspondence + ADR-ES-024 section 8.
+  - id: ACULT-AUTO-MAP-WSF-BND-007
+    description: Autonomous Culture is NOT Agentic Culture per WSF correspondence + ADR-ES-024 section 5 + ADR-ES-022 section 5.
+
+provenance:
+  source:
+    - ADR-ES-024
+    - CR-ES-024
+    - ADR-ES-026
+  decision:
+    - ADR-ES-024
+  implementation:
+    - CR-ES-024
