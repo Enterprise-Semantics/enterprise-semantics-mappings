@@ -1,0 +1,24 @@
+id: ES:WSF:closed-loop
+canonical_name: Closed Loop (WSF Specialization Mapping)
+status: Established
+version: 2.8.0
+date: 2026-09-27
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+source:
+  authority: Enterprise-Semantics
+  concept: CLOSED_LOOP
+target:
+  authority: WSF
+  concept: CLOSED_LOOP
+mapping_type: foundation_reference
+mapping_record:
+  semantic_authority: WSF
+  base_decision: ADR-WSF-38 (Baseline)
+boundary_assertions:
+  - closed_loop_specializes_wsf_closed_loop: true
+  - es_does_not_redefine_wsf: true
+provenance:
+  decision: [ES-ADR-035]
+  implementation: [CR-ES-035]
+release_target: v2.8.0
