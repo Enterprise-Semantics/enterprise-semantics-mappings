@@ -1,0 +1,21 @@
+id: ES:WSF:mlops
+canonical_name: Mlops Profile (WSF Mapping)
+status: Established
+version: 1.0.0
+date: 2026-09-28
+author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
+governance: enterprise-semantics
+source:
+  authority: Enterprise-Semantics
+  concept: MLOPS
+target:
+  authority: WSF
+  concept: PROFILES_AND_DISPOSITIONS
+mapping_type: disposition_profile
+mapping_record:
+  semantic_authority: ES
+  base_decision: ES-ADR-MLO
+disposition: profile (canonical-reject per AI boundary rule)
+provenance:
+  decision: [ES-ADR-MLO]
+release_target: v1.0.0
