@@ -1,18 +1,18 @@
-id: ES:OpenDEA:closed-loop
-canonical_name: Closed Loop (OpenDEA Architectural Specialization)
+id: ES:OpenDEA:loop-engineering
+canonical_name: Loop Engineering (OpenDEA Architectural Specialization)
 status: Established
-version: 2.10.0
+version: 2.9.0
 date: 2026-09-28
 author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
 governance: enterprise-semantics
 source:
   authority: Enterprise-Semantics
-  concept: CLOSED_LOOP
+  concept: LOOP_ENGINEERING
 target:
   authority: OpenDEA
-  concept: ClosedCamelLoop
+  concept: LoopCamelEngineering
 mapping_type: architectural_specialization
 provenance:
   decision: [ES-ADR-032]
   implementation: [CR-ES-032]
-release_target: v2.10.0
+release_target: v2.9.0

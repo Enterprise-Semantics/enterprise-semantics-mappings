@@ -1,13 +1,13 @@
-id: ES:WSF:closed-loop
-canonical_name: Closed Loop (WSF Mapping)
+id: ES:WSF:autonomous-network
+canonical_name: Autonomous Network (WSF Mapping)
 status: Established
-version: 2.10.0
+version: 2.8.0
 date: 2026-09-28
 author: Emmanuel A. Otchere (cardinal author rule, 2026-09-24)
 governance: enterprise-semantics
 source:
   authority: Enterprise-Semantics
-  concept: CLOSED_LOOP
+  concept: AUTONOMOUS_NETWORK
 target:
   authority: WSF
   concept: NETWORKS_AND_LOOPS
@@ -20,4 +20,4 @@ boundary_assertions:
 provenance:
   decision: [ES-ADR-032]
   implementation: [CR-ES-032]
-release_target: v2.10.0
+release_target: v2.8.0
