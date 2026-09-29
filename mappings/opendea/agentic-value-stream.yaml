@@ -11,7 +11,7 @@
 
 id: ES:MAP:agentic-value-stream-to-opendea
 canonical_name: Agentic Value Stream to OpenDEA mapping
-status: candidate ;;; per CR-ES-005 §13
+status: candidate, per CR-ES-005 §13
 mapping_type: specialisation
 source:
   id: ES:CONCEPT:agentic-value-stream
